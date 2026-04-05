@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ElevatorSystem from '../../components/ElevatorSystem.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import ThemeToggleScript from '../../components/ThemeToggleScript.astro';
+import FadeInScript from '../../components/FadeInScript.astro';
+import '../../styles/equipment.css';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'О лифте', selector: '.eq-hero' },
+  { id: 'features', label: 'Особенности', selector: '.eq-features' },
+  { id: 'specs', label: 'Характеристики', selector: '.eq-specs' },
+  { id: 'usecases', label: 'Применение', selector: '.eq-usecases' },
+  { id: 'faq', label: 'FAQ', selector: '.eq-faq' },
+  { id: 'cta', label: 'Заявка', selector: '.eq-cta' },
+];
+---
+
+<BaseLayout title="Больничные лифты Sanyo — для каталок и медоборудования | Дельта-лифт" description="Больничные лифты Sanyo: увеличенная кабина для каталок, плавный ход, антибактериальное покрытие. Для больниц, клиник, медицинских центров.">
+
+<Header activePage="equipment" ctaHref="#cta" />
+<SectionNav sections={sectionNavItems} />
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="eq-hero">
+  <div class="eq-hero-grid" id="pg"></div>
+  <div class="eq-hero-glow"></div>
+
+  <!-- Blueprint: front elevation with wide doors and gurney silhouette -->
+  <div class="bp" style="right:6%;bottom:0;opacity:.08">
+    <svg width="200" height="260" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace">
+      <!-- shaft outline -->
+      <rect x="20" y="20" width="160" height="220" stroke-width="1"/>
+      <!-- cabin outline -->
+      <rect x="30" y="40" width="140" height="180" stroke-width="1.2" stroke-dasharray="4 2"/>
+      <!-- wide doors -->
+      <rect x="50" y="40" width="100" height="180" stroke-width=".8"/>
+      <line x1="100" y1="40" x2="100" y2="220" stroke-dasharray="3 2" stroke-width=".6"/>
+      <text x="100" y="35" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ДВЕРИ ОТ 1100 ММ</text>
+      <!-- gurney silhouette -->
+      <rect x="55" y="150" width="90" height="8" rx="2" stroke-width=".8"/>
+      <line x1="60" y1="158" x2="60" y2="168" stroke-width=".6"/>
+      <line x1="140" y1="158" x2="140" y2="168" stroke-width=".6"/>
+      <circle cx="60" cy="171" r="3" stroke-width=".6"/>
+      <circle cx="140" cy="171" r="3" stroke-width=".6"/>
+      <text x="100" y="145" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">КАТАЛКА</text>
+      <!-- dimensions -->
+      <line x1="30" y1="248" x2="170" y2="248" stroke-width=".5"/>
+      <line x1="30" y1="245" x2="30" y2="251" stroke-width=".5"/>
+      <line x1="170" y1="245" x2="170" y2="251" stroke-width=".5"/>
+      <text x="100" y="258" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ОТ 2100 ММ</text>
+      <text x="100" y="15" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">БОЛЬНИЧНЫЙ — ФРОНТ</text>
+    </svg>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <a href="/equipment/">Оборудование</a><span style="opacity:.4">›</span>
+      <span>Больничные лифты</span>
+    </nav>
+    <div class="eq-hero-inner">
+      <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>БОЛЬНИЧНЫЕ ЛИФТЫ SANYO</div>
+      <h1 class="eq-h1 fi fi-d1">Больничные лифты <em>Sanyo</em> — когда плавность хода критична</h1>
+      <p class="eq-desc fi fi-d2">Увеличенная кабина для каталок и медицинского оборудования. Плавный пуск и торможение, антибактериальное покрытие, приоритетный режим вызова. PM-привод, сертификация EAC.</p>
+      <div class="eq-actions fi fi-d3">
+        <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a>
+        <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a>
+      </div>
+      <div class="eq-trust fi fi-d3">
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Монтаж от 14 дней</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═════════════════════════════════════════ -->
+<section class="eq-features">
+  <div class="container">
+    <p class="section-label fi">Ключевые преимущества</p>
+    <h2 class="section-title fi fi-d1">Почему выбирают<br>больничные лифты Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-feat-grid">
+      <div class="eq-feat-card fi">
+        <div class="eq-feat-icon">📏</div>
+        <div class="eq-feat-title">Увеличенная кабина от 2100 мм</div>
+        <div class="eq-feat-text">Ширина кабины от 2100 мм — свободное размещение каталки с медперсоналом. Глубина от 1400 мм для удобного разворота.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">🔇</div>
+        <div class="eq-feat-title">Плавный ход</div>
+        <div class="eq-feat-text">PM-привод обеспечивает минимальную вибрацию и плавный пуск-торможение. Критично при транспортировке пациентов в тяжёлом состоянии.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🦠</div>
+        <div class="eq-feat-title">Антибактериальное покрытие</div>
+        <div class="eq-feat-text">Специальные панели и поручни с антибактериальным покрытием. Легко моются, устойчивы к дезинфицирующим средствам.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">🚨</div>
+        <div class="eq-feat-title">Приоритетный режим</div>
+        <div class="eq-feat-text">Режим экстренного вызова — лифт игнорирует все попутные остановки и следует напрямую на нужный этаж. Ключ у медперсонала.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🚪</div>
+        <div class="eq-feat-title">Автоматическое удержание дверей</div>
+        <div class="eq-feat-text">Увеличенное время удержания дверей в открытом состоянии. Фотобарьер предотвращает закрытие при проезде каталки.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d3">
+        <div class="eq-feat-icon">🔋</div>
+        <div class="eq-feat-title">Резервное питание</div>
+        <div class="eq-feat-text">При отключении электричества лифт автоматически доезжает до ближайшего этажа и открывает двери. Опция ИБП для полноценной работы.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS ════════════════════════════════════════════ -->
+<section class="eq-specs">
+  <div class="container">
+    <p class="section-label fi">Технические характеристики</p>
+    <h2 class="section-title fi fi-d1">Параметры<br>больничных лифтов</h2>
+    <div class="eq-spec-grid">
+      <div class="eq-spec-row fi">
+        <span class="eq-spec-label">Грузоподъёмность</span>
+        <span class="eq-spec-value"><em>1000–2500</em> кг</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Скорость</span>
+        <span class="eq-spec-value"><em>1.0–2.5</em> м/с</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Ширина кабины</span>
+        <span class="eq-spec-value">от <em>2100</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Глубина кабины</span>
+        <span class="eq-spec-value">от <em>1400</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Ширина дверей</span>
+        <span class="eq-spec-value">от <em>1100</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Привод</span>
+        <span class="eq-spec-value">PM безредукторный</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Управление</span>
+        <span class="eq-spec-value">WISE3000</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ════════════════════════════════════════ -->
+<section class="eq-usecases">
+  <div class="container">
+    <p class="section-label fi">Применение</p>
+    <h2 class="section-title fi fi-d1">Для каких объектов<br>подходят</h2>
+    <div class="divider"></div>
+    <div class="eq-uc-grid">
+      <div class="eq-uc-card fi">
+        <div class="eq-uc-icon">🏥</div>
+        <div class="eq-uc-title">Больницы</div>
+        <div class="eq-uc-text">Многопрофильные стационары с интенсивным потоком каталок. Приоритетный режим для экстренной транспортировки между отделениями и операционными.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🩺</div>
+        <div class="eq-uc-title">Медицинские центры</div>
+        <div class="eq-uc-text">Частные клиники и диагностические центры. Плавный ход и тихая работа — комфорт для пациентов и персонала.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">♿</div>
+        <div class="eq-uc-title">Реабилитационные центры</div>
+        <div class="eq-uc-text">Увеличенная кабина для инвалидных колясок и реабилитационного оборудования. Низкий порог, увеличенное время удержания дверей.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d2">
+        <div class="eq-uc-icon">👶</div>
+        <div class="eq-uc-title">Родильные дома</div>
+        <div class="eq-uc-text">Максимальная плавность хода для транспортировки рожениц. Антибактериальное покрытие, резервное питание, приоритетный вызов.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════ -->
+<section class="eq-faq">
+  <div class="container">
+    <p class="section-label fi">Частые вопросы</p>
+    <h2 class="section-title fi fi-d1">FAQ по больничным<br>лифтам Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-faq-list">
+      <div class="eq-faq-item fi">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какой минимальный размер кабины для каталки?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Для свободного размещения стандартной медицинской каталки (2100×600 мм) с сопровождающим персоналом необходима кабина шириной от 2100 мм и глубиной от 1400 мм. Ширина дверей — от 1100 мм для беспрепятственного проезда.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d1">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Соответствует ли лифт требованиям СНиП?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Да. Больничные лифты Sanyo соответствуют требованиям СП 158.13330 и ГОСТ 33652-2019 для лифтов медицинских учреждений. Сертификация EAC (ТР ТС 011/2011) подтверждает соответствие всем нормам безопасности для эксплуатации в РФ.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d2">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Как работает антибактериальное покрытие?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Панели кабины и поручни покрыты составом на основе ионов серебра, который подавляет размножение бактерий на поверхности. Покрытие устойчиво к агрессивным дезинфицирующим средствам и сохраняет свойства на протяжении всего срока службы лифта.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d3">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Что такое приоритетный режим вызова?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Приоритетный режим активируется специальным ключом у медперсонала. Лифт отменяет все текущие вызовы и следует напрямую на нужный этаж без промежуточных остановок. Используется при экстренной транспортировке пациентов — например, из приёмного в реанимацию.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════ -->
+<section class="eq-cta" id="cta">
+  <div class="container">
+    <div class="eq-cta-grid">
+      <div>
+        <p class="section-label fi">Запросить расчёт</p>
+        <h2 class="eq-cta-title fi fi-d1">Подберём больничный лифт<br><em>под ваш медицинский объект</em></h2>
+        <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, замерит шахту и подготовит КП с фиксированной ценой за 3 рабочих дня.</p>
+        <div class="eq-cta-benefits fi fi-d2">
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Бесплатный выезд инженера
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            КП за 3 рабочих дня
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Фиксированная цена в договоре
+          </div>
+        </div>
+        <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a>
+        <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div>
+      </div>
+      <div class="eq-form fi fi-d2">
+        <div class="eq-form-title">Быстрая заявка</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="eq-form-group">
+            <label class="eq-form-label">Имя / Компания *</label>
+            <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «МедСтрой»" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Телефон *</label>
+            <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Описание задачи</label>
+            <textarea class="eq-form-input" name="message" placeholder="Тип объекта, этажность, размеры шахты, требования..."></textarea>
+          </div>
+          <input type="hidden" name="source" value="hospital">
+          <button type="submit" class="eq-form-submit">Отправить заявку →</button>
+          <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+function toggleEqFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

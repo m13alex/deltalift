@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ElevatorSystem from '../../components/ElevatorSystem.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import ThemeToggleScript from '../../components/ThemeToggleScript.astro';
+import FadeInScript from '../../components/FadeInScript.astro';
+import '../../styles/equipment.css';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'О лифте', selector: '.eq-hero' },
+  { id: 'features', label: 'Особенности', selector: '.eq-features' },
+  { id: 'specs', label: 'Характеристики', selector: '.eq-specs' },
+  { id: 'usecases', label: 'Применение', selector: '.eq-usecases' },
+  { id: 'faq', label: 'FAQ', selector: '.eq-faq' },
+  { id: 'cta', label: 'Заявка', selector: '.eq-cta' },
+];
+---
+
+<BaseLayout title="Панорамные лифты Sanyo — стеклянные кабины | Дельта-лифт" description="Панорамные лифты Sanyo: стеклянные кабины, индивидуальное проектирование под архитектуру объекта. Для торговых и бизнес-центров, отелей.">
+
+<Header activePage="equipment" ctaHref="#cta" />
+<SectionNav sections={sectionNavItems} />
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="eq-hero">
+  <div class="eq-hero-grid" id="pg"></div>
+  <div class="eq-hero-glow"></div>
+
+  <!-- Blueprint: plan-view cabin outlines with glass panels -->
+  <div class="bp" style="right:6%;bottom:0;opacity:.08">
+    <svg width="200" height="240" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace">
+      <text x="100" y="15" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ПЛАН КАБИН — ВИД СВЕРХУ</text>
+      <!-- rectangular cabin -->
+      <rect x="20" y="30" width="70" height="60" stroke-width="1"/>
+      <line x1="20" y1="50" x2="20" y2="70" stroke-width="1.5" stroke-dasharray="3 1"/>
+      <rect x="25" y="35" width="60" height="50" stroke-dasharray="2 2" stroke-width=".5"/>
+      <text x="55" y="65" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ПРЯМОУГ.</text>
+      <!-- semicircular cabin -->
+      <rect x="110" y="30" width="70" height="60" stroke-width="1"/>
+      <path d="M180 35 A30 25 0 0 1 180 85" stroke-width="1.2" stroke-dasharray="3 1"/>
+      <text x="145" y="65" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ПОЛУКРУГ</text>
+      <!-- circular cabin -->
+      <circle cx="65" cy="160" r="35" stroke-width="1"/>
+      <circle cx="65" cy="160" r="30" stroke-dasharray="2 2" stroke-width=".5"/>
+      <text x="65" y="163" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">КРУГЛАЯ</text>
+      <!-- glass notation -->
+      <line x1="130" y1="130" x2="170" y2="130" stroke-width="1.2" stroke-dasharray="3 1"/>
+      <text x="150" y="142" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">── СТЕКЛО</text>
+      <text x="150" y="155" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">10–12 ММ</text>
+      <!-- shaft outline -->
+      <rect x="120" y="165" width="60" height="50" stroke-width=".8" stroke-dasharray="4 2"/>
+      <text x="150" y="193" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ШАХТА</text>
+      <text x="100" y="235" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ФАСАДНЫЙ / АТРИУМНЫЙ МОНТАЖ</text>
+    </svg>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <a href="/equipment/">Оборудование</a><span style="opacity:.4">›</span>
+      <span>Панорамные лифты</span>
+    </nav>
+    <div class="eq-hero-inner">
+      <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>ПАНОРАМНЫЕ ЛИФТЫ SANYO</div>
+      <h1 class="eq-h1 fi fi-d1">Панорамные лифты <em>Sanyo</em> — архитектурный акцент вашего объекта</h1>
+      <p class="eq-desc fi fi-d2">Стеклянные кабины с индивидуальным дизайном под архитектуру здания. Фасадный и атриумный монтаж. Прямоугольные, полукруглые и круглые формы. LED-подсветка и тихий PM-привод.</p>
+      <div class="eq-actions fi fi-d3">
+        <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a>
+        <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a>
+      </div>
+      <div class="eq-trust fi fi-d3">
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Индивидуальный проект</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═════════════════════════════════════════ -->
+<section class="eq-features">
+  <div class="container">
+    <p class="section-label fi">Ключевые преимущества</p>
+    <h2 class="section-title fi fi-d1">Почему выбирают<br>панорамные лифты Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-feat-grid">
+      <div class="eq-feat-card fi">
+        <div class="eq-feat-icon">🔲</div>
+        <div class="eq-feat-title">Стеклянные кабины</div>
+        <div class="eq-feat-text">Закалённое стекло и триплекс 10–12 мм. Прозрачные стенки превращают поездку в архитектурное впечатление и визуально расширяют пространство.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">🎨</div>
+        <div class="eq-feat-title">Индивидуальный дизайн</div>
+        <div class="eq-feat-text">Проектирование кабины под стилистику здания: материалы отделки, форма, цвет каркаса, тип остекления. Каждый лифт уникален.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">⭕</div>
+        <div class="eq-feat-title">Круглые и полукруглые кабины</div>
+        <div class="eq-feat-text">Нестандартные формы кабин для атриумов и фасадов. Круглая, полукруглая, прямоугольная — подбор под архитектурный замысел.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">💡</div>
+        <div class="eq-feat-title">LED-подсветка</div>
+        <div class="eq-feat-text">Встроенная светодиодная подсветка кабины и шахты. Создаёт эффектный визуальный акцент, особенно в тёмное время суток.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🔇</div>
+        <div class="eq-feat-title">Тихая работа — PM-привод</div>
+        <div class="eq-feat-text">Синхронный безредукторный привод с постоянными магнитами. Минимальный уровень шума и вибрации для комфорта пассажиров.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d3">
+        <div class="eq-feat-icon">🏗️</div>
+        <div class="eq-feat-title">Наружный и внутренний монтаж</div>
+        <div class="eq-feat-text">Фасадное крепление на внешнюю стену или атриумная установка внутри здания. Металлоконструкция шахты под ключ.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS ════════════════════════════════════════════ -->
+<section class="eq-specs">
+  <div class="container">
+    <p class="section-label fi">Технические характеристики</p>
+    <h2 class="section-title fi fi-d1">Параметры<br>панорамных лифтов</h2>
+    <div class="eq-spec-grid">
+      <div class="eq-spec-row fi">
+        <span class="eq-spec-label">Грузоподъёмность</span>
+        <span class="eq-spec-value"><em>450–2000</em> кг</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Скорость</span>
+        <span class="eq-spec-value"><em>0.5–2.5</em> м/с</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Привод</span>
+        <span class="eq-spec-value">PM безредукторный</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Формы кабин</span>
+        <span class="eq-spec-value">прямоуг. / полукруг / круг</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Остекление</span>
+        <span class="eq-spec-value">закалённое <em>10–12</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Тип монтажа</span>
+        <span class="eq-spec-value">фасадный / атриумный</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ════════════════════════════════════════ -->
+<section class="eq-usecases">
+  <div class="container">
+    <p class="section-label fi">Применение</p>
+    <h2 class="section-title fi fi-d1">Для каких объектов<br>подходят</h2>
+    <div class="divider"></div>
+    <div class="eq-uc-grid">
+      <div class="eq-uc-card fi">
+        <div class="eq-uc-icon">🛒</div>
+        <div class="eq-uc-title">Торговые центры</div>
+        <div class="eq-uc-text">Панорамный лифт в атриуме — визуальная доминанта ТЦ. Привлекает внимание посетителей и работает как навигационный ориентир между этажами.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🏨</div>
+        <div class="eq-uc-title">Отели</div>
+        <div class="eq-uc-text">Стеклянный лифт в лобби создаёт премиальное впечатление. Индивидуальный дизайн кабины интегрируется в интерьер отеля.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🏢</div>
+        <div class="eq-uc-title">Бизнес-центры</div>
+        <div class="eq-uc-text">Фасадный панорамный лифт подчёркивает статус здания. Обзорные кабины создают комфортную среду для арендаторов и их клиентов.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d2">
+        <div class="eq-uc-icon">🏠</div>
+        <div class="eq-uc-title">Частные резиденции</div>
+        <div class="eq-uc-text">Компактные панорамные лифты для загородных домов и пентхаусов. Элемент престижа и удобства для владельцев многоуровневого жилья.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════ -->
+<section class="eq-faq">
+  <div class="container">
+    <p class="section-label fi">Частые вопросы</p>
+    <h2 class="section-title fi fi-d1">FAQ по панорамным<br>лифтам Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-faq-list">
+      <div class="eq-faq-item fi">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какие формы кабин доступны?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Sanyo производит панорамные кабины трёх основных форм: прямоугольные, полукруглые и круглые. Форма подбирается под архитектуру здания и тип шахты. Возможны индивидуальные решения по эскизам архитектора.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d1">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Насколько безопасно стекло в кабине?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Используется закалённое стекло или триплекс толщиной 10–12 мм, выдерживающий ударные и ветровые нагрузки. При разрушении закалённое стекло рассыпается на безопасные фрагменты, триплекс удерживается на плёнке. Все решения соответствуют нормам безопасности.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d2">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Можно ли установить панорамный лифт снаружи здания?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Да, фасадный монтаж — один из основных вариантов. Лифт крепится к внешней стене здания на металлоконструкции. Стеклянная шахта защищает от осадков и ветра. Проектируем под климатические условия региона установки.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d3">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какие требования к шахте для панорамного лифта?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Панорамный лифт может устанавливаться в готовую шахту с остеклением или в металлоконструкцию, которую мы проектируем и монтируем. Минимальные размеры зависят от формы кабины и грузоподъёмности. Инженер выполнит замеры и предложит оптимальное решение.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════ -->
+<section class="eq-cta" id="cta">
+  <div class="container">
+    <div class="eq-cta-grid">
+      <div>
+        <p class="section-label fi">Запросить расчёт</p>
+        <h2 class="eq-cta-title fi fi-d1">Подберём панорамный лифт<br><em>под архитектуру вашего объекта</em></h2>
+        <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, выполнит замеры и подготовит КП с визуализацией кабины за 5 рабочих дней.</p>
+        <div class="eq-cta-benefits fi fi-d2">
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Бесплатный выезд инженера
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            КП с визуализацией кабины
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Фиксированная цена в договоре
+          </div>
+        </div>
+        <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a>
+        <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div>
+      </div>
+      <div class="eq-form fi fi-d2">
+        <div class="eq-form-title">Быстрая заявка</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="eq-form-group">
+            <label class="eq-form-label">Имя / Компания *</label>
+            <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Телефон *</label>
+            <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Описание задачи</label>
+            <textarea class="eq-form-input" name="message" placeholder="Тип объекта, форма кабины, этажность, фасадный или атриумный монтаж..."></textarea>
+          </div>
+          <input type="hidden" name="source" value="panoramic">
+          <button type="submit" class="eq-form-submit">Отправить заявку →</button>
+          <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+function toggleEqFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лифты SANYO в России — официальный дилер ООО «Дельта-лифт»</title>
+<meta name="description" content="ООО «Дельта-лифт» — официальный авторизованный дилер SANYO ELEVATOR CO., LTD в России. Продажа, монтаж, ремонт и техническое обслуживание лифтов SANYO. Сертификат дилера SY-2025010109.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ─── PAGE-SPECIFIC: LIGHT OVERRIDES ─────────────────── */
+[data-theme="light"] .cert-card,[data-theme="light"] .why-card,[data-theme="light"] .project-card{box-shadow:var(--shadow-card)}
+[data-theme="light"] .scale-section,[data-theme="light"] .fire-section,[data-theme="light"] .deliveries-section{background:var(--bg-surface)}
+[data-theme="light"] .hero-bg-grid{background-image:linear-gradient(rgba(0,0,0,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.055) 1px,transparent 1px)}
+/* ─── PAGE-SPECIFIC: OVERRIDES ───────────────────────── */
+.grid-2{gap:24px}
+.section{padding:80px 0}
+
+/* ─── HERO ───────────────────────────────────────────── */
+.hero{
+  padding:40px 0 80px;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(37,99,235,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(212,135,14,0.05) 0%, transparent 70%);
+}
+.hero-grid-lines{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+  background-size:64px 64px;
+  will-change:transform;
+}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr minmax(0,420px);gap:48px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}}
+
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--info-border);background:var(--info-dim);
+  padding:5px 14px;border-radius:99px;
+  font-size:11px;color:#60a5fa;font-family:var(--font-display);
+  letter-spacing:0.1em;font-weight:500;margin-bottom:24px;
+}
+.hero-label-dot{width:5px;height:5px;border-radius:50%;background:#60a5fa;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero-h1{
+  font-family:var(--font-display);
+  font-size:clamp(30px,4.5vw,54px);font-weight:700;
+  line-height:1.05;letter-spacing:-0.02em;
+  color:var(--text-primary);margin-bottom:20px;
+}
+.hero-h1 em{font-style:normal;color:var(--accent)}
+.hero-desc{
+  font-size:17px;color:var(--text-secondary);
+  max-width:480px;line-height:1.7;margin-bottom:32px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Dealer cert card */
+.cert-card{
+  background:var(--bg-surface);
+  border:1px solid var(--border-default);
+  border-radius:var(--r-2xl);
+  padding:32px;
+  position:relative;overflow:hidden;
+}
+.cert-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:linear-gradient(90deg,var(--info),#60a5fa);
+}
+.cert-logo{
+  font-family:var(--font-display);font-size:22px;font-weight:700;
+  color:#60a5fa;letter-spacing:0.06em;margin-bottom:4px;
+}
+.cert-logo-sub{font-size:11px;color:var(--text-muted);letter-spacing:0.04em;margin-bottom:20px}
+.cert-divider{height:1px;background:var(--border-dim);margin:20px 0}
+.cert-row{display:flex;justify-content:space-between;gap:16px;padding:6px 0;font-size:13px}
+.cert-row-label{color:var(--text-muted)}
+.cert-row-value{color:var(--text-primary);font-weight:500;text-align:right}
+.cert-status{
+  margin-top:20px;
+  display:flex;align-items:center;gap:10px;
+  background:var(--success-dim);border:1px solid rgba(45,155,107,0.2);
+  border-radius:var(--r-md);padding:10px 14px;
+}
+.cert-status-dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0}
+.cert-status-text{font-size:13px;color:var(--success);font-weight:500}
+.cert-ref{font-size:11px;color:var(--text-muted);margin-top:16px;letter-spacing:0.04em}
+
+/* ─── SANYO SCALE ────────────────────────────────────── */
+.scale-section{
+  background:var(--bg-surface);
+  border-top:1px solid var(--border-dim);
+  border-bottom:1px solid var(--border-dim);
+  padding:60px 0;
+}
+.scale-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+@media(max-width:900px){.scale-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:500px){.scale-grid{grid-template-columns:repeat(2,1fr)}}
+.scale-item{
+  padding:24px 20px;text-align:center;
+  border-right:1px solid var(--border-dim);
+}
+.scale-item:last-child{border-right:none}
+.scale-num{
+  font-family:var(--font-display);font-size:32px;font-weight:700;
+  color:var(--text-primary);line-height:1;margin-bottom:8px;
+}
+.scale-num span{color:var(--accent)}
+.scale-label{font-size:12px;color:var(--text-muted);line-height:1.4}
+
+/* ─── WHY SANYO ─────────────────────────────────────── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.why-grid{grid-template-columns:1fr}}
+.why-card{
+  background:var(--bg-surface);border:1px solid var(--border-dim);
+  border-radius:var(--r-xl);padding:28px;
+  transition:all var(--t-base);
+}
+.why-card:hover{border-color:var(--accent-border);transform:translateY(-3px);background:var(--bg-raised)}
+.why-icon{
+  width:44px;height:44px;border-radius:var(--r-md);
+  background:var(--accent-dim);border:1px solid var(--accent-border);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;font-size:20px;
+}
+.why-title{
+  font-family:var(--font-display);font-size:14px;font-weight:500;
+  color:var(--text-primary);margin-bottom:10px;line-height:1.3;
+}
+.why-desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* ─── FIREFIGHTER SECTION ───────────────────────────── */
+.fire-section{
+  position:relative;overflow:hidden;
+  background:var(--bg-surface);
+  border-top:1px solid var(--border-dim);
+  border-bottom:1px solid var(--border-dim);
+  padding:80px 0;
+}
+.fire-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 50% 80% at 100% 50%, rgba(220,38,38,0.04) 0%, transparent 70%);
+}
+.fire-ghost{
+  position:absolute;right:0;top:50%;
+  font-family:var(--font-display);
+  font-size:clamp(100px,18vw,240px);font-weight:700;
+  color:transparent;-webkit-text-stroke:1px rgba(220,38,38,0.07);
+  transform:translateY(-50%);pointer-events:none;user-select:none;
+  line-height:1;white-space:nowrap;
+  will-change:transform;
+}
+.fire-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:900px){.fire-inner{grid-template-columns:1fr}}
+.fire-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.25);
+  padding:5px 14px;border-radius:99px;
+  font-size:11px;color:#f87171;font-family:var(--font-display);
+  letter-spacing:0.1em;font-weight:500;margin-bottom:24px;
+}
+.fire-specs{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.spec-row{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;background:var(--bg-raised);
+  border:1px solid var(--border-dim);border-radius:var(--r-md);
+}
+.spec-icon{
+  width:36px;height:36px;border-radius:var(--r-sm);
+  background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.18);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.spec-icon svg{width:16px;height:16px;color:#f87171}
+.spec-label{font-size:12px;color:var(--text-muted);margin-bottom:2px}
+.spec-value{font-size:14px;font-weight:500;color:var(--text-primary)}
+.fire-certs{margin-top:32px}
+.fire-cert-title{
+  font-size:12px;color:var(--text-muted);letter-spacing:0.08em;
+  text-transform:uppercase;font-family:var(--font-display);
+  margin-bottom:14px;
+}
+.cert-list{display:flex;flex-direction:column;gap:8px}
+.cert-item{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:var(--text-secondary);
+}
+.cert-check{
+  width:18px;height:18px;border-radius:99px;flex-shrink:0;
+  background:var(--success-dim);border:1px solid rgba(45,155,107,0.25);
+  display:flex;align-items:center;justify-content:center;
+}
+.cert-check svg{width:10px;height:10px;color:var(--success)}
+.ip-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.ip-tag{
+  font-family:var(--font-display);font-size:11px;font-weight:600;
+  padding:4px 12px;border-radius:99px;letter-spacing:0.06em;
+}
+.ip-tag-red{background:rgba(220,38,38,0.1);color:#f87171;border:1px solid rgba(220,38,38,0.25)}
+.ip-tag-blue{background:var(--info-dim);color:#60a5fa;border:1px solid var(--info-border)}
+
+/* ─── PROJECTS ───────────────────────────────────────── */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.projects-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.projects-grid{grid-template-columns:1fr}}
+.project-card{
+  background:var(--bg-surface);border:1px solid var(--border-dim);
+  border-radius:var(--r-xl);overflow:hidden;
+  transition:all var(--t-base);
+}
+.project-card:hover{border-color:var(--border-default);transform:translateY(-3px)}
+.project-img{
+  height:140px;background:var(--bg-raised);
+  display:flex;align-items:center;justify-content:center;
+  font-size:40px;border-bottom:1px solid var(--border-dim);
+  position:relative;overflow:hidden;
+}
+.project-img-bg{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--bg-raised) 0%,var(--bg-subtle) 100%);
+}
+.project-img span{position:relative;z-index:1}
+.project-body{padding:18px}
+.project-name{
+  font-family:var(--font-display);font-size:13px;font-weight:500;
+  color:var(--text-primary);margin-bottom:6px;line-height:1.3;
+}
+.project-meta{font-size:12px;color:var(--text-muted)}
+.project-flag{margin-right:5px}
+
+/* ─── DELIVERIES TABLE ───────────────────────────────── */
+.deliveries-section{background:var(--bg-surface);border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);padding:80px 0}
+.table-wrap{overflow-x:auto;margin-top:32px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead tr{background:var(--bg-raised);border-bottom:1px solid var(--border-default)}
+thead th{
+  padding:12px 16px;text-align:left;
+  font-family:var(--font-display);font-size:10px;font-weight:600;
+  letter-spacing:0.12em;color:var(--text-muted);text-transform:uppercase;
+}
+tbody tr{border-bottom:1px solid var(--border-dim);transition:background var(--t-fast)}
+tbody tr:hover{background:var(--bg-raised)}
+tbody td{padding:14px 16px;color:var(--text-secondary)}
+tbody td:first-child{color:var(--text-primary);font-weight:500}
+.td-badge{
+  display:inline-flex;font-size:11px;font-family:var(--font-display);
+  font-weight:600;padding:3px 10px;border-radius:99px;letter-spacing:0.05em;
+}
+.badge-gov{background:rgba(37,99,235,0.1);color:#60a5fa;border:1px solid rgba(37,99,235,0.2)}
+.badge-med{background:rgba(220,38,38,0.08);color:#f87171;border:1px solid rgba(220,38,38,0.18)}
+.badge-ind{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.badge-culture{background:rgba(139,92,246,0.1);color:#a78bfa;border:1px solid rgba(139,92,246,0.2)}
+.badge-telecom{background:rgba(34,197,94,0.1);color:#4ade80;border:1px solid rgba(34,197,94,0.2)}
+.badge-intl{background:rgba(251,146,60,0.1);color:#fb923c;border:1px solid rgba(251,146,60,0.2)}
+
+/* ─── CERTIFICATE CTA ────────────────────────────────── */
+.cert-cta{
+  background:var(--bg-surface);border:1px solid var(--border-dim);
+  border-radius:var(--r-2xl);padding:48px;
+  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  position:relative;overflow:hidden;margin:0 0 80px;
+}
+.cert-cta::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.cert-cta-glow{position:absolute;right:-80px;top:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(212,135,14,0.05) 0%,transparent 70%);pointer-events:none}
+.cert-cta-title{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+.cert-cta-sub{font-size:14px;color:var(--text-secondary);max-width:480px;line-height:1.6}
+@media(max-width:700px){.cert-cta{grid-template-columns:1fr}.cert-cta-actions{display:flex;gap:12px;flex-wrap:wrap}}
+
+/* ─── PARALLAX ───────────────────────────────────────── */
+.prl{will-change:transform}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Главная","item":"https://delta-elevators.ru"},
+        {"@type":"ListItem","position":2,"name":"Лифты SANYO","item":"https://delta-elevators.ru/sanyo/"}
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://delta-elevators.ru/sanyo/#product",
+      "name": "Лифты SANYO ELEVATOR CO., LTD",
+      "brand": {
+        "@type": "Brand",
+        "name": "SANYO",
+        "url": "https://www.sanyoelevator.com"
+      },
+      "description": "Пассажирские, грузовые, больничные и пожарные лифты SANYO. Официальный авторизованный дилер в России — ООО «Дельта-лифт». Сертификат дилера SY-2025010109.",
+      "offers": {
+        "@type": "Offer",
+        "seller": {"@id": "https://delta-elevators.ru/#organization"},
+        "areaServed": {"@type": "Country","name": "Россия"},
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "RUB"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://delta-elevators.ru/#organization",
+      "name": "Дельта-лифт",
+      "url": "https://delta-elevators.ru",
+      "telephone": "+78002224230",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Кузнецкий Мост, 21/5, эт. 6",
+        "addressLocality": "Москва",
+        "postalCode": "107996",
+        "addressCountry": "RU"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- LEFT SECTION NAVIGATOR -->
+<nav class="section-nav" id="sectionNav" aria-hidden="true">
+  <div class="section-nav-line" id="snl0"></div>
+  <div class="section-nav-dot active" id="snd0"><div class="section-nav-dot-inner"></div><span class="section-nav-label">О дилере</span></div>
+  <div class="section-nav-line" id="snl1"></div>
+  <div class="section-nav-dot" id="snd1"><div class="section-nav-dot-inner"></div><span class="section-nav-label">Масштаб</span></div>
+  <div class="section-nav-line" id="snl2"></div>
+  <div class="section-nav-dot" id="snd2"><div class="section-nav-dot-inner"></div><span class="section-nav-label">Почему SANYO</span></div>
+  <div class="section-nav-line" id="snl3"></div>
+  <div class="section-nav-dot" id="snd3"><div class="section-nav-dot-inner"></div><span class="section-nav-label">Пожарные</span></div>
+  <div class="section-nav-line" id="snl4"></div>
+  <div class="section-nav-dot" id="snd4"><div class="section-nav-dot-inner"></div><span class="section-nav-label">Объекты</span></div>
+  <div class="section-nav-line" id="snl5"></div>
+  <div class="section-nav-dot" id="snd5"><div class="section-nav-dot-inner"></div><span class="section-nav-label">Клиенты</span></div>
+  <div class="section-nav-line" id="snl6"></div>
+</nav>
+
+<!-- RIGHT ELEVATOR SYSTEM -->
+<div class="elev-system">
+  <div class="elev-floor-display">
+    <div class="elev-floor-screen">
+      <div class="elev-floor-num" id="elevFloor">1</div>
+      <div class="elev-floor-label">ЭТАЖ</div>
+    </div>
+    <div class="elev-floor-arrow" id="elevArrow">▲</div>
+  </div>
+  <div class="elev-call-panel">
+    <div class="elev-call-btn" id="callUp">
+      <span class="elev-call-btn-label">ВВЕРХ</span>
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9V3M3 6l3-3 3 3"/></svg>
+    </div>
+    <div class="elev-call-btn" id="callDown">
+      <span class="elev-call-btn-label">ВНИЗ</span>
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v6M3 6l3 3 3-3"/></svg>
+    </div>
+  </div>
+  <div class="elev-fade"></div>
+  <div class="elev-wrap" id="elevWrap">
+    <div class="elev-shaft-outer"></div>
+    <div class="elev-shaft-inner"></div>
+    <div class="elev-sheave-wrap"><div class="elev-sheave"></div></div>
+    <div class="elev-rail-l-el"><div class="elev-rail-stem"></div></div>
+    <div class="elev-rail-r-el"><div class="elev-rail-stem"></div></div>
+    <div class="elev-pit">
+      <div class="elev-buffer"><div class="elev-buffer-spring"></div><div class="elev-buffer-base"></div></div>
+      <div class="elev-buffer"><div class="elev-buffer-spring"></div><div class="elev-buffer-base"></div></div>
+    </div>
+    <div class="elev-ropes" id="elevRopes">
+      <div class="elev-rope"></div><div class="elev-rope"></div><div class="elev-rope"></div>
+    </div>
+    <div class="elev-car" id="elevCar">
+      <div class="elev-sling-top"></div>
+      <div class="elev-sling-side elev-sling-side-l" id="elevSlingL"></div>
+      <div class="elev-sling-side elev-sling-side-r" id="elevSlingR"></div>
+      <div class="elev-car-body" id="elevBody">
+        <div class="elev-doors" id="elevDoors"><div class="elev-door"></div><div class="elev-door"></div></div>
+        <div class="elev-door-gap" id="elevGap"></div>
+        <div class="elev-cop">
+          <div class="elev-cop-btn lit" id="elevBtn1"></div>
+          <div class="elev-cop-btn" id="elevBtn2"></div>
+          <div class="elev-cop-btn" id="elevBtn3"></div>
+        </div>
+        <div class="elev-interior"><div class="elev-handrail"></div><div class="elev-handrail"></div></div>
+      </div>
+      <div class="elev-sill"></div>
+      <div class="elev-sling-bot"></div>
+    </div>
+    <div class="elev-cw" id="elevCW">
+      <div class="elev-cw-rope"></div>
+      <div class="elev-cw-beam"></div>
+      <div class="elev-cw-weight">
+        <div class="elev-cw-plate"></div><div class="elev-cw-plate"></div>
+        <div class="elev-cw-plate"></div><div class="elev-cw-plate"></div><div class="elev-cw-plate"></div>
+      </div>
+      <div class="elev-cw-beam"></div>
+    </div>
+    <div class="elev-pct" id="elevPct">0%</div>
+  </div>
+</div>
+
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="/" class="site-logo">DELTA<span>.</span>ELEVATORS</a>
+  <nav class="site-nav hide-mob">
+    <a href="/equipment/">Оборудование</a>
+    <a href="/services/">Услуги</a>
+    <a href="/nonstandard/">Нестандартные шахты</a>
+    <a href="/projects/">Проекты</a>
+    <a href="/sanyo/" class="active">Sanyo</a>
+    <a href="/contacts/">Контакты</a>
+  </nav>
+  <div class="theme-toggle hide-mob" id="themeToggle" onclick="toggleTheme()">
+    <span class="theme-toggle-label" id="themeLabel">Тёмная</span>
+    <div class="theme-toggle-pill">
+      <div class="theme-toggle-thumb" id="themeThumb">
+        <svg id="iconMoon" viewBox="0 0 9 9" fill="currentColor" style="color:var(--bg-base)"><path d="M4.5 0a4.5 4.5 0 100 9 3.5 3.5 0 010-7 4.5 4.5 0 000 0z"/></svg>
+        <svg id="iconSun" viewBox="0 0 9 9" fill="none" stroke="currentColor" stroke-width="1" style="color:var(--bg-base);display:none"><circle cx="4.5" cy="4.5" r="1.8" fill="currentColor"/><line x1="4.5" y1=".5" x2="4.5" y2="1.8"/><line x1="4.5" y1="7.2" x2="4.5" y2="8.5"/><line x1=".5" y1="4.5" x2="1.8" y2="4.5"/><line x1="7.2" y1="4.5" x2="8.5" y2="4.5"/></svg>
+      </div>
+    </div>
+  </div>
+  <a href="/contacts/" class="btn btn-primary">Получить расчёт</a>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid-lines" id="pg"></div>
+  </div>
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Главная</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Производитель SANYO</span>
+    </nav>
+
+    <div class="hero-inner" style="margin-top:40px">
+      <div>
+        <div class="hero-label fi">
+          <div class="hero-label-dot"></div>
+          ОФИЦИАЛЬНЫЙ ДИЛЕР С 2024 ГОДА
+        </div>
+        <h1 class="hero-h1 fi fi-d1">
+          Лифты <em>SANYO</em><br>
+          в России — напрямую<br>
+          от дилера
+        </h1>
+        <p class="hero-desc fi fi-d2">
+          ООО «Дельта-лифт» — авторизованный дилер SANYO ELEVATOR CO., LTD на территории Российской Федерации. Прямые поставки, гарантийное обслуживание, оригинальные запчасти.
+        </p>
+        <div class="hero-actions fi fi-d3">
+          <a href="/contacts/" class="btn btn-primary btn-lg">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2v14M2 9h14"/></svg>
+            Получить предложение
+          </a>
+          <a href="#certificate" class="btn btn-outline btn-lg">Сертификат дилера</a>
+        </div>
+      </div>
+
+      <!-- Dealer certificate card -->
+      <div class="cert-card fi fi-d2" id="certificate">
+        <div class="cert-logo">SANYO</div>
+        <div class="cert-logo-sub">ELEVATOR CO., LTD · Rising Into The Future</div>
+        <div class="cert-divider"></div>
+        <div class="cert-row">
+          <span class="cert-row-label">Документ</span>
+          <span class="cert-row-value">Доверенность дилера</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-row-label">Реестровый номер</span>
+          <span class="cert-row-value">SY-2025010109</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-row-label">Дата выдачи</span>
+          <span class="cert-row-value">1 января 2024 г.</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-row-label">Подписал</span>
+          <span class="cert-row-value">Xie Dezhi, CEO</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-row-label">Полномочия</span>
+          <span class="cert-row-value">Продажа · Монтаж · Ремонт · ТО</span>
+        </div>
+        <div class="cert-row">
+          <span class="cert-row-label">Территория</span>
+          <span class="cert-row-value">Российская Федерация</span>
+        </div>
+        <div class="cert-status">
+          <div class="cert-status-dot"></div>
+          <div class="cert-status-text">Действующий авторизованный дилер</div>
+        </div>
+        <div class="cert-ref">Производитель: Huzhou City, Zhejiang Province, China</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCALE -->
+<section class="scale-section" style="position:relative;overflow:hidden">
+  <!-- Blueprint: motor room diagram -->
+  <div class="bp" style="right:2%;top:50%;transform:translateY(-50%);opacity:.10">
+    <svg width="200" height="80" viewBox="0 0 200 80" fill="none" stroke="currentColor" stroke-width=".8" font-family="monospace">
+      <rect x="10" y="10" width="80" height="60" stroke-width="1.2"/>
+      <text x="50" y="8" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">МАШИННЫЙ ЗАЛ</text>
+      <circle cx="50" cy="40" r="20" stroke-width="1"/>
+      <circle cx="50" cy="40" r="8"/>
+      <line x1="50" y1="20" x2="50" y2="28"/><line x1="50" y1="52" x2="50" y2="60"/>
+      <line x1="30" y1="40" x2="38" y2="40"/><line x1="62" y1="40" x2="70" y2="40"/>
+      <rect x="100" y="20" width="90" height="40" stroke-width="1"/>
+      <text x="145" y="37" font-size="7" font-weight="700" fill="currentColor" stroke="none" text-anchor="middle">WISE3000</text>
+      <text x="145" y="49" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">Система управления</text>
+      <line x1="90" y1="40" x2="100" y2="40" stroke-dasharray="2 2"/>
+      <text x="50" y="78" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">67 ОФИСОВ · 1020 СЕРВИСНЫХ ЦЕНТРОВ</text>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="scale-grid">
+      <div class="scale-item fi">
+        <div class="scale-num">1998<span>г</span></div>
+        <div class="scale-label">год основания SANYO</div>
+      </div>
+      <div class="scale-item fi fi-d1">
+        <div class="scale-num">67<span>+</span></div>
+        <div class="scale-label">офисов по всему Китаю</div>
+      </div>
+      <div class="scale-item fi fi-d2">
+        <div class="scale-num">1020</div>
+        <div class="scale-label">сервисных центров</div>
+      </div>
+      <div class="scale-item fi fi-d3">
+        <div class="scale-num">400<span>+</span></div>
+        <div class="scale-label">авторизованных дилеров в мире</div>
+      </div>
+      <div class="scale-item fi fi-d4">
+        <div class="scale-num">2500<span>+</span></div>
+        <div class="scale-label">специалистов на линии</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SANYO -->
+<section class="section">
+  <div class="container">
+    <p class="section-label fi">Преимущества производителя</p>
+    <h2 class="section-title fi fi-d1">Почему SANYO выбирают<br>застройщики и эксплуататоры</h2>
+    <div class="divider"></div>
+    <div class="why-grid">
+      <div class="why-card fi">
+        <div class="why-icon">🏭</div>
+        <h3 class="why-title">Собственное производство</h3>
+        <div class="why-desc">Завод полного цикла в провинции Чжэцзян. Контроль качества на каждом этапе — от литья до финальной сборки и испытаний.</div>
+      </div>
+      <div class="why-card fi fi-d1">
+        <div class="why-icon">📋</div>
+        <h3 class="why-title">Российская сертификация</h3>
+        <div class="why-desc">Лифты SANYO соответствуют ТР ТС 011/2011. Декларация соответствия ЕАЭС действительна до 2050 года. Готовы к сдаче Ростехнадзору.</div>
+      </div>
+      <div class="why-card fi fi-d2">
+        <div class="why-icon">🔧</div>
+        <h3 class="why-title">Широкая линейка</h3>
+        <div class="why-desc">Пассажирские, грузовые, больничные, панорамные, домашние, пожарные лифты и эскалаторы. Грузоподъёмность до 2000 кг, высота подъёма до 150 м.</div>
+      </div>
+      <div class="why-card fi fi-d3">
+        <div class="why-icon">🚒</div>
+        <h3 class="why-title">Пожарные лифты GB/T 26465</h3>
+        <div class="why-desc">Соответствие новым стандартам 2021 года. Обязательны в зданиях выше 33 м. Степень защиты от IPX3 до IPX5, огнестойкость дверей E120.</div>
+      </div>
+      <div class="why-card fi fi-d4">
+        <div class="why-icon">⚡</div>
+        <h3 class="why-title">Энергоэффективность</h3>
+        <div class="why-desc">Оптимизированные алгоритмы управления. По опыту Росэнергоатома — модернизация лифтов SANYO снизила энергопотребление и сократила время ожидания.</div>
+      </div>
+      <div class="why-card fi fi-d5">
+        <div class="why-icon">🌍</div>
+        <h3 class="why-title">Мировые объекты</h3>
+        <div class="why-desc">Аэропорт Сочи, международный аэропорт Дакка, объекты в Кувейте, Малайзии, Индонезии, ЮАР. Более 30 000 объектов в 50+ странах мира.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIREFIGHTER ELEVATORS -->
+<section class="fire-section" style="position:relative">
+  <!-- Blueprint: fire protection certificate stack -->
+  <div class="bp" style="left:2%;bottom:20px;opacity:.09">
+    <svg width="180" height="50" viewBox="0 0 180 50" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace">
+      <text x="0" y="10" font-size="7" font-weight="700" fill="currentColor" stroke="none">СЕРТИФИКАТЫ ПОЖАРНОГО ЛИФТА</text>
+      <rect x="0"  y="16" width="50" height="28" rx="2"/><text x="25" y="26" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">GB/T</text><text x="25" y="36" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">26465-2021</text>
+      <rect x="56" y="16" width="50" height="28" rx="2"/><text x="81" y="26" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">GB 7588</text><text x="81" y="36" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">2020</text>
+      <rect x="112" y="16" width="50" height="28" rx="2"/><text x="137" y="26" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">TP TC</text><text x="137" y="36" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">011/2011</text>
+    </svg>
+  </div>
+  <div class="fire-bg"></div>
+  <div class="fire-ghost prl" id="prl-fire">FIRE</div>
+  <div class="container">
+    <div class="fire-inner">
+      <div>
+        <div class="fire-badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#ef4444" opacity=".3"/><circle cx="6" cy="6" r="3" fill="#ef4444"/></svg>
+          ПОЖАРНЫЕ ЛИФТЫ SANYO
+        </div>
+        <h2 class="section-title fi" style="font-size:clamp(22px,3vw,34px)">
+          Firefighter Elevator —<br>
+          обязателен в зданиях<br>
+          выше 11 этажей
+        </h2>
+        <p class="section-sub fi fi-d1" style="margin-bottom:0">
+          С 1 июня 2023 года вступил в силу GB 55037-2022 — обязательный стандарт противопожарной защиты зданий. Здания выше 33 м (11 этажей) обязаны иметь пожарный лифт. SANYO предлагает полное решение под ключ.
+        </p>
+        <div class="fire-specs">
+          <div class="spec-row fi">
+            <div class="spec-icon">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 2v12M3 7h10"/></svg>
+            </div>
+            <div>
+              <div class="spec-label">Максимальная высота подъёма</div>
+              <div class="spec-value">до 150 метров</div>
+            </div>
+          </div>
+          <div class="spec-row fi fi-d1">
+            <div class="spec-icon">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="12" height="12" rx="2"/></svg>
+            </div>
+            <div>
+              <div class="spec-label">Грузоподъёмность</div>
+              <div class="spec-value">до 2 000 кг</div>
+            </div>
+          </div>
+          <div class="spec-row fi fi-d2">
+            <div class="spec-icon">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+            </div>
+            <div>
+              <div class="spec-label">Скорость</div>
+              <div class="spec-value">до 4 м/с · MRL и Motor Room</div>
+            </div>
+          </div>
+          <div class="spec-row fi fi-d3">
+            <div class="spec-icon">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
+            </div>
+            <div>
+              <div class="spec-label">Огнестойкость дверей</div>
+              <div class="spec-value">E120 · Стандарт GB/T 27903</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="fire-certs fi">
+          <div class="fire-cert-title">Степени защиты IP — полная матрица</div>
+          <div class="ip-tags" style="margin-bottom:24px">
+            <span class="ip-tag ip-tag-red">IPX3</span>
+            <span class="ip-tag ip-tag-blue">IPX5</span>
+            <span class="ip-tag ip-tag-red">IP54</span>
+            <span class="ip-tag ip-tag-blue">IP65</span>
+            <span class="ip-tag ip-tag-red">IP67</span>
+            <span class="ip-tag ip-tag-blue">IP20 MR</span>
+          </div>
+          <div class="fire-cert-title">Полученные сертификаты</div>
+          <div class="cert-list">
+            <div class="cert-item">
+              <div class="cert-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 5l2 2 4-4"/></svg></div>
+              Waterproof testing report (IPX)
+            </div>
+            <div class="cert-item">
+              <div class="cert-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 5l2 2 4-4"/></svg></div>
+              Type test report (типовые испытания)
+            </div>
+            <div class="cert-item">
+              <div class="cert-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 5l2 2 4-4"/></svg></div>
+              Fire detection report
+            </div>
+            <div class="cert-item">
+              <div class="cert-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 5l2 2 4-4"/></svg></div>
+              GB/T 26465-2021 · Safety Code for Fire Elevators
+            </div>
+            <div class="cert-item">
+              <div class="cert-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 5l2 2 4-4"/></svg></div>
+              ТР ТС 011/2011 (для поставок в РФ)
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-raised);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:24px;margin-top:24px" class="fi fi-d1">
+          <div style="font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.12em;color:var(--text-muted);text-transform:uppercase;margin-bottom:16px">Состав поставки (complete set)</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;color:var(--text-secondary)">
+            <div>• Шкаф управления (MRL/MR)</div>
+            <div>• COP/LOP · IPX5</div>
+            <div>• Кабина с интерфейсом</div>
+            <div>• Двери T3203-C2 · E120</div>
+            <div>• Полный комплект кабелей</div>
+            <div>• Pit inspection box IPX3</div>
+            <div>• Пожарный выключатель</div>
+            <div>• Датчик весовой нагрузки IP67</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCE OBJECTS -->
+<section class="section">
+  <div class="container">
+    <p class="section-label fi">Референс-лист SANYO · ноябрь 2025</p>
+    <h2 class="section-title fi fi-d1">Ключевые объекты в России<br>и мире</h2>
+    <div class="divider"></div>
+    <div class="projects-grid">
+      <div class="project-card fi">
+        <div class="project-img"><div class="project-img-bg"></div><span>✈️</span></div>
+        <div class="project-body">
+          <h3 class="project-name">Аэропорт Сочи</h3>
+          <div class="project-meta"><span class="project-flag">🇷🇺</span>Сочи, Россия</div>
+        </div>
+      </div>
+      <div class="project-card fi fi-d1">
+        <div class="project-img"><div class="project-img-bg"></div><span>🎭</span></div>
+        <div class="project-body">
+          <h3 class="project-name">МиТОК — Музейный и театрально-образовательный комплекс</h3>
+          <div class="project-meta"><span class="project-flag">🇷🇺</span>Россия</div>
+        </div>
+      </div>
+      <div class="project-card fi fi-d2">
+        <div class="project-img"><div class="project-img-bg"></div><span>🏛️</span></div>
+        <div class="project-body">
+          <h3 class="project-name">Посольство Ирана в России</h3>
+          <div class="project-meta"><span class="project-flag">🇷🇺</span>Москва, Россия</div>
+        </div>
+      </div>
+      <div class="project-card fi fi-d3">
+        <div class="project-img"><div class="project-img-bg"></div><span>✈️</span></div>
+        <div class="project-body">
+          <h3 class="project-name">Международный аэропорт Дакка</h3>
+          <div class="project-meta"><span class="project-flag">🇧🇩</span>Бангладеш</div>
+        </div>
+      </div>
+      <div class="project-card fi fi-d4">
+        <div class="project-img"><div class="project-img-bg"></div><span>🏢</span></div>
+        <div class="project-body">
+          <h3 class="project-name">Ministry — административное здание</h3>
+          <div class="project-meta"><span class="project-flag">🇰🇼</span>Кувейт</div>
+        </div>
+      </div>
+      <div class="project-card fi fi-d5">
+        <div class="project-img"><div class="project-img-bg"></div><span>🏗️</span></div>
+        <div class="project-body">
+          <h3 class="project-name">ЖК «Гавань», ЖК «Сокол», ЖК «Гармония»</h3>
+          <div class="project-meta"><span class="project-flag">🇷🇺</span>Барнаул, Сахалин — Россия</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELTA DELIVERIES TABLE -->
+<section class="deliveries-section">
+  <div class="container">
+    <p class="section-label fi">Объекты «Дельта-лифт»</p>
+    <h2 class="section-title fi fi-d1">Где работают лифты,<br>поставленные нами</h2>
+    <div class="section-sub fi fi-d2">17 подтверждённых объектов с благодарственными письмами на фирменных бланках.</div>
+    <div class="table-wrap fi">
+      <table>
+        <thead>
+          <tr>
+            <th>Организация</th>
+            <th>Тип</th>
+            <th>Работа</th>
+            <th>Год</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>ОАО «Концерн Росэнергоатом»</td><td><span class="td-badge badge-gov">Госкорпорация</span></td><td>Монтаж + ПНР, 4 лифта, Холодильный пер., 3А</td><td>2014</td></tr>
+          <tr><td>ФГУП ФМБА — Ядерная медицина</td><td><span class="td-badge badge-gov">Госструктура</span></td><td>Замена грузового лифта ПГ-1005, ул. Живописная, 46</td><td>2020</td></tr>
+          <tr><td>АО «Мосэнергосбыт»</td><td><span class="td-badge badge-ind">Энергетика</span></td><td>ТО лифтового оборудования в административных зданиях</td><td>2022</td></tr>
+          <tr><td>ОАО «Северсталь» (Москва)</td><td><span class="td-badge badge-ind">Промышленность</span></td><td>Замена лифтов OTIS + ТО, ул. Клары Цеткин, 2/3</td><td>2009</td></tr>
+          <tr><td>ОАО «МГТС»</td><td><span class="td-badge badge-telecom">Телеком</span></td><td>Замена 12 лифтов + постоянное ТО</td><td>2012</td></tr>
+          <tr><td>МХАТ им. А.П. Чехова</td><td><span class="td-badge badge-culture">Культура</span></td><td>Капремонт + замена оборудования, Камергерский пер., 3</td><td>—</td></tr>
+          <tr><td>Музей ВМДПНИ (Минкульт РФ)</td><td><span class="td-badge badge-culture">Культура</span></td><td>Капремонт шахты + замена на 3 остановки, ул. Делегатская, 3</td><td>2015</td></tr>
+          <tr><td>РКНПК Росздрава</td><td><span class="td-badge badge-med">Медицина</span></td><td>ТО лифтов, 3-я Черепковская, 15а</td><td>2006</td></tr>
+          <tr><td>ГБУЗ им. Свержевского (ДЗМ)</td><td><span class="td-badge badge-med">Медицина</span></td><td>Качественное ТО лифтового оборудования</td><td>2021</td></tr>
+          <tr><td>ФГУП «УСЗ» при Минсельхозе РФ</td><td><span class="td-badge badge-gov">Госструктура</span></td><td>Замена + <strong style="color:var(--accent)">строительство шахт</strong>, Садовая-Спасская, 11/1</td><td>2019</td></tr>
+          <tr><td>AAB GmbH (Германия)</td><td><span class="td-badge badge-intl">Международный</span></td><td>Монтаж в Онкоцентре им. Блохина, Каширское ш., 24</td><td>—</td></tr>
+          <tr><td>АО «Проминдустрия АГ»</td><td><span class="td-badge badge-intl">Международный</span></td><td>Монтаж 3 лифтов IS Technology (Греция), Вороновское</td><td>2021</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="container">
+  <div class="cert-cta fi">
+    <div class="cert-cta-glow"></div>
+    <div>
+      <div class="cert-cta-title">Запросить коммерческое предложение на лифты SANYO</div>
+      <div class="cert-cta-sub">Прямые поставки от официального дилера. Подберём модель под ваш объект, рассчитаем стоимость и сроки поставки. Ответим в течение 24 часов.</div>
+    </div>
+    <div class="cert-cta-actions">
+      <a href="/contacts/" class="btn btn-primary btn-lg">Получить расчёт</a>
+      <a href="tel:+78002224230" class="btn btn-outline btn-lg">8 800 222-42-30</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<script>
+// ── PARALLAX ──────────────────────────────────────────
+const pg = document.getElementById('pg');
+const prlFire = document.getElementById('prl-fire');
+let tick = false;
+
+window.addEventListener('scroll', () => {
+  if (!tick) { requestAnimationFrame(run); tick = true; }
+}, { passive: true });
+
+function run() {
+  const sy = window.scrollY;
+  if (pg) pg.style.transform = `translateY(${sy * 0.14}px)`;
+  if (prlFire) {
+    const r = prlFire.closest('.fire-section')?.getBoundingClientRect();
+    if (r) {
+      const p = (window.innerHeight - r.top) / (window.innerHeight + r.height);
+      prlFire.style.transform = `translateY(calc(-50% + ${(p - 0.5) * 80}px))`;
+    }
+  }
+  tick = false;
+}
+run();
+
+// ── MOUSE PARALLAX on HERO ────────────────────────────
+const hero = document.querySelector('.hero');
+if (hero) {
+  hero.addEventListener('mousemove', e => {
+    const rx = (e.clientX / window.innerWidth - 0.5) * 16;
+    const ry = (e.clientY / window.innerHeight - 0.5) * 16;
+    if (pg) pg.style.transform = `translate(${rx * 0.3}px, ${ry * 0.3}px)`;
+  });
+  hero.addEventListener('mouseleave', () => { if (pg) pg.style.transform = ''; });
+}
+
+// ── FADE IN ───────────────────────────────────────────
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('vis'), i * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+
+<script>
+// ── THEME TOGGLE ──────────────────────────────────────
+(function(){
+  const root=document.documentElement;
+  const label=document.getElementById('themeLabel');
+  const moon=document.getElementById('iconMoon');
+  const sun=document.getElementById('iconSun');
+  function applyTheme(t){
+    root.setAttribute('data-theme',t);
+    const l=t==='light';
+    if(label)label.textContent=l?'Светлая':'Тёмная';
+    if(moon)moon.style.display=l?'none':'block';
+    if(sun)sun.style.display=l?'block':'none';
+    try{localStorage.setItem('delta-theme',t)}catch(e){}
+  }
+  window.toggleTheme=()=>{const c=root.getAttribute('data-theme')||'dark';applyTheme(c==='dark'?'light':'dark');};
+  (function(){let s;try{s=localStorage.getItem('delta-theme')}catch(e){}if(s)applyTheme(s);else if(window.matchMedia('(prefers-color-scheme: light)').matches)applyTheme('light');})();
+})();
+</script>
+
+<script>
+// ── ELEVATOR + CALL BUTTONS + SECTION NAV ─────────────
+(function(){
+  const wrap     = document.getElementById('elevWrap');
+  const car      = document.getElementById('elevCar');
+  const ropes    = document.getElementById('elevRopes');
+  const cw       = document.getElementById('elevCW');
+  const pctEl    = document.getElementById('elevPct');
+  const floorEl  = document.getElementById('elevFloor');
+  const arrowEl  = document.getElementById('elevArrow');
+  const callUp   = document.getElementById('callUp');
+  const callDown = document.getElementById('callDown');
+  const body_el  = document.getElementById('elevBody');
+  const slingL   = document.getElementById('elevSlingL');
+  const slingR   = document.getElementById('elevSlingR');
+  const gap      = document.getElementById('elevGap');
+  if(!wrap||!car) return;
+
+  const SHEAVE_Y=36,CAR_TOT=98,BODY_H=76,DOOR_H=48,CAP_T=52,CAP_B=52,FLOORS=9;
+  let raf=null,lastPct=0,callTimer=null;
+
+  if(body_el) body_el.style.height=BODY_H+'px';
+  const doors=document.getElementById('elevDoors');
+  if(doors) doors.style.height=DOOR_H+'px';
+  if(gap) gap.style.height=DOOR_H+'px';
+  const slingH=BODY_H+3;
+  if(slingL) slingL.style.height=slingH+'px';
+  if(slingR) slingR.style.height=slingH+'px';
+
+  function buildBrackets(){
+    wrap.querySelectorAll('.elev-bracket').forEach(b=>b.remove());
+    for(let y=80;y<window.innerHeight-60;y+=90){
+      ['elev-bracket-l','elev-bracket-r'].forEach(cls=>{
+        const b=document.createElement('div');
+        b.className='elev-bracket '+cls;
+        b.style.top=y+'px';
+        wrap.appendChild(b);
+      });
+    }
+  }
+  buildBrackets();
+
+  function update(){
+    const docH=document.documentElement.scrollHeight-window.innerHeight;
+    const pct=docH>0?Math.min(1,window.scrollY/docH):0;
+    const wrapH=wrap.clientHeight;
+    const travel=wrapH-CAP_T-CAP_B-CAR_TOT;
+    const carTop=CAP_T+pct*travel;
+    car.style.top=carTop+'px';
+    const ropeH=Math.max(0,carTop-SHEAVE_Y);
+    ropes.style.height=ropeH+'px';
+    ropes.querySelectorAll('.elev-rope').forEach(r=>r.style.height='100%');
+    const cwH=55,cwTravel=wrapH-CAP_T-CAP_B-cwH;
+    cw.style.top=(CAP_T+(1-pct)*cwTravel)+'px';
+    const floor=Math.max(1,Math.round((1-pct)*FLOORS));
+    if(floorEl) floorEl.textContent=floor;
+    const btns=document.querySelectorAll('.elev-cop-btn');
+    btns.forEach((b,i)=>{b.classList.toggle('lit',i===0&&floor<=3||i===1&&floor>3&&floor<=6||i===2&&floor>6);});
+    const dir=pct-lastPct;
+    if(Math.abs(dir)>0.001){
+      const goingDown=dir>0;
+      if(callUp) callUp.classList.toggle('active',!goingDown);
+      if(callDown) callDown.classList.toggle('active',goingDown);
+      if(arrowEl){arrowEl.textContent=goingDown?'▼':'▲';arrowEl.className='elev-floor-arrow '+(goingDown?'down':'up');}
+      clearTimeout(callTimer);
+      callTimer=setTimeout(()=>{
+        if(callUp) callUp.classList.remove('active');
+        if(callDown) callDown.classList.remove('active');
+        if(arrowEl){arrowEl.textContent='●';arrowEl.className='elev-floor-arrow';}
+      },800);
+    }
+    if(pctEl) pctEl.textContent=Math.round(pct*100)+'%';
+    lastPct=pct;
+    raf=null;
+  }
+
+  const navDots=document.querySelectorAll('.section-nav-dot');
+  const navLines=document.querySelectorAll('.section-nav-line');
+  const thresholds=[0,0.12,0.30,0.50,0.68,0.85,0.95];
+  function updateSectionNav(){
+    const docH=document.documentElement.scrollHeight-window.innerHeight;
+    const pct=docH>0?window.scrollY/docH:0;
+    let active=0;
+    for(let i=0;i<thresholds.length;i++){if(pct>=thresholds[i])active=i;}
+    navDots.forEach((d,i)=>d.classList.toggle('active',i===active));
+    navLines.forEach((l,i)=>l.classList.toggle('active',i<=active));
+  }
+
+  window.addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{update();updateSectionNav();});},{passive:true});
+  window.addEventListener('resize',()=>{buildBrackets();requestAnimationFrame(update);});
+  requestAnimationFrame(()=>{update();updateSectionNav();});
+})();
+
+// ── FADE IN ───────────────────────────────────────────
+const io2=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('vis'),i*60);io2.unobserve(e.target);}});
+},{threshold:.07});
+document.querySelectorAll('.fi').forEach(el=>io2.observe(el));
+</script>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">DELTA<span>.</span>ELEVATORS</div>
+        <div class="footer-desc">ООО «Дельта-лифт» — официальный авторизованный дилер SANYO ELEVATOR CO., LTD в России. Монтаж с 2003 года.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <div class="footer-links">
+          <a href="/services/installation/">Монтаж лифтов</a>
+          <a href="/nonstandard/">Нестандартные шахты</a>
+          <a href="/services/modernization/">Замена и модернизация</a>
+          <a href="/services/maintenance/">Техобслуживание</a>
+          <a href="/services/design/">Проектирование</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Оборудование</div>
+        <div class="footer-links">
+          <a href="/equipment/passenger/">Пассажирские лифты</a>
+          <a href="/equipment/freight/">Грузовые лифты</a>
+          <a href="/equipment/hospital/">Больничные лифты</a>
+          <a href="/equipment/home/">Домашние лифты</a>
+          <a href="/sanyo/">Лифты SANYO</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Компания</div>
+        <div class="footer-links">
+          <a href="/about/">О компании</a>
+          <a href="/projects/">Портфолио</a>
+          <a href="/letters/">Благодарственные письма</a>
+          <a href="/sanyo/">Официальный дилер SANYO</a>
+          <a href="/contacts/">Контакты</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2003–2026 ООО «Дельта-лифт» · ОГРН 1037702013997</div>
+      <div>107996, Москва, Кузнецкий Мост, 21/5, эт. 6 · 8 800 222-42-30</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

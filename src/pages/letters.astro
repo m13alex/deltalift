@@ -1,0 +1,455 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ThemeToggleScript from '../components/ThemeToggleScript.astro';
+import FadeInScript from '../components/FadeInScript.astro';
+---
+
+<BaseLayout title="Благодарственные письма — ООО «Дельта-лифт»" description="17 благодарственных писем от клиентов ООО «Дельта-лифт»: Росэнергоатом, Северсталь, МГТС, МХАТ, Минсельхоз РФ, AAB GmbH (Германия) и других организаций.">
+
+<style is:global>
+/* ─── PAGE-SPECIFIC: LIGHT OVERRIDES ─────────────────── */
+[data-theme="light"] .letter-card{box-shadow:var(--shadow-card)}
+[data-theme="light"] .hero-bg-grid{background-image:linear-gradient(rgba(0,0,0,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.055) 1px,transparent 1px)}
+[data-theme="light"] .filters-section{background:var(--bg-base)}
+/* ─── HERO ────────────────────────────────────────────── */
+.page-hero{padding:140px 0 64px;position:relative;overflow:hidden}
+.hero-bg-grid{position:absolute;inset:-8%;background-image:linear-gradient(rgba(255,255,255,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.055) 1px,transparent 1px);background-size:64px 64px}
+.hero-glow{position:absolute;width:600px;height:500px;top:-100px;right:-80px;background:radial-gradient(circle,rgba(212,135,14,0.07) 0%,transparent 70%);pointer-events:none}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-muted);margin-bottom:32px;position:relative;z-index:2}
+.breadcrumb a{color:var(--text-muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--text-secondary)}
+.hero-inner{position:relative;z-index:2}
+.section-label{font-family:var(--font-display);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.page-h1{font-family:var(--font-display);font-size:clamp(32px,4.5vw,52px);font-weight:700;line-height:1.06;letter-spacing:-.025em;margin-bottom:16px}
+.page-desc{font-size:17px;color:var(--text-secondary);max-width:560px;line-height:1.7;margin-bottom:40px}
+/* Stats strip */
+.letter-stats{display:flex;gap:0;border-top:1px solid var(--border-dim);padding-top:36px}
+.letter-stat{flex:1;padding-right:32px;border-right:1px solid var(--border-dim)}
+.letter-stat:last-child{border-right:none;padding-right:0;padding-left:32px}
+.letter-stat:not(:first-child){padding-left:32px}
+.letter-stat-num{font-family:var(--font-display);font-size:36px;font-weight:700;color:var(--text-primary);line-height:1}
+.letter-stat-num span{color:var(--accent)}
+.letter-stat-label{font-size:13px;color:var(--text-muted);margin-top:6px}
+@media(max-width:580px){.letter-stats{flex-direction:column;gap:20px}.letter-stat{border-right:none;padding:0!important;border-top:1px solid var(--border-dim);padding-top:20px!important}}
+/* ─── FILTERS ─────────────────────────────────────────── */
+.filters-section{padding:40px 0 32px;border-bottom:1px solid var(--border-dim);position:sticky;top:68px;z-index:100;background:var(--bg-base)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:99px;font-size:13px;font-weight:500;font-family:var(--font-display);letter-spacing:.03em;cursor:pointer;border:1px solid var(--border-default);background:var(--bg-raised);color:var(--text-secondary);transition:all var(--t-fast);touch-action:manipulation}
+.filter-btn:hover{border-color:var(--border-strong);color:var(--text-primary)}
+.filter-btn.active{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent)}
+.filter-count{font-size:10px;background:var(--bg-subtle);border-radius:99px;padding:1px 6px;font-weight:600}
+.filter-btn.active .filter-count{background:var(--accent-dim);color:var(--accent)}
+/* ─── LETTERS GRID ────────────────────────────────────── */
+.letters-section{padding:40px 0 88px}
+.letters-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:1000px){.letters-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.letters-grid{grid-template-columns:1fr}}
+.letter-card{
+  background:var(--bg-surface);border:1px solid var(--border-dim);
+  border-radius:var(--r-xl);padding:28px;
+  display:flex;flex-direction:column;
+  transition:all var(--t-base);position:relative;overflow:hidden;
+  cursor:default;
+}
+.letter-card:hover{border-color:var(--border-default);transform:translateY(-3px);background:var(--bg-raised)}
+.letter-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);opacity:0;transition:opacity var(--t-base)}
+.letter-card:hover::before{opacity:1}
+.letter-card.hidden{display:none}
+/* Card header */
+.letter-org{font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:4px;line-height:1.3}
+.letter-year{font-size:11px;color:var(--text-muted);font-family:var(--font-display);font-weight:500;letter-spacing:.06em}
+/* Quote mark */
+.letter-quote-mark{font-family:var(--font-display);font-size:36px;font-weight:700;color:var(--accent-border);line-height:1;margin:16px 0 8px;display:block}
+/* Quote text */
+.letter-text{font-size:13px;color:var(--text-secondary);line-height:1.7;font-style:italic;flex:1}
+.letter-text strong{color:var(--text-primary);font-style:normal;font-weight:500}
+/* Footer */
+.letter-footer{margin-top:20px;padding-top:16px;border-top:1px solid var(--border-dim);display:flex;justify-content:space-between;align-items:flex-end}
+.letter-signer{font-size:12px;color:var(--text-muted);line-height:1.4}
+.letter-signer strong{color:var(--text-secondary);display:block;font-weight:500;margin-bottom:1px}
+.letter-tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.ltag{font-size:9px;font-family:var(--font-display);font-weight:600;padding:2px 8px;border-radius:99px;letter-spacing:.06em;white-space:nowrap}
+.ltag-gov{background:var(--accent2-dim);color:var(--accent2-bright);border:1px solid var(--accent2-border)}
+.ltag-med{background:rgba(220,38,38,0.07);color:#f87171;border:1px solid rgba(220,38,38,0.16)}
+.ltag-ind{background:var(--accent-dim);color:var(--accent);border:1px solid var(--accent-border)}
+.ltag-culture{background:rgba(139,92,246,0.08);color:#a78bfa;border:1px solid rgba(139,92,246,0.18)}
+.ltag-intl{background:var(--success-dim);color:var(--success);border:1px solid rgba(45,155,107,0.22)}
+.ltag-tel{background:rgba(34,197,94,0.08);color:#4ade80;border:1px solid rgba(34,197,94,0.18)}
+/* Year badge on card */
+.letter-year-badge{
+  position:absolute;top:20px;right:20px;
+  font-family:var(--font-display);font-size:10px;font-weight:600;
+  color:var(--text-muted);letter-spacing:.08em;
+  background:var(--bg-subtle);padding:3px 8px;border-radius:99px;
+}
+/* Empty state */
+.letters-empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted)}
+.letters-empty svg{width:48px;height:48px;margin:0 auto 16px;display:block;opacity:.3}
+/* ─── CTA ─────────────────────────────────────────────── */
+.cta-strip{background:var(--bg-surface);border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);padding:60px 0;text-align:center}
+.cta-strip-title{font-family:var(--font-display);font-size:clamp(18px,2.2vw,26px);font-weight:600;color:var(--text-primary);margin-bottom:10px}
+.cta-strip-sub{font-size:15px;color:var(--text-secondary);margin-bottom:28px}
+.cta-strip-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+</style>
+
+<Header />
+
+<main>
+<!-- ═══ HERO ══════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <!-- Blueprint: pen/signature mark -->
+  <div class="bp" style="right:4%;bottom:-10px;opacity:.08">
+    <svg width="200" height="120" viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width=".8" font-family="monospace">
+      <rect x="10" y="10" width="180" height="100" rx="4" stroke-width="1.2"/>
+      <line x1="30" y1="35" x2="170" y2="35"/>
+      <line x1="30" y1="55" x2="170" y2="55"/>
+      <line x1="30" y1="75" x2="130" y2="75"/>
+      <path d="M140 80 Q155 65 170 80 Q185 95 170 95 Q155 95 155 80" stroke-width="1.4"/>
+      <line x1="30" y1="95" x2="90" y2="95"/>
+      <text x="100" y="18" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">БЛАГОДАРСТВЕННОЕ ПИСЬМО · ГОСТ Р</text>
+    </svg>
+  </div>
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <a href="/about/">О компании</a><span style="opacity:.4">›</span>
+      <span>Благодарственные письма</span>
+    </nav>
+    <div class="hero-inner">
+      <p class="section-label fi">Подтверждённое качество</p>
+      <h1 class="page-h1 fi fi-d1">Благодарственные<br>письма клиентов</h1>
+      <p class="page-desc fi fi-d2">Каждое письмо — реальный объект, реальный заказчик. Росатом, Северсталь, МГТС, министерства, больницы, международные компании.</p>
+      <div class="letter-stats fi fi-d3">
+        <div class="letter-stat">
+          <div class="letter-stat-num">17<span>+</span></div>
+          <div class="letter-stat-label">благодарственных писем</div>
+        </div>
+        <div class="letter-stat">
+          <div class="letter-stat-num">2004</div>
+          <div class="letter-stat-label">самое раннее письмо</div>
+        </div>
+        <div class="letter-stat">
+          <div class="letter-stat-num">7<span></span></div>
+          <div class="letter-stat-label">отраслей — от Росатома до музеев</div>
+        </div>
+        <div class="letter-stat">
+          <div class="letter-stat-num">20<span>+</span></div>
+          <div class="letter-stat-label">лет сотрудничества с клиентами</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FILTERS ═══════════════════════════════════════ -->
+<div class="filters-section">
+  <div class="container">
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">
+        Все письма <span class="filter-count">17</span>
+      </button>
+      <button class="filter-btn" data-filter="gov">
+        Госструктуры <span class="filter-count">6</span>
+      </button>
+      <button class="filter-btn" data-filter="ind">
+        Промышленность <span class="filter-count">4</span>
+      </button>
+      <button class="filter-btn" data-filter="med">
+        Медицина <span class="filter-count">3</span>
+      </button>
+      <button class="filter-btn" data-filter="culture">
+        Культура <span class="filter-count">2</span>
+      </button>
+      <button class="filter-btn" data-filter="intl">
+        Международные <span class="filter-count">2</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ LETTERS GRID ══════════════════════════════════ -->
+<section class="letters-section">
+  <div class="container">
+    <div class="letters-grid" id="lettersGrid">
+
+      <!-- 1. Росэнергоатом -->
+      <div class="letter-card fi" data-tags="gov ind">
+        <div class="letter-year-badge">2014</div>
+        <h3 class="letter-org">ОАО «Концерн Росэнергоатом»</h3>
+        <div class="letter-year">Минэнерго России · Ядерная энергетика</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность за <strong>оперативную организацию работ</strong> и качественное выполнение монтажных и пусконаладочных работ управления четырьмя лифтами. Произведённое переключение позволило <strong>сократить время ожидания и снизить энергопотребление</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>А.А. Гудин</strong>Руководитель АХО</div>
+          <div class="letter-tags"><span class="ltag ltag-gov">Госструктура</span><span class="ltag ltag-ind">Энергетика</span></div>
+        </div>
+      </div>
+
+      <!-- 2. МГТС -->
+      <div class="letter-card fi fi-d1" data-tags="ind tel">
+        <div class="letter-year-badge">2012</div>
+        <h3 class="letter-org">ОАО «МГТС»</h3>
+        <div class="letter-year">Московская городская телефонная сеть</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«ОАО МГТС сотрудничает с ООО «Дельта-лифт» с 2010 г. Компания <strong>провела замену 12 лифтов</strong> в зданиях МГТС. Работы выполнены качественно. «Дельта-лифт» является <strong>надёжным партнёром</strong>, добросовестно выполняет договорные обязательства.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>В.Е. Николаенко</strong>Директор Департамента</div>
+          <div class="letter-tags"><span class="ltag ltag-ind">Телеком</span><span class="ltag ltag-ind">12 лифтов</span></div>
+        </div>
+      </div>
+
+      <!-- 3. Мосэнергосбыт -->
+      <div class="letter-card fi fi-d2" data-tags="ind gov">
+        <div class="letter-year-badge">2022</div>
+        <h3 class="letter-org">АО «Мосэнергосбыт»</h3>
+        <div class="letter-year">Энергосбытовая компания Москвы</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность за <strong>своевременное высококачественное обслуживание</strong> лифтового оборудования в наших административных зданиях, за исполнительное и <strong>добросовестное отношение</strong> к своим обязанностям.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>А.А. Зюльков</strong>И.о. начальника ОЭЗ</div>
+          <div class="letter-tags"><span class="ltag ltag-ind">Энергетика</span><span class="ltag ltag-tel">ТО</span></div>
+        </div>
+      </div>
+
+      <!-- 4. Северсталь -->
+      <div class="letter-card fi" data-tags="ind">
+        <div class="letter-year-badge">2009</div>
+        <h3 class="letter-org">ОАО «Северсталь»</h3>
+        <div class="letter-year">Металлургический холдинг</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность ООО «Дельта-лифт» за выполненные работы по <strong>замене лифтового оборудования</strong> в административном здании. Работы выполнены <strong>качественно и в установленные сроки</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство АХО</strong>Административная служба</div>
+          <div class="letter-tags"><span class="ltag ltag-ind">Металлургия</span></div>
+        </div>
+      </div>
+
+      <!-- 5. ФМБА России -->
+      <div class="letter-card fi fi-d1" data-tags="gov med">
+        <div class="letter-year-badge">2020</div>
+        <h3 class="letter-org">ФМБА России</h3>
+        <div class="letter-year">Федеральное медико-биологическое агентство</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем признательность ООО «Дельта-лифт» за <strong>профессиональное выполнение работ</strong> по монтажу лифтового оборудования в медицинских учреждениях ядерной медицины. Работы выполнены <strong>в срок и в полном объёме</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство ФМБА</strong>Управление имущества</div>
+          <div class="letter-tags"><span class="ltag ltag-gov">Федеральное</span><span class="ltag ltag-med">Медицина</span></div>
+        </div>
+      </div>
+
+      <!-- 6. Минсельхоз / ФГУП УСЗ -->
+      <div class="letter-card fi fi-d2" data-tags="gov">
+        <div class="letter-year-badge">2019</div>
+        <h3 class="letter-org">ФГУП «УСЗ» при Минсельхозе РФ</h3>
+        <div class="letter-year">Министерство сельского хозяйства РФ</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Благодарим за <strong>высокий технический уровень и профессионализм</strong> в организации работ по замене лифтового оборудования и <strong>строительстве лифтовых шахт</strong> в административном здании Министерства.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Д.Ю. Гогин</strong>Генеральный директор</div>
+          <div class="letter-tags"><span class="ltag ltag-gov">Минсельхоз</span><span class="ltag ltag-ind">Строит. шахт</span></div>
+        </div>
+      </div>
+
+      <!-- 7. МХАТ им. Чехова -->
+      <div class="letter-card fi" data-tags="culture gov">
+        <div class="letter-year-badge">—</div>
+        <h3 class="letter-org">МХАТ им. А.П. Чехова</h3>
+        <div class="letter-year">Московский художественный театр</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Дирекция МХАТ им. А.П. Чехова выражает благодарность ООО «Дельта-лифт» за <strong>качественное выполнение работ</strong> по техническому обслуживанию и ремонту лифтового оборудования театра.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Дирекция театра</strong>Административная служба</div>
+          <div class="letter-tags"><span class="ltag ltag-culture">Культура</span><span class="ltag ltag-gov">Минкульт</span></div>
+        </div>
+      </div>
+
+      <!-- 8. Музей ВМДПНИ -->
+      <div class="letter-card fi fi-d1" data-tags="culture gov">
+        <div class="letter-year-badge">2015</div>
+        <h3 class="letter-org">ВМДПНИ (Музей)</h3>
+        <div class="letter-year">Всероссийский музей декоративно-прикладного искусства</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«ВМДПНИ выражает благодарность за <strong>своевременное и качественное выполнение работ</strong> по капитальному ремонту лифтового оборудования с заменой на 3 остановки и <strong>ремонту лифтовой шахты</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Е.В. Титова</strong>Директор музея</div>
+          <div class="letter-tags"><span class="ltag ltag-culture">Памятник архит.</span><span class="ltag ltag-gov">Минкульт</span></div>
+        </div>
+      </div>
+
+      <!-- 9. РКНПК Росздрав -->
+      <div class="letter-card fi fi-d2" data-tags="med gov">
+        <div class="letter-year-badge">2006</div>
+        <h3 class="letter-org">РКНПК Росздрав</h3>
+        <div class="letter-year">Российский кардиологический научно-производственный комплекс</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность ООО «Дельта-лифт» за <strong>профессиональный подход</strong> к выполнению монтажных работ и <strong>соблюдение требований медицинского учреждения</strong> при проведении работ.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство РКНПК</strong>Росздрав</div>
+          <div class="letter-tags"><span class="ltag ltag-med">Кардиология</span><span class="ltag ltag-gov">Росздрав</span></div>
+        </div>
+      </div>
+
+      <!-- 10. ГБУЗ им. Свержевского -->
+      <div class="letter-card fi" data-tags="med gov">
+        <div class="letter-year-badge">2021</div>
+        <h3 class="letter-org">ГБУЗ им. Свержевского</h3>
+        <div class="letter-year">Городская больница · Департамент здравоохранения Москвы</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность за <strong>качественное техническое обслуживание</strong> лифтового оборудования больницы. Работы выполняются регулярно, <strong>в соответствии с требованиями</strong> к медицинским учреждениям.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Главный врач</strong>ГБУЗ им. Свержевского</div>
+          <div class="letter-tags"><span class="ltag ltag-med">Медицина</span><span class="ltag ltag-gov">ДЗМ</span></div>
+        </div>
+      </div>
+
+      <!-- 11. AAB GmbH Германия -->
+      <div class="letter-card fi fi-d1" data-tags="intl med">
+        <div class="letter-year-badge">—</div>
+        <h3 class="letter-org">AAB GmbH <span style="color:var(--text-muted);font-weight:400">Германия</span></h3>
+        <div class="letter-year">AAB Automatisierungs-und Anlagenbau · Пёсснек, Германия</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Руководство AAB GmbH благодарит за выполненные строительно-монтажные и пусконаладочные работы в <strong>РОНЦ им. Н.Н. Блохина</strong>. Все работы произведены <strong>профессионально и в срок</strong>. Отдельное спасибо за помощь при оформлении документов для сдачи лифта.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>В. Фридель</strong>Генеральный директор</div>
+          <div class="letter-tags"><span class="ltag ltag-intl">Германия</span><span class="ltag ltag-med">Онкология</span></div>
+        </div>
+      </div>
+
+      <!-- 12. Проминдустрия АГ -->
+      <div class="letter-card fi fi-d2" data-tags="intl ind">
+        <div class="letter-year-badge">2021</div>
+        <h3 class="letter-org">Проминдустрия АГ <span style="color:var(--text-muted);font-weight:400">Швейцария</span></h3>
+        <div class="letter-year">Промышленная группа · Швейцарская Конфедерация</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность ООО «Дельта-лифт» за <strong>надёжное и профессиональное выполнение работ</strong> на объектах нашего производственного комплекса. Рекомендуем как <strong>проверенного подрядчика</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство</strong>Проминдустрия АГ</div>
+          <div class="letter-tags"><span class="ltag ltag-intl">Швейцария</span><span class="ltag ltag-ind">Промышленность</span></div>
+        </div>
+      </div>
+
+      <!-- 13. ЗАО Мартин -->
+      <div class="letter-card fi" data-tags="ind">
+        <div class="letter-year-badge">—</div>
+        <h3 class="letter-org">ЗАО «Мартин»</h3>
+        <div class="letter-year">Коммерческая организация</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Благодарим ООО «Дельта-лифт» за <strong>оперативное выполнение работ</strong> и профессиональный подход к монтажу лифтового оборудования. Работы выполнены <strong>качественно, в срок и в полном соответствии</strong> с проектной документацией.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство</strong>ЗАО «Мартин»</div>
+          <div class="letter-tags"><span class="ltag ltag-ind">Коммерция</span></div>
+        </div>
+      </div>
+
+      <!-- 14. Московский Патриархат -->
+      <div class="letter-card fi fi-d1" data-tags="gov culture">
+        <div class="letter-year-badge">2006</div>
+        <h3 class="letter-org">Московский Патриархат</h3>
+        <div class="letter-year">Русская Православная Церковь</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность ООО «Дельта-лифт» за <strong>добросовестное выполнение работ</strong> по монтажу лифтового оборудования и <strong>внимательное отношение</strong> к специфике объекта.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Хозяйственное управление</strong>Московский Патриархат</div>
+          <div class="letter-tags"><span class="ltag ltag-culture">Религия</span></div>
+        </div>
+      </div>
+
+      <!-- 15. ЕПК -->
+      <div class="letter-card fi fi-d2" data-tags="ind">
+        <div class="letter-year-badge">2004</div>
+        <h3 class="letter-org">ЕПК (Европейская Подшипниковая Корпорация)</h3>
+        <div class="letter-year">Промышленный холдинг</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем признательность ООО «Дельта-лифт» за <strong>качественно выполненные работы</strong> по установке и наладке лифтового оборудования. Компания зарекомендовала себя как <strong>ответственный исполнитель</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство</strong>ЕПК</div>
+          <div class="letter-tags"><span class="ltag ltag-ind">Промышленность</span></div>
+        </div>
+      </div>
+
+      <!-- 16. Техномаш -->
+      <div class="letter-card fi" data-tags="ind gov">
+        <div class="letter-year-badge">2005</div>
+        <h3 class="letter-org">ФГУП «Техномаш»</h3>
+        <div class="letter-year">Роскосмос · Федеральное предприятие</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность ООО «Дельта-лифт» за <strong>своевременное выполнение работ</strong> по монтажу лифтового оборудования. Качество работ соответствует <strong>требованиям технического задания</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство АХО</strong>ФГУП «Техномаш»</div>
+          <div class="letter-tags"><span class="ltag ltag-gov">Роскосмос</span><span class="ltag ltag-ind">ВПК</span></div>
+        </div>
+      </div>
+
+      <!-- 17. Базис ФОК -->
+      <div class="letter-card fi fi-d1" data-tags="ind">
+        <div class="letter-year-badge">—</div>
+        <h3 class="letter-org">ООО «Базис» (ФОК)</h3>
+        <div class="letter-year">Физкультурно-оздоровительный комплекс</div>
+        <span class="letter-quote-mark">"</span>
+        <p class="letter-text">«Выражаем благодарность ООО «Дельта-лифт» за <strong>профессиональный монтаж</strong> и ввод в эксплуатацию лифтового оборудования. Работы выполнены <strong>в строго обозначенные сроки</strong>.»</p>
+        <div class="letter-footer">
+          <div class="letter-signer"><strong>Руководство</strong>ООО «Базис»</div>
+          <div class="letter-tags"><span class="ltag ltag-ind">Спорт</span></div>
+        </div>
+      </div>
+
+    </div><!-- /letters-grid -->
+  </div>
+</section>
+
+<!-- ═══ CTA ═══════════════════════════════════════════ -->
+<div class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-title fi">Хотите стать следующим довольным клиентом?</div>
+    <p class="cta-strip-sub fi fi-d1">Расскажите об объекте — дадим оценку в течение 24 часов</p>
+    <div class="cta-strip-actions fi fi-d2">
+      <a href="/contacts/" class="btn btn-primary">Получить расчёт →</a>
+      <a href="tel:+78002224230" class="btn btn-outline">8 800 222-42-30</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  // ── FILTER ────────────────────────────────────────────
+  function filterLetters(btn, cat) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+
+    var cards = document.querySelectorAll('.letter-card');
+    var shown = 0;
+    cards.forEach(function(card) {
+      var tags = card.dataset.tags || '';
+      var show = cat === 'all' || tags.split(' ').includes(cat);
+      card.classList.toggle('hidden', !show);
+      if (show) {
+        shown++;
+        // Re-trigger fade animation
+        card.classList.remove('vis');
+        setTimeout(function() { card.classList.add('vis'); }, shown * 40);
+      }
+    });
+  }
+
+  // Bind click handlers to filter buttons
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterLetters(this, this.dataset.filter);
+    });
+  });
+});
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

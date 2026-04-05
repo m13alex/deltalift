@@ -1,0 +1,36 @@
+---
+interface Props {
+  activePage?: string;
+  ctaHref?: string;
+}
+
+const { activePage = '', ctaHref = '/contacts/' } = Astro.props;
+
+const navLinks = [
+  { href: '/equipment/', label: 'Оборудование', key: 'equipment' },
+  { href: '/services/', label: 'Услуги', key: 'services' },
+  { href: '/nonstandard/', label: 'Нестандартные шахты', key: 'nonstandard' },
+  { href: '/projects/', label: 'Проекты', key: 'projects' },
+  { href: '/sanyo/', label: 'Sanyo', key: 'sanyo' },
+  { href: '/contacts/', label: 'Контакты', key: 'contacts' },
+];
+---
+
+<header class="site-header">
+  <a href="/" class="site-logo">DELTA<span>.</span>ELEVATORS</a>
+  <nav class="site-nav hide-mob">
+    {navLinks.map(link => (
+      <a href={link.href} class={activePage === link.key ? 'active' : ''}>{link.label}</a>
+    ))}
+  </nav>
+  <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+    <span class="theme-toggle-label hide-mob" id="themeLabel">Тёмная</span>
+    <div class="theme-toggle-pill">
+      <div class="theme-toggle-thumb" id="themeThumb">
+        <svg id="iconMoon" viewBox="0 0 9 9" fill="currentColor" style="color:var(--bg-base)"><path d="M4.5 0a4.5 4.5 0 100 9 3.5 3.5 0 010-7 4.5 4.5 0 000 0z"/></svg>
+        <svg id="iconSun" viewBox="0 0 9 9" fill="none" stroke="currentColor" stroke-width="1" style="color:var(--bg-base);display:none"><circle cx="4.5" cy="4.5" r="1.8" fill="currentColor"/><line x1="4.5" y1=".5" x2="4.5" y2="1.8"/><line x1="4.5" y1="7.2" x2="4.5" y2="8.5"/><line x1=".5" y1="4.5" x2="1.8" y2="4.5"/><line x1="7.2" y1="4.5" x2="8.5" y2="4.5"/></svg>
+      </div>
+    </div>
+  </div>
+  <a href={ctaHref} class="btn btn-primary" style="margin-left:8px">Получить расчёт</a>
+</header>

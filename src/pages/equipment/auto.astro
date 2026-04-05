@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ElevatorSystem from '../../components/ElevatorSystem.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import ThemeToggleScript from '../../components/ThemeToggleScript.astro';
+import FadeInScript from '../../components/FadeInScript.astro';
+import '../../styles/equipment.css';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'О лифте', selector: '.eq-hero' },
+  { id: 'features', label: 'Особенности', selector: '.eq-features' },
+  { id: 'specs', label: 'Характеристики', selector: '.eq-specs' },
+  { id: 'usecases', label: 'Применение', selector: '.eq-usecases' },
+  { id: 'faq', label: 'FAQ', selector: '.eq-faq' },
+  { id: 'cta', label: 'Заявка', selector: '.eq-cta' },
+];
+---
+
+<BaseLayout title="Автомобильные лифты Sanyo — платформы для авто | Дельта-лифт" description="Автомобильные лифты Sanyo: платформы до 5000 кг для парковок, автосалонов, многоуровневых стоянок. Поставка и монтаж по России.">
+
+<Header activePage="equipment" ctaHref="#cta" />
+<SectionNav sections={sectionNavItems} />
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="eq-hero">
+  <div class="eq-hero-grid" id="pg"></div>
+  <div class="eq-hero-glow"></div>
+
+  <!-- Blueprint: plan-view car on platform with door locations -->
+  <div class="bp" style="right:6%;bottom:0;opacity:.08">
+    <svg width="200" height="240" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace">
+      <text x="100" y="15" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ПЛАН — ВИД СВЕРХУ</text>
+      <!-- platform outline -->
+      <rect x="20" y="30" width="160" height="170" stroke-width="1.2"/>
+      <!-- car silhouette -->
+      <rect x="50" y="60" width="100" height="110" rx="8" stroke-width="1" stroke-dasharray="4 2"/>
+      <!-- windshield -->
+      <line x1="60" y1="75" x2="140" y2="75" stroke-width=".8"/>
+      <!-- rear -->
+      <line x1="60" y1="155" x2="140" y2="155" stroke-width=".8"/>
+      <!-- wheels -->
+      <rect x="48" y="80" width="8" height="15" rx="2" stroke-width=".6"/>
+      <rect x="144" y="80" width="8" height="15" rx="2" stroke-width=".6"/>
+      <rect x="48" y="135" width="8" height="15" rx="2" stroke-width=".6"/>
+      <rect x="144" y="135" width="8" height="15" rx="2" stroke-width=".6"/>
+      <text x="100" y="120" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">АВТО</text>
+      <!-- front door -->
+      <line x1="60" y1="30" x2="140" y2="30" stroke-width="1.5"/>
+      <text x="100" y="45" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ВЪЕЗД</text>
+      <!-- rear door -->
+      <line x1="60" y1="200" x2="140" y2="200" stroke-width="1.5"/>
+      <text x="100" y="192" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ВЫЕЗД</text>
+      <!-- dimensions -->
+      <line x1="10" y1="30" x2="10" y2="200" stroke-dasharray="2 2" stroke-width=".5"/>
+      <text x="8" y="115" font-size="5" fill="currentColor" stroke="none" transform="rotate(-90,8,115)">5500 ММ</text>
+      <line x1="20" y1="210" x2="180" y2="210" stroke-dasharray="2 2" stroke-width=".5"/>
+      <text x="100" y="225" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">2500 ММ</text>
+      <text x="100" y="238" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ДО 5000 КГ</text>
+    </svg>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <a href="/equipment/">Оборудование</a><span style="opacity:.4">›</span>
+      <span>Автомобильные лифты</span>
+    </nav>
+    <div class="eq-hero-inner">
+      <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>АВТОМОБИЛЬНЫЕ ЛИФТЫ SANYO</div>
+      <h1 class="eq-h1 fi fi-d1">Автомобильные лифты <em>Sanyo</em> — для подземных паркингов и автосалонов</h1>
+      <p class="eq-desc fi fi-d2">Грузоподъёмность до 5000 кг, платформа от 2500×5500 мм. Датчики присутствия, фотозавесы, антискользящее покрытие. Двустороннее открывание для сквозного проезда.</p>
+      <div class="eq-actions fi fi-d3">
+        <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a>
+        <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a>
+      </div>
+      <div class="eq-trust fi fi-d3">
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Монтаж от 21 дня</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═════════════════════════════════════════ -->
+<section class="eq-features">
+  <div class="container">
+    <p class="section-label fi">Ключевые преимущества</p>
+    <h2 class="section-title fi fi-d1">Почему выбирают<br>автомобильные лифты Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-feat-grid">
+      <div class="eq-feat-card fi">
+        <div class="eq-feat-icon">⚖️</div>
+        <div class="eq-feat-title">Грузоподъёмность до 5000 кг</div>
+        <div class="eq-feat-text">Перевозка легковых автомобилей, внедорожников и микроавтобусов. Запас прочности для безопасной эксплуатации в любых условиях.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">📐</div>
+        <div class="eq-feat-title">Большая платформа от 2500×5500 мм</div>
+        <div class="eq-feat-text">Размер платформы рассчитан на полноразмерные автомобили с запасом для манёвра. Возможна индивидуальная настройка габаритов.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🛡️</div>
+        <div class="eq-feat-title">Системы безопасности</div>
+        <div class="eq-feat-text">Датчики присутствия, фотозавесы по периметру, ограничители скорости. Исключают движение платформы при незакрытых дверях или наличии препятствий.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">🔘</div>
+        <div class="eq-feat-title">Антискользящее покрытие</div>
+        <div class="eq-feat-text">Рифлёная стальная поверхность платформы предотвращает проскальзывание колёс. Безопасный заезд и выезд даже на мокрых шинах.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">↔️</div>
+        <div class="eq-feat-title">Двустороннее открывание</div>
+        <div class="eq-feat-text">Сквозной проезд — въезд с одной стороны, выезд с другой. Оптимизирует потоки транспорта на подземных паркингах.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d3">
+        <div class="eq-feat-icon">🚪</div>
+        <div class="eq-feat-title">Автоматические двери</div>
+        <div class="eq-feat-text">Рулонные или секционные ворота с автоматическим приводом. Открытие по сигналу вызова, закрытие после выезда автомобиля.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS ════════════════════════════════════════════ -->
+<section class="eq-specs">
+  <div class="container">
+    <p class="section-label fi">Технические характеристики</p>
+    <h2 class="section-title fi fi-d1">Параметры<br>автомобильных лифтов</h2>
+    <div class="eq-spec-grid">
+      <div class="eq-spec-row fi">
+        <span class="eq-spec-label">Грузоподъёмность</span>
+        <span class="eq-spec-value"><em>2000–5000</em> кг</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Платформа</span>
+        <span class="eq-spec-value">от <em>2500×5500</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Скорость</span>
+        <span class="eq-spec-value"><em>0.25–0.5</em> м/с</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Привод</span>
+        <span class="eq-spec-value">гидравлический / PM</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Двери</span>
+        <span class="eq-spec-value">рулонные / секционные</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Высота подъёма</span>
+        <span class="eq-spec-value">до <em>30</em> м</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ════════════════════════════════════════ -->
+<section class="eq-usecases">
+  <div class="container">
+    <p class="section-label fi">Применение</p>
+    <h2 class="section-title fi fi-d1">Для каких объектов<br>подходят</h2>
+    <div class="divider"></div>
+    <div class="eq-uc-grid">
+      <div class="eq-uc-card fi">
+        <div class="eq-uc-icon">🅿️</div>
+        <div class="eq-uc-title">Подземные паркинги</div>
+        <div class="eq-uc-text">Перемещение автомобилей между уровнями подземной парковки. Двустороннее открывание для сквозного проезда без разворотов.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🚗</div>
+        <div class="eq-uc-title">Автосалоны</div>
+        <div class="eq-uc-text">Подъём автомобилей на выставочные этажи. Плавный ход и большая грузоподъёмность для премиальных автомобилей и внедорожников.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🏢</div>
+        <div class="eq-uc-title">Жилые комплексы</div>
+        <div class="eq-uc-text">Индивидуальная парковка с лифтом в подземный гараж. Решение для элитных ЖК с ограниченной площадью участка.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════ -->
+<section class="eq-faq">
+  <div class="container">
+    <p class="section-label fi">Частые вопросы</p>
+    <h2 class="section-title fi fi-d1">FAQ по автомобильным<br>лифтам Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-faq-list">
+      <div class="eq-faq-item fi">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какой максимальный вес автомобиля выдерживает лифт?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Стандартная грузоподъёмность — до 5000 кг, что достаточно для большинства легковых автомобилей, внедорожников и кроссоверов. Для справки: полноразмерный внедорожник весит 2500–3000 кг, средний легковой — 1500–2000 кг.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d1">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Можно ли перевозить микроавтобусы?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Да, при соответствующих размерах платформы и грузоподъёмности. Стандартная платформа 2500×5500 мм подходит для большинства микроавтобусов. Для крупногабаритного транспорта проектируем индивидуальные решения.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d2">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какие требования к строительной части?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Необходима шахта с усиленным приямком и несущими стенами, рассчитанными на нагрузку от лифта с автомобилем. Точные требования зависят от грузоподъёмности и типа привода. Наши инженеры выдают строительное задание на этапе проектирования.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d3">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Как обеспечивается безопасность?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Многоуровневая система: фотозавесы по периметру платформы, датчики закрытия дверей, ограничитель скорости, ловители, буферы в приямке. Движение платформы блокируется при обнаружении препятствий. Соответствие ТР ТС 011/2011.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════ -->
+<section class="eq-cta" id="cta">
+  <div class="container">
+    <div class="eq-cta-grid">
+      <div>
+        <p class="section-label fi">Запросить расчёт</p>
+        <h2 class="eq-cta-title fi fi-d1">Подберём автомобильный лифт<br><em>под ваш паркинг</em></h2>
+        <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, замерит шахту и подготовит КП с фиксированной ценой за 3 рабочих дня.</p>
+        <div class="eq-cta-benefits fi fi-d2">
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Бесплатный выезд инженера
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            КП за 3 рабочих дня
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Фиксированная цена в договоре
+          </div>
+        </div>
+        <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a>
+        <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div>
+      </div>
+      <div class="eq-form fi fi-d2">
+        <div class="eq-form-title">Быстрая заявка</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="eq-form-group">
+            <label class="eq-form-label">Имя / Компания *</label>
+            <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Телефон *</label>
+            <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Описание задачи</label>
+            <textarea class="eq-form-input" name="message" placeholder="Тип паркинга, количество уровней, габариты автомобилей, грузоподъёмность..."></textarea>
+          </div>
+          <input type="hidden" name="source" value="auto">
+          <button type="submit" class="eq-form-submit">Отправить заявку →</button>
+          <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+function toggleEqFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

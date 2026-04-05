@@ -1,0 +1,202 @@
+---
+/**
+ * Animated elevator system — decorative element for desktop ≥1281px.
+ * Scroll-driven car movement, counterweight, floor display, call buttons.
+ * Floor display is mounted on the car and moves with it.
+ */
+---
+
+<div class="elev-system">
+  <!-- Call buttons -->
+  <div class="elev-call-panel">
+    <div class="elev-call-btn" id="callUp">
+      <span class="elev-call-btn-label">ВВЕРХ</span>
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9V3M3 6l3-3 3 3"/></svg>
+    </div>
+    <div class="elev-call-btn" id="callDown">
+      <span class="elev-call-btn-label">ВНИЗ</span>
+      <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v6M3 6l3 3 3-3"/></svg>
+    </div>
+  </div>
+
+  <!-- Left-edge fade -->
+  <div class="elev-fade"></div>
+
+  <!-- Shaft -->
+  <div class="elev-wrap" id="elevWrap">
+    <div class="elev-shaft-outer"></div>
+    <div class="elev-shaft-inner"></div>
+    <div class="elev-sheave-wrap"><div class="elev-sheave"></div></div>
+    <div class="elev-rail-l-el"><div class="elev-rail-stem"></div></div>
+    <div class="elev-rail-r-el"><div class="elev-rail-stem"></div></div>
+    <div class="elev-pit">
+      <div class="elev-buffer"><div class="elev-buffer-spring"></div><div class="elev-buffer-base"></div></div>
+      <div class="elev-buffer"><div class="elev-buffer-spring"></div><div class="elev-buffer-base"></div></div>
+    </div>
+    <div class="elev-ropes" id="elevRopes">
+      <div class="elev-rope"></div>
+      <div class="elev-rope"></div>
+      <div class="elev-rope"></div>
+    </div>
+    <div class="elev-car" id="elevCar">
+      <!-- Floor display — mounted on the car, moves with it -->
+      <div class="elev-car-display" id="elevCarDisplay">
+        <div class="elev-floor-arrow" id="elevArrow">&#9679;</div>
+        <div class="elev-floor-num" id="elevFloor">1</div>
+      </div>
+      <div class="elev-sling-top"></div>
+      <div class="elev-sling-side elev-sling-side-l" id="elevSlingL"></div>
+      <div class="elev-sling-side elev-sling-side-r" id="elevSlingR"></div>
+      <div class="elev-car-body" id="elevBody">
+        <div class="elev-doors" id="elevDoors">
+          <div class="elev-door"></div>
+          <div class="elev-door"></div>
+        </div>
+        <div class="elev-door-gap" id="elevGap"></div>
+        <div class="elev-cop">
+          <div class="elev-cop-btn lit" id="elevBtn1"></div>
+          <div class="elev-cop-btn" id="elevBtn2"></div>
+          <div class="elev-cop-btn" id="elevBtn3"></div>
+        </div>
+        <div class="elev-interior">
+          <div class="elev-handrail"></div>
+          <div class="elev-handrail"></div>
+        </div>
+      </div>
+      <div class="elev-sill"></div>
+      <div class="elev-sling-bot"></div>
+    </div>
+    <div class="elev-cw-ropes" id="elevCWRopes">
+      <div class="elev-rope"></div>
+      <div class="elev-rope"></div>
+    </div>
+    <div class="elev-cw" id="elevCW">
+      <div class="elev-cw-beam"></div>
+      <div class="elev-cw-weight">
+        <div class="elev-cw-plate"></div><div class="elev-cw-plate"></div>
+        <div class="elev-cw-plate"></div><div class="elev-cw-plate"></div>
+        <div class="elev-cw-plate"></div>
+      </div>
+      <div class="elev-cw-beam"></div>
+    </div>
+    <div class="elev-pct" id="elevPct">0%</div>
+  </div>
+</div>
+
+<style>
+  /* Floor display mounted on car — above the sling */
+  .elev-car-display{
+    position:absolute;
+    left:50%;transform:translateX(-50%);
+    bottom:calc(100% + 4px);
+    width:44px;
+    display:flex;flex-direction:column;
+    align-items:center;gap:1px;
+    z-index:15;
+    pointer-events:none;
+  }
+  .elev-car-display .elev-floor-num{
+    font-family:var(--font-display);font-size:22px;font-weight:700;
+    color:var(--accent);line-height:1;
+    text-shadow:0 0 12px rgba(212,135,14,.6),0 0 4px rgba(212,135,14,.4);
+  }
+  .elev-car-display .elev-floor-arrow{
+    font-size:10px;line-height:1;
+    transition:color .25s;
+  }
+  .elev-car-display .elev-floor-arrow.up{color:var(--success)}
+  .elev-car-display .elev-floor-arrow.down{color:#e53e3e}
+
+  /* Counterweight ropes — from sheave down to CW */
+  .elev-cw-ropes{
+    position:absolute;left:50%;transform:translateX(-4px);
+    width:8px;top:36px;
+    display:flex;justify-content:space-between;
+    will-change:height;z-index:3;opacity:.75;
+  }
+</style>
+
+<script is:inline>
+(function(){
+  var wrap=document.getElementById('elevWrap'),car=document.getElementById('elevCar'),
+      ropes=document.getElementById('elevRopes'),cw=document.getElementById('elevCW'),
+      pctEl=document.getElementById('elevPct'),cwRopes=document.getElementById('elevCWRopes'),
+      floorEl=document.getElementById('elevFloor'),
+      arrowEl=document.getElementById('elevArrow'),callUp=document.getElementById('callUp'),
+      callDown=document.getElementById('callDown'),body_el=document.getElementById('elevBody'),
+      slingL=document.getElementById('elevSlingL'),slingR=document.getElementById('elevSlingR'),
+      gap=document.getElementById('elevGap');
+  if(!wrap||!car) return;
+
+  var SHEAVE_Y=36,CAR_TOT=98,BODY_H=76,DOOR_H=48,CAP_T=52,CAP_B=52,FLOORS=9;
+  var raf=null,lastPct=0,callTimer=null;
+
+  if(body_el) body_el.style.height=BODY_H+'px';
+  var doors=document.getElementById('elevDoors');
+  if(doors) doors.style.height=DOOR_H+'px';
+  if(gap) gap.style.height=DOOR_H+'px';
+  var slingH=BODY_H+3;
+  if(slingL) slingL.style.height=slingH+'px';
+  if(slingR) slingR.style.height=slingH+'px';
+
+  function buildBrackets(){
+    wrap.querySelectorAll('.elev-bracket').forEach(function(b){b.remove()});
+    for(var y=80;y<window.innerHeight-60;y+=90){
+      ['elev-bracket-l','elev-bracket-r'].forEach(function(cls){
+        var b=document.createElement('div');
+        b.className='elev-bracket '+cls;
+        b.style.top=y+'px';
+        wrap.appendChild(b);
+      });
+    }
+  }
+  buildBrackets();
+
+  function update(){
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    var pct=docH>0?Math.min(1,window.scrollY/docH):0;
+    var wrapH=wrap.clientHeight;
+    var travel=wrapH-CAP_T-CAP_B-CAR_TOT;
+    var carTop=CAP_T+pct*travel;
+    car.style.top=carTop+'px';
+    var ropeH=Math.max(0,carTop-SHEAVE_Y);
+    ropes.style.height=ropeH+'px';
+    ropes.querySelectorAll('.elev-rope').forEach(function(r){r.style.height='100%'});
+    var cwH=55,cwTravel=wrapH-CAP_T-CAP_B-cwH;
+    var cwTop=CAP_T+(1-pct)*cwTravel;
+    cw.style.top=cwTop+'px';
+    if(cwRopes){var cwRopeH=Math.max(0,cwTop-SHEAVE_Y);cwRopes.style.height=cwRopeH+'px';cwRopes.querySelectorAll('.elev-rope').forEach(function(r){r.style.height='100%'});}
+    var floor=Math.max(1,Math.round((1-pct)*FLOORS));
+    if(floorEl) floorEl.textContent=floor;
+    var btns=document.querySelectorAll('.elev-cop-btn');
+    btns.forEach(function(b,i){
+      b.classList.toggle('lit',i===0&&floor<=3||i===1&&floor>3&&floor<=6||i===2&&floor>6);
+    });
+    var dir=pct-lastPct;
+    if(Math.abs(dir)>0.001){
+      var goingDown=dir>0;
+      if(callUp) callUp.classList.toggle('active',!goingDown);
+      if(callDown) callDown.classList.toggle('active',goingDown);
+      if(arrowEl){
+        arrowEl.textContent=goingDown?'\u25BC':'\u25B2';
+        arrowEl.className='elev-floor-arrow '+(goingDown?'down':'up');
+      }
+      clearTimeout(callTimer);
+      callTimer=setTimeout(function(){
+        if(callUp) callUp.classList.remove('active');
+        if(callDown) callDown.classList.remove('active');
+        if(arrowEl){arrowEl.textContent='\u25CF';arrowEl.className='elev-floor-arrow';}
+      },800);
+    }
+    if(pctEl) pctEl.textContent=Math.round(pct*100)+'%';
+    lastPct=pct;
+    raf=null;
+  }
+
+  window.addEventListener('scroll',function(){
+    if(!raf) raf=requestAnimationFrame(update);
+  },{passive:true});
+  window.addEventListener('resize',function(){buildBrackets();requestAnimationFrame(update);});
+  requestAnimationFrame(update);
+})();
+</script>

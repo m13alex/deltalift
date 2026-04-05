@@ -1,0 +1,52 @@
+---
+interface Props {
+  description?: string;
+}
+
+const { description = 'ООО «Дельта-лифт» — монтаж, замена и обслуживание лифтов с 2003 года. Официальный дилер SANYO в России.' } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">DELTA<span>.</span>ELEVATORS</div>
+        <div class="footer-desc">{description}</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Услуги</div>
+        <div class="footer-links">
+          <a href="/services/installation/">Монтаж лифтов</a>
+          <a href="/nonstandard/">Нестандартные шахты</a>
+          <a href="/services/modernization/">Замена и модернизация</a>
+          <a href="/services/maintenance/">Техобслуживание</a>
+          <a href="/services/design/">Проектирование</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Оборудование</div>
+        <div class="footer-links">
+          <a href="/equipment/passenger/">Пассажирские лифты</a>
+          <a href="/equipment/freight/">Грузовые лифты</a>
+          <a href="/equipment/hospital/">Больничные лифты</a>
+          <a href="/equipment/home/">Домашние лифты</a>
+          <a href="/sanyo/">Лифты SANYO</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Компания</div>
+        <div class="footer-links">
+          <a href="/about/">О компании</a>
+          <a href="/projects/">Портфолио</a>
+          <a href="/letters/">Благодарственные письма</a>
+          <a href="/sanyo/">Официальный дилер SANYO</a>
+          <a href="/contacts/">Контакты</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2003&ndash;2026 ООО &laquo;Дельта-лифт&raquo; &middot; ОГРН 1037702013997</div>
+      <div>107996, Москва, Кузнецкий Мост, 21/5, эт. 6 &middot; 8 800 222-42-30</div>
+    </div>
+  </div>
+</footer>

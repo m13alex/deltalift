@@ -1,0 +1,185 @@
+<!DOCTYPE html><html lang="ru"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Контакты — ООО «Дельта-лифт» | Монтаж лифтов в Москве</title><meta name="description" content="Контакты ООО «Дельта-лифт»: Москва, ул. 1-я Дубровская, д.13А, стр.1 (м. Дубровка). Телефон 8 800 222-42-30 (бесплатно). Заявка на расчёт стоимости монтажа или обслуживания лифта."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/BaseLayout.DcfiHcqe.css">
+<style>.elev-car-display[data-astro-cid-v77xh2lf]{position:absolute;left:50%;transform:translate(-50%);bottom:calc(100% + 4px);width:44px;display:flex;flex-direction:column;align-items:center;gap:1px;z-index:15;pointer-events:none}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-num[data-astro-cid-v77xh2lf]{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--accent);line-height:1;text-shadow:0 0 12px rgba(212,135,14,.6),0 0 4px rgba(212,135,14,.4)}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-arrow[data-astro-cid-v77xh2lf]{font-size:10px;line-height:1;transition:color .25s}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-arrow[data-astro-cid-v77xh2lf].up{color:var(--success)}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-arrow[data-astro-cid-v77xh2lf].down{color:#e53e3e}.elev-cw-ropes[data-astro-cid-v77xh2lf]{position:absolute;left:50%;transform:translate(-4px);width:8px;top:36px;display:flex;justify-content:space-between;will-change:height;z-index:3;opacity:.75}
+</style>
+<link rel="stylesheet" href="/_astro/contacts@_@astro.C71rtamc.css"></head> <body>   <header class="site-header"> <a href="/" class="site-logo">DELTA<span>.</span>ELEVATORS</a> <nav class="site-nav hide-mob"> <a href="/equipment/" class>Оборудование</a><a href="/services/" class>Услуги</a><a href="/nonstandard/" class>Нестандартные шахты</a><a href="/projects/" class>Проекты</a><a href="/sanyo/" class>Sanyo</a><a href="/contacts/" class="active">Контакты</a> </nav> <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()"> <span class="theme-toggle-label hide-mob" id="themeLabel">Тёмная</span> <div class="theme-toggle-pill"> <div class="theme-toggle-thumb" id="themeThumb"> <svg id="iconMoon" viewBox="0 0 9 9" fill="currentColor" style="color:var(--bg-base)"><path d="M4.5 0a4.5 4.5 0 100 9 3.5 3.5 0 010-7 4.5 4.5 0 000 0z"></path></svg> <svg id="iconSun" viewBox="0 0 9 9" fill="none" stroke="currentColor" stroke-width="1" style="color:var(--bg-base);display:none"><circle cx="4.5" cy="4.5" r="1.8" fill="currentColor"></circle><line x1="4.5" y1=".5" x2="4.5" y2="1.8"></line><line x1="4.5" y1="7.2" x2="4.5" y2="8.5"></line><line x1=".5" y1="4.5" x2="1.8" y2="4.5"></line><line x1="7.2" y1="4.5" x2="8.5" y2="4.5"></line></svg> </div> </div> </div> <a href="#form" class="btn btn-primary" style="margin-left:8px">Получить расчёт</a> </header> <nav class="section-nav" id="sectionNav" aria-hidden="true">  <div class="section-nav-line active" id="snl0"></div> <div class="section-nav-dot active" id="snd0"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Контакты</span> </div>  <div class="section-nav-line" id="snl1"></div> <div class="section-nav-dot" id="snd1"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Заявка</span> </div>  <div class="section-nav-line" id="snl2"></div> <div class="section-nav-dot" id="snd2"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Карта</span> </div>  <div class="section-nav-line" id="snl3"></div> <div class="section-nav-dot" id="snd3"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Реквизиты</span> </div>  <div class="section-nav-line" id="snl4"></div> </nav> <script>(function(){const sections = [{"id":"hero","label":"Контакты","selector":".hero-contacts"},{"id":"form","label":"Заявка","selector":"#form"},{"id":"map","label":"Карта","selector":".map-section"},{"id":"req","label":"Реквизиты","selector":".req-section"}];
+
+document.addEventListener('DOMContentLoaded',function(){
+  var navDots=document.querySelectorAll('.section-nav-dot');
+  var navLines=document.querySelectorAll('.section-nav-line');
+  var sectionSelectors=sections.map(function(s){return s.selector||('.'+s.id+',#'+s.id)});
+
+  var sectionEls=sectionSelectors.map(function(sel){
+    var el=document.querySelector(sel);
+    return el?(el.closest('section')||el):null;
+  }).filter(Boolean);
+
+  if(sectionEls.length===0) return;
+
+  var activeIdx=0;
+  function setActive(idx){
+    if(idx===activeIdx&&idx!==0) return;
+    activeIdx=idx;
+    navDots.forEach(function(d,i){d.classList.toggle('active',i===idx)});
+    navLines.forEach(function(l,i){l.classList.toggle('active',i<=idx)});
+  }
+
+  function updateNav(){
+    var bestIdx=activeIdx,bestDist=Infinity;
+    sectionEls.forEach(function(el,i){
+      var r=el.getBoundingClientRect();
+      var mid=r.top+r.height/2;
+      var dist=Math.abs(mid-window.innerHeight/2);
+      if(dist<bestDist&&r.top<window.innerHeight&&r.bottom>0){bestDist=dist;bestIdx=i;}
+    });
+    setActive(bestIdx);
+  }
+
+  var raf=null;
+  window.addEventListener('scroll',function(){
+    if(!raf) raf=requestAnimationFrame(function(){updateNav();raf=null;});
+  },{passive:true});
+
+  updateNav();
+});
+})();</script> <div class="elev-system" data-astro-cid-v77xh2lf> <!-- Call buttons --> <div class="elev-call-panel" data-astro-cid-v77xh2lf> <div class="elev-call-btn" id="callUp" data-astro-cid-v77xh2lf> <span class="elev-call-btn-label" data-astro-cid-v77xh2lf>ВВЕРХ</span> <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-astro-cid-v77xh2lf><path d="M6 9V3M3 6l3-3 3 3" data-astro-cid-v77xh2lf></path></svg> </div> <div class="elev-call-btn" id="callDown" data-astro-cid-v77xh2lf> <span class="elev-call-btn-label" data-astro-cid-v77xh2lf>ВНИЗ</span> <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-astro-cid-v77xh2lf><path d="M6 3v6M3 6l3 3 3-3" data-astro-cid-v77xh2lf></path></svg> </div> </div> <!-- Left-edge fade --> <div class="elev-fade" data-astro-cid-v77xh2lf></div> <!-- Shaft --> <div class="elev-wrap" id="elevWrap" data-astro-cid-v77xh2lf> <div class="elev-shaft-outer" data-astro-cid-v77xh2lf></div> <div class="elev-shaft-inner" data-astro-cid-v77xh2lf></div> <div class="elev-sheave-wrap" data-astro-cid-v77xh2lf><div class="elev-sheave" data-astro-cid-v77xh2lf></div></div> <div class="elev-rail-l-el" data-astro-cid-v77xh2lf><div class="elev-rail-stem" data-astro-cid-v77xh2lf></div></div> <div class="elev-rail-r-el" data-astro-cid-v77xh2lf><div class="elev-rail-stem" data-astro-cid-v77xh2lf></div></div> <div class="elev-pit" data-astro-cid-v77xh2lf> <div class="elev-buffer" data-astro-cid-v77xh2lf><div class="elev-buffer-spring" data-astro-cid-v77xh2lf></div><div class="elev-buffer-base" data-astro-cid-v77xh2lf></div></div> <div class="elev-buffer" data-astro-cid-v77xh2lf><div class="elev-buffer-spring" data-astro-cid-v77xh2lf></div><div class="elev-buffer-base" data-astro-cid-v77xh2lf></div></div> </div> <div class="elev-ropes" id="elevRopes" data-astro-cid-v77xh2lf> <div class="elev-rope" data-astro-cid-v77xh2lf></div> <div class="elev-rope" data-astro-cid-v77xh2lf></div> <div class="elev-rope" data-astro-cid-v77xh2lf></div> </div> <div class="elev-car" id="elevCar" data-astro-cid-v77xh2lf> <!-- Floor display — mounted on the car, moves with it --> <div class="elev-car-display" id="elevCarDisplay" data-astro-cid-v77xh2lf> <div class="elev-floor-arrow" id="elevArrow" data-astro-cid-v77xh2lf>&#9679;</div> <div class="elev-floor-num" id="elevFloor" data-astro-cid-v77xh2lf>1</div> </div> <div class="elev-sling-top" data-astro-cid-v77xh2lf></div> <div class="elev-sling-side elev-sling-side-l" id="elevSlingL" data-astro-cid-v77xh2lf></div> <div class="elev-sling-side elev-sling-side-r" id="elevSlingR" data-astro-cid-v77xh2lf></div> <div class="elev-car-body" id="elevBody" data-astro-cid-v77xh2lf> <div class="elev-doors" id="elevDoors" data-astro-cid-v77xh2lf> <div class="elev-door" data-astro-cid-v77xh2lf></div> <div class="elev-door" data-astro-cid-v77xh2lf></div> </div> <div class="elev-door-gap" id="elevGap" data-astro-cid-v77xh2lf></div> <div class="elev-cop" data-astro-cid-v77xh2lf> <div class="elev-cop-btn lit" id="elevBtn1" data-astro-cid-v77xh2lf></div> <div class="elev-cop-btn" id="elevBtn2" data-astro-cid-v77xh2lf></div> <div class="elev-cop-btn" id="elevBtn3" data-astro-cid-v77xh2lf></div> </div> <div class="elev-interior" data-astro-cid-v77xh2lf> <div class="elev-handrail" data-astro-cid-v77xh2lf></div> <div class="elev-handrail" data-astro-cid-v77xh2lf></div> </div> </div> <div class="elev-sill" data-astro-cid-v77xh2lf></div> <div class="elev-sling-bot" data-astro-cid-v77xh2lf></div> </div> <div class="elev-cw-ropes" id="elevCWRopes" data-astro-cid-v77xh2lf> <div class="elev-rope" data-astro-cid-v77xh2lf></div> <div class="elev-rope" data-astro-cid-v77xh2lf></div> </div> <div class="elev-cw" id="elevCW" data-astro-cid-v77xh2lf> <div class="elev-cw-beam" data-astro-cid-v77xh2lf></div> <div class="elev-cw-weight" data-astro-cid-v77xh2lf> <div class="elev-cw-plate" data-astro-cid-v77xh2lf></div><div class="elev-cw-plate" data-astro-cid-v77xh2lf></div> <div class="elev-cw-plate" data-astro-cid-v77xh2lf></div><div class="elev-cw-plate" data-astro-cid-v77xh2lf></div> <div class="elev-cw-plate" data-astro-cid-v77xh2lf></div> </div> <div class="elev-cw-beam" data-astro-cid-v77xh2lf></div> </div> <div class="elev-pct" id="elevPct" data-astro-cid-v77xh2lf>0%</div> </div> </div>  <script>
+(function(){
+  var wrap=document.getElementById('elevWrap'),car=document.getElementById('elevCar'),
+      ropes=document.getElementById('elevRopes'),cw=document.getElementById('elevCW'),
+      pctEl=document.getElementById('elevPct'),cwRopes=document.getElementById('elevCWRopes'),
+      floorEl=document.getElementById('elevFloor'),
+      arrowEl=document.getElementById('elevArrow'),callUp=document.getElementById('callUp'),
+      callDown=document.getElementById('callDown'),body_el=document.getElementById('elevBody'),
+      slingL=document.getElementById('elevSlingL'),slingR=document.getElementById('elevSlingR'),
+      gap=document.getElementById('elevGap');
+  if(!wrap||!car) return;
+
+  var SHEAVE_Y=36,CAR_TOT=98,BODY_H=76,DOOR_H=48,CAP_T=52,CAP_B=52,FLOORS=9;
+  var raf=null,lastPct=0,callTimer=null;
+
+  if(body_el) body_el.style.height=BODY_H+'px';
+  var doors=document.getElementById('elevDoors');
+  if(doors) doors.style.height=DOOR_H+'px';
+  if(gap) gap.style.height=DOOR_H+'px';
+  var slingH=BODY_H+3;
+  if(slingL) slingL.style.height=slingH+'px';
+  if(slingR) slingR.style.height=slingH+'px';
+
+  function buildBrackets(){
+    wrap.querySelectorAll('.elev-bracket').forEach(function(b){b.remove()});
+    for(var y=80;y<window.innerHeight-60;y+=90){
+      ['elev-bracket-l','elev-bracket-r'].forEach(function(cls){
+        var b=document.createElement('div');
+        b.className='elev-bracket '+cls;
+        b.style.top=y+'px';
+        wrap.appendChild(b);
+      });
+    }
+  }
+  buildBrackets();
+
+  function update(){
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    var pct=docH>0?Math.min(1,window.scrollY/docH):0;
+    var wrapH=wrap.clientHeight;
+    var travel=wrapH-CAP_T-CAP_B-CAR_TOT;
+    var carTop=CAP_T+pct*travel;
+    car.style.top=carTop+'px';
+    var ropeH=Math.max(0,carTop-SHEAVE_Y);
+    ropes.style.height=ropeH+'px';
+    ropes.querySelectorAll('.elev-rope').forEach(function(r){r.style.height='100%'});
+    var cwH=55,cwTravel=wrapH-CAP_T-CAP_B-cwH;
+    var cwTop=CAP_T+(1-pct)*cwTravel;
+    cw.style.top=cwTop+'px';
+    if(cwRopes){var cwRopeH=Math.max(0,cwTop-SHEAVE_Y);cwRopes.style.height=cwRopeH+'px';cwRopes.querySelectorAll('.elev-rope').forEach(function(r){r.style.height='100%'});}
+    var floor=Math.max(1,Math.round((1-pct)*FLOORS));
+    if(floorEl) floorEl.textContent=floor;
+    var btns=document.querySelectorAll('.elev-cop-btn');
+    btns.forEach(function(b,i){
+      b.classList.toggle('lit',i===0&&floor<=3||i===1&&floor>3&&floor<=6||i===2&&floor>6);
+    });
+    var dir=pct-lastPct;
+    if(Math.abs(dir)>0.001){
+      var goingDown=dir>0;
+      if(callUp) callUp.classList.toggle('active',!goingDown);
+      if(callDown) callDown.classList.toggle('active',goingDown);
+      if(arrowEl){
+        arrowEl.textContent=goingDown?'\u25BC':'\u25B2';
+        arrowEl.className='elev-floor-arrow '+(goingDown?'down':'up');
+      }
+      clearTimeout(callTimer);
+      callTimer=setTimeout(function(){
+        if(callUp) callUp.classList.remove('active');
+        if(callDown) callDown.classList.remove('active');
+        if(arrowEl){arrowEl.textContent='\u25CF';arrowEl.className='elev-floor-arrow';}
+      },800);
+    }
+    if(pctEl) pctEl.textContent=Math.round(pct*100)+'%';
+    lastPct=pct;
+    raf=null;
+  }
+
+  window.addEventListener('scroll',function(){
+    if(!raf) raf=requestAnimationFrame(update);
+  },{passive:true});
+  window.addEventListener('resize',function(){buildBrackets();requestAnimationFrame(update);});
+  requestAnimationFrame(update);
+})();
+</script> <main> <!-- ═══ HERO ══════════════════════════════════════════ --> <section class="hero-contacts" style="position:relative;overflow:hidden"> <div class="hero-bg-grid" id="pg"></div> <div class="hero-glow"></div> <!-- Blueprint: address pin schematic --> <div style="position:absolute;right:8%;bottom:-20px;opacity:.10;pointer-events:none;user-select:none;color:var(--text-primary)"> <svg width="200" height="240" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width=".8" font-family="monospace"> <!-- Building outline --> <rect x="40" y="60" width="120" height="160" stroke-width="1.2"></rect> <!-- Floors --> <line x1="40" y1="100" x2="160" y2="100"></line> <line x1="40" y1="132" x2="160" y2="132"></line> <line x1="40" y1="164" x2="160" y2="164"></line> <line x1="40" y1="196" x2="160" y2="196"></line> <!-- Entrance --> <rect x="80" y="200" width="40" height="20" stroke-width="1.2"></rect> <!-- Shaft in building --> <rect x="130" y="60" width="30" height="160" stroke-width="1.4"></rect> <text x="145" y="58" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ЛФТ</text> <!-- Windows --> <rect x="50" y="70" width="20" height="18"></rect><rect x="80" y="70" width="20" height="18"></rect> <rect x="50" y="108" width="20" height="18"></rect><rect x="80" y="108" width="20" height="18"></rect> <rect x="50" y="140" width="20" height="18"></rect><rect x="80" y="140" width="20" height="18"></rect> <rect x="50" y="172" width="20" height="18"></rect><rect x="80" y="172" width="20" height="18"></rect> <!-- Pin / marker --> <circle cx="100" cy="26" r="16" stroke-width="1.2"></circle> <circle cx="100" cy="26" r="5" stroke-width="1"></circle> <line x1="100" y1="42" x2="100" y2="60" stroke-dasharray="2 2"></line> <line x1="84" y1="26" x2="116" y2="26" stroke-dasharray="2 2" stroke-width=".5"></line> <line x1="100" y1="10" x2="100" y2="42" stroke-dasharray="2 2" stroke-width=".5"></line> <!-- Address annotation --> <text x="100" y="8" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">1-Я ДУБРОВСКАЯ 13А</text> <!-- Floors annotation --> <text x="175" y="85" font-size="7" fill="currentColor" stroke="none" transform="rotate(90,175,85)">ОФ.19</text> <!-- Distance markers --> <text x="20" y="223" font-size="6" fill="currentColor" stroke="none">M ДУБРОВКА — 5 МИН</text> </svg> </div> <div class="container"> <nav class="breadcrumb fi"> <a href="/">Главная</a><span style="opacity:.4">›</span><span>Контакты</span> </nav> <div class="hero-contacts-inner"> <div> <div class="hero-badge fi fi-d1"><div class="badge-dot"></div>МОСКВА · С 2003 ГОДА</div> <h1 class="hero-h1 fi fi-d1">Свяжитесь<br>с нами —<br><em>ответим за 24 ч</em></h1> <p class="hero-desc fi fi-d2">Выезд инженера бесплатно. КП с фиксированной ценой за 3 рабочих дня. Работаем по Москве и МО, крупные объекты — по всей России.</p> <div class="quick-contacts fi fi-d3"> <a href="tel:+78002224230" class="qc-item"> <div class="qc-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h4l2 4-2 2c1 2 3 4 5 5l2-2 4 2v4a1 1 0 01-1 1C7 18 1 11 1 4a1 1 0 011-1z"></path></svg></div> <div> <div class="qc-label">Телефон</div> <div class="qc-value">8 800 222-42-30</div> <div class="qc-sub">бесплатно по России · пн–пт 9:00–18:00</div> </div> </a> <a href="mailto:deltalift@mail.ru" class="qc-item"> <div class="qc-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="14" height="10" rx="1.5"></rect><path d="M2 5l7 5 7-5"></path></svg></div> <div> <div class="qc-label">Email</div> <div class="qc-value-sm">deltalift@mail.ru</div> <div class="qc-sub">ответ в течение рабочего дня</div> </div> </a> <a href="https://yandex.ru/maps/?text=Москва+1-я+Дубровская+13А+стр.1" target="_blank" rel="noopener" class="qc-item"> <div class="qc-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 1C6.2 1 4 3.2 4 6c0 4 5 11 5 11s5-7 5-11c0-2.8-2.2-5-5-5z"></path><circle cx="9" cy="6" r="2"></circle></svg></div> <div> <div class="qc-label">Адрес офиса</div> <div class="qc-value-sm">Москва, ул. 1-я Дубровская, д.13А, стр.1</div> <div class="qc-sub">оф.19 · м. Дубровка, 5 мин</div> </div> </a> </div> </div> <!-- Stats mini --> <div class="fi fi-d2"> <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"> <div style="background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:20px"> <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text-primary);line-height:1"><span class="sn-val">23</span><span class="sn-sfx" style="color:var(--accent)">г</span></div> <div style="font-size:12px;color:var(--text-muted);margin-top:6px">на рынке</div> </div> <div style="background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:20px"> <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text-primary);line-height:1"><span class="sn-val">340</span><span class="sn-sfx" style="color:var(--accent)">+</span></div> <div style="font-size:12px;color:var(--text-muted);margin-top:6px">объектов</div> </div> <div style="background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:20px"> <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text-primary);line-height:1"><span class="sn-val">48</span><span class="sn-sfx" style="color:var(--accent)">ч</span></div> <div style="font-size:12px;color:var(--text-muted);margin-top:6px">выезд инженера</div> </div> <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--r-xl);padding:20px"> <div style="font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--accent);line-height:1.3">Бесплатная консультация</div> <div style="font-size:11px;color:var(--text-muted);margin-top:6px">без обязательств</div> </div> </div> </div> </div> </div> </section> <!-- ═══ MAIN FORM + CONTACTS ═════════════════════════ --> <section class="contacts-main" id="form"> <div class="container"> <div class="contacts-grid"> <!-- FORM --> <div class="form-card fi"> <div class="form-card-title">Заявка на расчёт</div> <div class="form-card-sub">Опишите задачу — инженер перезвонит и назначит выезд. Выезд на объект бесплатный.</div> <form action="/contacts/send/" method="POST"> <div class="form-grid"> <div class="form-group"> <label class="form-label">Имя / Компания *</label> <input type="text" class="form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required> </div> <div class="form-group"> <label class="form-label">Телефон *</label> <input type="tel" class="form-input" name="phone" placeholder="+7 (___) ___-__-__" required> </div> <div class="form-group"> <label class="form-label">Email</label> <input type="email" class="form-input" name="email" placeholder="info@company.ru"> </div> <div class="form-group"> <label class="form-label">Тип объекта</label> <select class="form-input" name="type"> <option value="">Выберите</option> <option>Жилой дом / МКД</option> <option>Административное здание</option> <option>Торговый центр</option> <option>Медицинский объект</option> <option>Историческое здание</option> <option>Промышленный объект</option> <option>Частный дом</option> <option>Другое</option> </select> </div> <div class="form-group"> <label class="form-label">Тип работ</label> <select class="form-input" name="work_type"> <option value="">Выберите</option> <option>Монтаж нового лифта</option> <option>Замена / модернизация</option> <option>Строительство шахты</option> <option>Техническое обслуживание</option> <option>Аварийный ремонт</option> <option>Проектирование</option> <option>Консультация</option> </select> </div> <div class="form-group"> <label class="form-label">Этажность</label> <input type="text" class="form-input" name="floors" placeholder="Например: 9 этажей"> </div> <div class="form-group full"> <label class="form-label">Описание задачи</label> <textarea class="form-input" name="message" placeholder="Расскажите об объекте: адрес, размеры шахты, грузоподъёмность, сроки, особенности..."></textarea> <span class="form-hint">Чем подробнее — тем точнее будет расчёт</span> </div> <div class="form-group full"> <button type="submit" class="form-submit">Отправить заявку →</button> <p class="form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p> </div> </div> </form> </div> <!-- SIDEBAR --> <div class="sidebar-stack fi fi-d1"> <!-- Phone card --> <div class="contact-card"> <div class="cc-title">Телефон</div> <a href="tel:+78002224230" class="cc-phone">8 800 222-42-30</a> <div class="cc-phone-badge" style="margin-bottom:14px"> <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"></path></svg>
+Бесплатно по России
+</div> <div class="cc-row"><div class="cc-dot"></div><div class="cc-text"><strong>+7 (495) 649-67-72</strong>Прямая линия · Москва</div></div> <div class="cc-row"><div class="cc-dot"></div><div class="cc-text"><strong>deltalift@mail.ru</strong>Email для заявок</div></div> </div> <!-- Address card --> <div class="contact-card"> <div class="cc-title">Адрес офиса</div> <div class="cc-row"> <div class="cc-dot"></div> <div class="cc-text"> <strong>г. Москва</strong>
+ул. 1-я Дубровская, д.13А, стр.1, оф.19
+</div> </div> <div class="cc-row"> <div class="cc-dot"></div> <div class="cc-text"><strong>м. Дубровка</strong>5 минут пешком</div> </div> <div class="cc-row"> <div class="cc-dot"></div> <div class="cc-text"><strong>м. Кожуховская</strong>10 минут пешком</div> </div> <a href="https://yandex.ru/maps/?text=Москва+1-я+Дубровская+13А+стр.1" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:14px;font-size:13px">Открыть на карте →</a> </div> <!-- Work hours --> <div class="contact-card"> <div class="cc-title">Режим работы</div> <div class="hours-grid"> <div class="hours-item"> <div class="hours-days">ПН — ПТ</div> <div class="hours-time">9:00 — 18:00</div> </div> <div class="hours-item"> <div class="hours-days">СБ — ВС</div> <div class="hours-time" style="color:var(--text-muted)">Выходной</div> </div> </div> <div class="hours-note">⚡ Аварийные выезды — круглосуточно по отдельному договору ТО</div> </div> </div> </div> </div> </section> <!-- ═══ MAP ═══════════════════════════════════════════ --> <section class="map-section"> <div class="container"> <p class="section-label fi">Как добраться</p> <h2 class="section-title fi fi-d1">Офис рядом<br>с м. Дубровка</h2> <div class="divider"></div> <div class="map-inner fi fi-d1"> <div class="map-frame"> <!-- Yandex Maps embed — 1-я Дубровская 13А стр.1 --> <iframe src="https://yandex.ru/map-widget/v1/?ll=37.674984%2C55.722801&z=17&pt=37.674984%2C55.722801,pm2am" width="100%" height="100%" style="border:none;display:block" allowfullscreen loading="lazy" title="Офис Дельта-лифт на карте — ул. 1-я Дубровская, д.13А, стр.1"></iframe> </div> <div class="directions-card fi fi-d2"> <div class="dir-title">Как нас найти</div> <div class="dir-item"> <div class="dir-icon">🚇</div> <div> <div class="dir-label">м. Дубровка</div> <div class="dir-desc">Люблинско-Дмитровская линия. Выход в сторону ул. 1-я Дубровская, 5 минут пешком.</div> </div> </div> <div class="dir-item"> <div class="dir-icon">🚇</div> <div> <div class="dir-label">м. Кожуховская</div> <div class="dir-desc">Люблинско-Дмитровская линия. 10 минут пешком по ул. Дубровская.</div> </div> </div> <div class="dir-item"> <div class="dir-icon">🚗</div> <div> <div class="dir-label">На автомобиле</div> <div class="dir-desc">Заезд со стороны ул. 1-я Дубровская. Парковка на территории.</div> </div> </div> <div class="dir-item"> <div class="dir-icon">🚌</div> <div> <div class="dir-label">Наземный транспорт</div> <div class="dir-desc">Остановка «Дубровская улица» — автобусы по Шарикоподшипниковской ул.</div> </div> </div> </div> </div> </div> </section> <!-- ═══ REQUISITES ════════════════════════════════════ --> <section class="req-section"> <div class="container"> <p class="section-label fi">Реквизиты</p> <h2 class="section-title fi fi-d1">Юридические данные<br>компании</h2> <div class="req-grid"> <div class="req-card fi"> <div class="req-label">Полное наименование</div> <div class="req-value">Общество с ограниченной ответственностью «Дельта-лифт»</div> </div> <div class="req-card fi fi-d1"> <div class="req-label">Краткое наименование</div> <div class="req-value">ООО «Дельта-лифт»</div> </div> <div class="req-card fi fi-d2"> <div class="req-label">Руководитель</div> <div class="req-value">Усачев Юрий Игоревич<br><span style="font-size:12px;color:var(--text-muted)">Генеральный директор</span></div> </div> <div class="req-card fi fi-d1"> <div class="req-label">ОГРН</div> <div class="req-value-mono">1037702013997</div> </div> <div class="req-card fi fi-d2"> <div class="req-label">ИНН / КПП</div> <div class="req-value-mono">Уточняется при выставлении счёта</div> </div> <div class="req-card fi fi-d3"> <div class="req-label">Фактический адрес</div> <div class="req-value">г. Москва, ул. 1-я Дубровская,<br>д.13А, стр.1, оф.19</div> </div> <div class="req-card fi fi-d3"> <div class="req-label">Юридический адрес</div> <div class="req-value">г. Москва, ул. Кузнецкий Мост,<br>д.21/5, эт.6, пом.V, комн.5</div> </div> <div class="req-card fi fi-d2"> <div class="req-label">Год регистрации</div> <div class="req-value-mono">2003</div> </div> <div class="req-card fi fi-d3"> <div class="req-label">Работаем по</div> <div class="req-value">44-ФЗ (госзакупки),<br>223-ФЗ, прямые договоры</div> </div> <div class="req-card fi fi-d4"> <div class="req-label">Лицензии / Допуски</div> <div class="req-value">СРО на монтаж лифтов,<br>допуск Ростехнадзора</div> </div> </div> </div> </section> </main> <footer class="footer"> <div class="container"> <div class="footer-inner"> <div> <div class="footer-logo">DELTA<span>.</span>ELEVATORS</div> <div class="footer-desc">ООО «Дельта-лифт» — монтаж, замена и обслуживание лифтов с 2003 года. Официальный дилер SANYO в России.</div> </div> <div> <div class="footer-col-title">Услуги</div> <div class="footer-links"> <a href="/services/installation/">Монтаж лифтов</a> <a href="/nonstandard/">Нестандартные шахты</a> <a href="/services/modernization/">Замена и модернизация</a> <a href="/services/maintenance/">Техобслуживание</a> <a href="/services/design/">Проектирование</a> </div> </div> <div> <div class="footer-col-title">Оборудование</div> <div class="footer-links"> <a href="/equipment/passenger/">Пассажирские лифты</a> <a href="/equipment/freight/">Грузовые лифты</a> <a href="/equipment/hospital/">Больничные лифты</a> <a href="/equipment/home/">Домашние лифты</a> <a href="/sanyo/">Лифты SANYO</a> </div> </div> <div> <div class="footer-col-title">Компания</div> <div class="footer-links"> <a href="/about/">О компании</a> <a href="/projects/">Портфолио</a> <a href="/letters/">Благодарственные письма</a> <a href="/sanyo/">Официальный дилер SANYO</a> <a href="/contacts/">Контакты</a> </div> </div> </div> <div class="footer-bottom"> <div>&copy; 2003&ndash;2026 ООО &laquo;Дельта-лифт&raquo; &middot; ОГРН 1037702013997</div> <div>107996, Москва, Кузнецкий Мост, 21/5, эт. 6 &middot; 8 800 222-42-30</div> </div> </div> </footer>  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // ── HERO PARALLAX ─────────────────────────────────────
+  var pg = document.getElementById('pg');
+  var tick = false;
+  window.addEventListener('scroll', function() {
+    if (!tick) {
+      requestAnimationFrame(function() {
+        if (pg) pg.style.transform = 'translateY(' + (window.scrollY * 0.12) + 'px)';
+        tick = false;
+      });
+      tick = true;
+    }
+  }, { passive: true });
+});
+</script> <script>
+(function(){
+  var root = document.documentElement;
+  var KEY = 'delta-theme';
+
+  function applyTheme(t){
+    root.setAttribute('data-theme', t);
+    localStorage.setItem(KEY, t);
+    var label = document.getElementById('themeLabel');
+    var moon  = document.getElementById('iconMoon');
+    var sun   = document.getElementById('iconSun');
+    if(label) label.textContent = t === 'light' ? 'Светлая' : 'Тёмная';
+    if(moon)  moon.style.display  = t === 'light' ? 'none' : 'block';
+    if(sun)   sun.style.display   = t === 'light' ? 'block' : 'none';
+  }
+
+  window.toggleTheme = function(){
+    var c = root.getAttribute('data-theme') || 'dark';
+    applyTheme(c === 'dark' ? 'light' : 'dark');
+  };
+
+  var saved = localStorage.getItem(KEY);
+  if(saved){ applyTheme(saved); }
+  else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+    applyTheme('light');
+  }
+})();
+</script> <script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('vis');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.07});
+  document.querySelectorAll('.fi').forEach(function(el){ obs.observe(el); });
+})();
+</script>  </body></html>

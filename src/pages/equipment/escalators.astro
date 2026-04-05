@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ElevatorSystem from '../../components/ElevatorSystem.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import ThemeToggleScript from '../../components/ThemeToggleScript.astro';
+import FadeInScript from '../../components/FadeInScript.astro';
+import '../../styles/equipment.css';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'Об эскалаторе', selector: '.eq-hero' },
+  { id: 'features', label: 'Особенности', selector: '.eq-features' },
+  { id: 'specs', label: 'Характеристики', selector: '.eq-specs' },
+  { id: 'usecases', label: 'Применение', selector: '.eq-usecases' },
+  { id: 'faq', label: 'FAQ', selector: '.eq-faq' },
+  { id: 'cta', label: 'Заявка', selector: '.eq-cta' },
+];
+---
+
+<BaseLayout title="Эскалаторы и траволаторы Sanyo | Дельта-лифт" description="Эскалаторы и траволаторы Sanyo: высота подъёма до 13 м, углы 30° и 35°. Для торговых центров, метро, аэропортов. Энергосберегающий привод.">
+
+<Header activePage="equipment" ctaHref="#cta" />
+<SectionNav sections={sectionNavItems} />
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="eq-hero">
+  <div class="eq-hero-grid" id="pg"></div>
+  <div class="eq-hero-glow"></div>
+
+  <!-- Blueprint: escalator side-view cross-section -->
+  <div class="bp" style="right:6%;bottom:0;opacity:.08">
+    <svg width="220" height="200" viewBox="0 0 220 200" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace">
+      <line x1="20" y1="170" x2="200" y2="30" stroke-width="1.2"/>
+      <line x1="20" y1="180" x2="200" y2="40" stroke-width="1.2"/>
+      <line x1="20" y1="170" x2="20" y2="180" stroke-width="1"/>
+      <line x1="200" y1="30" x2="200" y2="40" stroke-width="1"/>
+      <!-- steps -->
+      <line x1="50" y1="157" x2="60" y2="157" stroke-width=".8"/>
+      <line x1="60" y1="157" x2="60" y2="150" stroke-width=".8"/>
+      <line x1="70" y1="143" x2="80" y2="143" stroke-width=".8"/>
+      <line x1="80" y1="143" x2="80" y2="136" stroke-width=".8"/>
+      <line x1="90" y1="129" x2="100" y2="129" stroke-width=".8"/>
+      <line x1="100" y1="129" x2="100" y2="122" stroke-width=".8"/>
+      <line x1="110" y1="115" x2="120" y2="115" stroke-width=".8"/>
+      <line x1="120" y1="115" x2="120" y2="108" stroke-width=".8"/>
+      <line x1="130" y1="101" x2="140" y2="101" stroke-width=".8"/>
+      <line x1="140" y1="101" x2="140" y2="94" stroke-width=".8"/>
+      <line x1="150" y1="87" x2="160" y2="87" stroke-width=".8"/>
+      <line x1="160" y1="87" x2="160" y2="80" stroke-width=".8"/>
+      <!-- handrails -->
+      <line x1="15" y1="155" x2="195" y2="15" stroke-dasharray="4 2" stroke-width=".5"/>
+      <line x1="25" y1="155" x2="205" y2="15" stroke-dasharray="4 2" stroke-width=".5"/>
+      <!-- angle arc -->
+      <path d="M60 180 A30 30 0 0 1 80 170" stroke-dasharray="2 1" stroke-width=".5"/>
+      <text x="75" y="192" font-size="5" fill="currentColor" stroke="none">30°/35°</text>
+      <!-- labels -->
+      <text x="110" y="15" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ЭСКАЛАТОР SANYO</text>
+      <line x1="210" y1="30" x2="210" y2="180" stroke-dasharray="2 2" stroke-width=".5"/>
+      <text x="215" y="110" font-size="5" fill="currentColor" stroke="none" transform="rotate(-90,215,110)">ДО 13 М</text>
+    </svg>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <a href="/equipment/">Оборудование</a><span style="opacity:.4">›</span>
+      <span>Эскалаторы</span>
+    </nav>
+    <div class="eq-hero-inner">
+      <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>ЭСКАЛАТОРЫ И ТРАВОЛАТОРЫ SANYO</div>
+      <h1 class="eq-h1 fi fi-d1">Эскалаторы и траволаторы <em>Sanyo</em> — для торговых центров и общественных объектов</h1>
+      <p class="eq-desc fi fi-d2">Высота подъёма до 13 м, углы наклона 30° и 35°. Энергосберегающий привод с автоматическим снижением скорости без нагрузки. Соответствие EN115 и сертификация EAC для российского рынка.</p>
+      <div class="eq-actions fi fi-d3">
+        <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a>
+        <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a>
+      </div>
+      <div class="eq-trust fi fi-d3">
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Монтаж от 21 дня</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═════════════════════════════════════════ -->
+<section class="eq-features">
+  <div class="container">
+    <p class="section-label fi">Ключевые преимущества</p>
+    <h2 class="section-title fi fi-d1">Почему выбирают<br>эскалаторы Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-feat-grid">
+      <div class="eq-feat-card fi">
+        <div class="eq-feat-icon">📐</div>
+        <div class="eq-feat-title">Высота подъёма до 13 м</div>
+        <div class="eq-feat-text">Одним маршем без промежуточных площадок — подходит для межэтажных перекрытий высотой до 6,5 м при угле 30°.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">⚙️</div>
+        <div class="eq-feat-title">Углы наклона 30° и 35°</div>
+        <div class="eq-feat-text">30° — стандартный угол для высоты до 6 м. 35° — компактная установка при высоте до 6 м, экономия площади в здании.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🔋</div>
+        <div class="eq-feat-title">Энергосбережение</div>
+        <div class="eq-feat-text">Автоматическое снижение скорости или остановка при отсутствии пассажиров. Экономия до 30% электроэнергии по сравнению с постоянной работой.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">🛡️</div>
+        <div class="eq-feat-title">Безопасность по EN115</div>
+        <div class="eq-feat-text">Датчики входных площадок, защита от обратного хода, аварийное торможение. Полное соответствие европейским нормам безопасности.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">↔️</div>
+        <div class="eq-feat-title">Траволаторы</div>
+        <div class="eq-feat-text">Горизонтальные и наклонные (до 12°) движущиеся дорожки длиной до 80 м. Для аэропортов, торговых центров, переходов.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d3">
+        <div class="eq-feat-icon">✅</div>
+        <div class="eq-feat-title">Сертификация EAC + EN115</div>
+        <div class="eq-feat-text">Полный пакет сертификатов ТР ТС 011/2011 и соответствие EN115. Готовность к вводу в эксплуатацию без дополнительных экспертиз.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS ════════════════════════════════════════════ -->
+<section class="eq-specs">
+  <div class="container">
+    <p class="section-label fi">Технические характеристики</p>
+    <h2 class="section-title fi fi-d1">Параметры<br>эскалаторов и траволаторов</h2>
+    <div class="eq-spec-grid">
+      <div class="eq-spec-row fi">
+        <span class="eq-spec-label">Высота подъёма</span>
+        <span class="eq-spec-value">до <em>13</em> м</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Угол наклона</span>
+        <span class="eq-spec-value"><em>30°</em> / <em>35°</em></span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Ширина ступеней</span>
+        <span class="eq-spec-value"><em>600 / 800 / 1000</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Скорость</span>
+        <span class="eq-spec-value"><em>0.5</em> м/с</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Привод</span>
+        <span class="eq-spec-value">асинхронный / PM</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Стандарты</span>
+        <span class="eq-spec-value">EN115, EAC</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Траволатор: угол</span>
+        <span class="eq-spec-value"><em>0°–12°</em></span>
+      </div>
+      <div class="eq-spec-row fi fi-d4">
+        <span class="eq-spec-label">Траволатор: длина</span>
+        <span class="eq-spec-value">до <em>80</em> м</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ════════════════════════════════════════ -->
+<section class="eq-usecases">
+  <div class="container">
+    <p class="section-label fi">Применение</p>
+    <h2 class="section-title fi fi-d1">Для каких объектов<br>подходят</h2>
+    <div class="divider"></div>
+    <div class="eq-uc-grid">
+      <div class="eq-uc-card fi">
+        <div class="eq-uc-icon">🛒</div>
+        <div class="eq-uc-title">Торговые центры</div>
+        <div class="eq-uc-text">Основной тип вертикального транспорта в ТЦ. Широкие ступени 1000 мм для покупателей с сумками и тележками. Энергосбережение снижает операционные расходы.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🚇</div>
+        <div class="eq-uc-title">Метро и вокзалы</div>
+        <div class="eq-uc-text">Высокая интенсивность использования, длительные режимы непрерывной работы. Усиленная конструкция для пиковых нагрузок в часы пик.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">✈️</div>
+        <div class="eq-uc-title">Аэропорты</div>
+        <div class="eq-uc-text">Траволаторы до 80 м для длинных переходов между терминалами. Наклонные траволаторы для перемещения пассажиров с багажом.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d2">
+        <div class="eq-uc-icon">🏢</div>
+        <div class="eq-uc-title">Бизнес-центры</div>
+        <div class="eq-uc-text">Эскалаторы между этажами в атриумных зонах. Компактные решения с углом 35° при ограниченном пространстве для установки.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════ -->
+<section class="eq-faq">
+  <div class="container">
+    <p class="section-label fi">Частые вопросы</p>
+    <h2 class="section-title fi fi-d1">FAQ по эскалаторам<br>и траволаторам Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-faq-list">
+      <div class="eq-faq-item fi">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какова максимальная высота подъёма эскалатора?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Максимальная высота подъёма — до 13 м одним маршем. При угле 30° это соответствует межэтажной высоте примерно 6 м. Для большей высоты устанавливаются каскадные эскалаторы с промежуточными площадками.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d1">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>В чём разница между углами 30° и 35°?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Угол 30° — стандартный, подходит для высоты подъёма до 6 м, наиболее комфортный для пассажиров. Угол 35° — компактнее по длине, применяется при ограниченном пространстве, но допускается только для высоты до 6 м по нормам EN115.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d2">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Что такое траволатор и чем он отличается от эскалатора?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Траволатор — это движущаяся дорожка без ступеней. Бывает горизонтальной (0°) или наклонной (до 12°). Используется для перемещения пассажиров на большие расстояния — в аэропортах, переходах, крупных торговых центрах.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d3">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Каков срок эксплуатации эскалатора?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Расчётный срок службы эскалаторов Sanyo — 20–25 лет при регулярном техническом обслуживании. Ключевые узлы (ступени, цепи, привод) рассчитаны на высокую интенсивность эксплуатации. Мы предлагаем контракты на ТО для поддержания оборудования в рабочем состоянии.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════ -->
+<section class="eq-cta" id="cta">
+  <div class="container">
+    <div class="eq-cta-grid">
+      <div>
+        <p class="section-label fi">Запросить расчёт</p>
+        <h2 class="eq-cta-title fi fi-d1">Подберём эскалатор<br><em>под ваш объект</em></h2>
+        <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, выполнит замеры и подготовит КП с фиксированной ценой за 3 рабочих дня.</p>
+        <div class="eq-cta-benefits fi fi-d2">
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Бесплатный выезд инженера
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            КП за 3 рабочих дня
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Фиксированная цена в договоре
+          </div>
+        </div>
+        <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a>
+        <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div>
+      </div>
+      <div class="eq-form fi fi-d2">
+        <div class="eq-form-title">Быстрая заявка</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="eq-form-group">
+            <label class="eq-form-label">Имя / Компания *</label>
+            <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Телефон *</label>
+            <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Описание задачи</label>
+            <textarea class="eq-form-input" name="message" placeholder="Тип объекта, высота подъёма, ширина ступеней, количество эскалаторов..."></textarea>
+          </div>
+          <input type="hidden" name="source" value="escalators">
+          <button type="submit" class="eq-form-submit">Отправить заявку →</button>
+          <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+function toggleEqFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ElevatorSystem from '../../components/ElevatorSystem.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import ThemeToggleScript from '../../components/ThemeToggleScript.astro';
+import FadeInScript from '../../components/FadeInScript.astro';
+import '../../styles/equipment.css';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'О лифте', selector: '.eq-hero' },
+  { id: 'features', label: 'Особенности', selector: '.eq-features' },
+  { id: 'specs', label: 'Характеристики', selector: '.eq-specs' },
+  { id: 'usecases', label: 'Применение', selector: '.eq-usecases' },
+  { id: 'faq', label: 'FAQ', selector: '.eq-faq' },
+  { id: 'cta', label: 'Заявка', selector: '.eq-cta' },
+];
+---
+
+<BaseLayout title="Грузовые лифты Sanyo — до 5000 кг | Дельта-лифт" description="Грузовые лифты Sanyo: грузоподъёмность до 5000 кг, нестандартные платформы. Для складов, производств, логистических центров. EAC-сертификация.">
+
+<Header activePage="equipment" ctaHref="#cta" />
+<SectionNav sections={sectionNavItems} />
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="eq-hero">
+  <div class="eq-hero-grid" id="pg"></div>
+  <div class="eq-hero-glow"></div>
+
+  <!-- Blueprint: top-view platform with dimensional annotations -->
+  <div class="bp" style="right:6%;bottom:0;opacity:.08">
+    <svg width="200" height="260" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace">
+      <rect x="20" y="30" width="160" height="200" stroke-width="1"/>
+      <rect x="35" y="45" width="130" height="170" stroke-width="1.2" stroke-dasharray="4 2"/>
+      <line x1="40" y1="130" x2="160" y2="130" stroke-dasharray="2 2"/>
+      <text x="100" y="90" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ПЛАТФОРМА</text>
+      <text x="100" y="110" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ИНДИВИДУАЛЬНЫЙ РАЗМЕР</text>
+      <!-- dimension arrows horizontal -->
+      <line x1="35" y1="240" x2="165" y2="240" stroke-width=".5"/>
+      <line x1="35" y1="237" x2="35" y2="243" stroke-width=".5"/>
+      <line x1="165" y1="237" x2="165" y2="243" stroke-width=".5"/>
+      <text x="100" y="252" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ДО 3000 ММ</text>
+      <!-- dimension arrows vertical -->
+      <line x1="8" y1="45" x2="8" y2="215" stroke-width=".5"/>
+      <line x1="5" y1="45" x2="11" y2="45" stroke-width=".5"/>
+      <line x1="5" y1="215" x2="11" y2="215" stroke-width=".5"/>
+      <text x="6" y="130" font-size="5" fill="currentColor" stroke="none" transform="rotate(-90,6,130)">ДО 4000 ММ</text>
+      <!-- door opening -->
+      <rect x="70" y="215" width="60" height="6" stroke-width=".8"/>
+      <text x="100" y="228" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ДВЕРИ ДО 2400 ММ</text>
+      <text x="100" y="18" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ГРУЗОВОЙ — ВИД СВЕРХУ</text>
+    </svg>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <a href="/equipment/">Оборудование</a><span style="opacity:.4">›</span>
+      <span>Грузовые лифты</span>
+    </nav>
+    <div class="eq-hero-inner">
+      <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>ГРУЗОВЫЕ ЛИФТЫ SANYO</div>
+      <h1 class="eq-h1 fi fi-d1">Грузовые лифты <em>Sanyo</em> — до 5000 кг для любых задач</h1>
+      <p class="eq-desc fi fi-d2">Грузоподъёмность от 500 до 5000 кг, нестандартные платформы под конкретный груз. Двустороннее открывание дверей, промышленная защита, PM-привод. Сертификация EAC для российского рынка.</p>
+      <div class="eq-actions fi fi-d3">
+        <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a>
+        <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a>
+      </div>
+      <div class="eq-trust fi fi-d3">
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Монтаж от 14 дней</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═════════════════════════════════════════ -->
+<section class="eq-features">
+  <div class="container">
+    <p class="section-label fi">Ключевые преимущества</p>
+    <h2 class="section-title fi fi-d1">Почему выбирают<br>грузовые лифты Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-feat-grid">
+      <div class="eq-feat-card fi">
+        <div class="eq-feat-icon">⚙️</div>
+        <div class="eq-feat-title">Высокая грузоподъёмность</div>
+        <div class="eq-feat-text">До 5000 кг — для перевозки паллет, оборудования, транспортных средств. Усиленная рама и направляющие рассчитаны на интенсивную эксплуатацию.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">📐</div>
+        <div class="eq-feat-title">Нестандартные платформы</div>
+        <div class="eq-feat-text">Размер платформы проектируется под конкретный груз. Нет привязки к типоразмерам — индивидуальный подбор под задачу заказчика.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🛡️</div>
+        <div class="eq-feat-title">Усиленная конструкция</div>
+        <div class="eq-feat-text">Усиленный пол кабины, противоударные стенки, защита порогов. Конструкция рассчитана на заезд погрузчиков и рохлей.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">🚪</div>
+        <div class="eq-feat-title">Двустороннее открывание</div>
+        <div class="eq-feat-text">Проходная кабина с дверями на двух сторонах. Оптимизирует логистику: загрузка с одной стороны, выгрузка с другой.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🔒</div>
+        <div class="eq-feat-title">Промышленная защита</div>
+        <div class="eq-feat-text">Защита от пыли, влаги и агрессивных сред. Специальные покрытия для пищевых производств, фармацевтики, химической промышленности.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d3">
+        <div class="eq-feat-icon">✅</div>
+        <div class="eq-feat-title">Сертификация EAC</div>
+        <div class="eq-feat-text">Полный пакет сертификатов ТР ТС 011/2011. Готовность к регистрации в Ростехнадзоре без дополнительных экспертиз.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS ════════════════════════════════════════════ -->
+<section class="eq-specs">
+  <div class="container">
+    <p class="section-label fi">Технические характеристики</p>
+    <h2 class="section-title fi fi-d1">Параметры<br>грузовых лифтов</h2>
+    <div class="eq-spec-grid">
+      <div class="eq-spec-row fi">
+        <span class="eq-spec-label">Грузоподъёмность</span>
+        <span class="eq-spec-value"><em>500–5000</em> кг</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Скорость</span>
+        <span class="eq-spec-value"><em>0.25–1.0</em> м/с</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Привод</span>
+        <span class="eq-spec-value">PM безредукторный</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Платформа</span>
+        <span class="eq-spec-value">индивидуально</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Ширина дверей</span>
+        <span class="eq-spec-value">до <em>2400</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Высота подъёма</span>
+        <span class="eq-spec-value">до <em>60</em> м</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Тип</span>
+        <span class="eq-spec-value">грузовая / грузопассажирская</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ════════════════════════════════════════ -->
+<section class="eq-usecases">
+  <div class="container">
+    <p class="section-label fi">Применение</p>
+    <h2 class="section-title fi fi-d1">Для каких объектов<br>подходят</h2>
+    <div class="divider"></div>
+    <div class="eq-uc-grid">
+      <div class="eq-uc-card fi">
+        <div class="eq-uc-icon">🏭</div>
+        <div class="eq-uc-title">Склады</div>
+        <div class="eq-uc-text">Перемещение паллет и крупногабаритных грузов между этажами. Проходная кабина ускоряет логистику, заезд погрузчика прямо в кабину.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">⚙️</div>
+        <div class="eq-uc-title">Производства</div>
+        <div class="eq-uc-text">Перевозка оборудования, сырья и готовой продукции. Усиленная конструкция выдерживает интенсивную эксплуатацию в промышленных условиях.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🛒</div>
+        <div class="eq-uc-title">Торговые центры</div>
+        <div class="eq-uc-text">Доставка товаров на торговые этажи, загрузка-разгрузка в зонах приёмки. Работа в ночное время без шума для арендаторов.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d2">
+        <div class="eq-uc-icon">🏗️</div>
+        <div class="eq-uc-title">Строительные объекты</div>
+        <div class="eq-uc-text">Подъём стройматериалов, инструментов и техники. Повышенная защита от строительной пыли и механических повреждений.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════ -->
+<section class="eq-faq">
+  <div class="container">
+    <p class="section-label fi">Частые вопросы</p>
+    <h2 class="section-title fi fi-d1">FAQ по грузовым<br>лифтам Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-faq-list">
+      <div class="eq-faq-item fi">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какой максимальный размер платформы?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Размер платформы проектируется индивидуально под задачу заказчика. Стандартные варианты — до 3000×4000 мм, но возможны и нестандартные решения. Оставьте заявку с габаритами груза — инженер подберёт оптимальную конфигурацию.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d1">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Можно ли перевозить людей в грузовом лифте?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Да, в грузопассажирском исполнении. Такой лифт сертифицирован для одновременной перевозки грузов и людей. Кабина оборудована панелью управления, освещением и вентиляцией по стандартам для пассажирских лифтов.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d2">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какие требования к шахте для грузового лифта?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Размеры шахты зависят от грузоподъёмности и габаритов платформы. Для лифта на 2000 кг минимальная шахта — от 2200×2500 мм. Для нестандартных шахт подбираем конфигурацию индивидуально — инженер выедет на объект и сделает замеры.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d3">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какой срок службы грузового лифта?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Расчётный срок службы — 25 лет при соблюдении регламента обслуживания. PM-привод рассчитан на 1 000 000+ циклов. Мы предлагаем контракты на техническое обслуживание с фиксированной стоимостью для поддержания ресурса оборудования.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════ -->
+<section class="eq-cta" id="cta">
+  <div class="container">
+    <div class="eq-cta-grid">
+      <div>
+        <p class="section-label fi">Запросить расчёт</p>
+        <h2 class="eq-cta-title fi fi-d1">Подберём грузовой лифт<br><em>под вашу задачу</em></h2>
+        <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, замерит шахту и подготовит КП с фиксированной ценой за 3 рабочих дня.</p>
+        <div class="eq-cta-benefits fi fi-d2">
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Бесплатный выезд инженера
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            КП за 3 рабочих дня
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Фиксированная цена в договоре
+          </div>
+        </div>
+        <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a>
+        <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div>
+      </div>
+      <div class="eq-form fi fi-d2">
+        <div class="eq-form-title">Быстрая заявка</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="eq-form-group">
+            <label class="eq-form-label">Имя / Компания *</label>
+            <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Телефон *</label>
+            <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Описание задачи</label>
+            <textarea class="eq-form-input" name="message" placeholder="Тип груза, вес, габариты платформы, этажность, сроки..."></textarea>
+          </div>
+          <input type="hidden" name="source" value="freight">
+          <button type="submit" class="eq-form-submit">Отправить заявку →</button>
+          <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+function toggleEqFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

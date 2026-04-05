@@ -1,0 +1,483 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ElevatorSystem from '../components/ElevatorSystem.astro';
+import SectionNav from '../components/SectionNav.astro';
+import ThemeToggleScript from '../components/ThemeToggleScript.astro';
+import FadeInScript from '../components/FadeInScript.astro';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'Контакты', selector: '.hero-contacts' },
+  { id: 'form', label: 'Заявка', selector: '#form' },
+  { id: 'map', label: 'Карта', selector: '.map-section' },
+  { id: 'req', label: 'Реквизиты', selector: '.req-section' },
+];
+---
+
+<BaseLayout title="Контакты — ООО «Дельта-лифт» | Монтаж лифтов в Москве" description="Контакты ООО «Дельта-лифт»: Москва, ул. 1-я Дубровская, д.13А, стр.1 (м. Дубровка). Телефон 8 800 222-42-30 (бесплатно). Заявка на расчёт стоимости монтажа или обслуживания лифта.">
+
+<style is:global>
+/* ─── PAGE-SPECIFIC: LIGHT OVERRIDES ─────────────────── */
+[data-theme="light"] .contact-card,[data-theme="light"] .req-card{box-shadow:var(--shadow-card)}
+[data-theme="light"] .hero-bg-grid{background-image:linear-gradient(rgba(0,0,0,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,0.055) 1px,transparent 1px)}
+[data-theme="light"] .form-submit{color:#fff}
+/* ─── LAYOUT OVERRIDE ────────────────────────────────── */
+@media(min-width:1281px){body{padding-left:48px}}
+/* ─── BREADCRUMB ─────────────────────────────────────── */
+.breadcrumb a{transition:color var(--t-fast)}
+/* ─── HERO CONTACTS ──────────────────────────────────── */
+.hero-contacts{padding:140px 0 72px;position:relative;overflow:hidden}
+.hero-bg-grid{position:absolute;inset:-8%;background-image:linear-gradient(rgba(255,255,255,0.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.055) 1px,transparent 1px);background-size:64px 64px;will-change:transform}
+.hero-glow{position:absolute;width:600px;height:600px;top:-150px;right:-100px;background:radial-gradient(circle,rgba(212,135,14,0.08) 0%,transparent 70%);pointer-events:none}
+.hero-contacts-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.hero-contacts-inner{grid-template-columns:1fr}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--accent-border);background:var(--accent-dim);padding:6px 14px;border-radius:99px;font-size:11px;color:var(--accent);font-family:var(--font-display);letter-spacing:.1em;font-weight:500;margin-bottom:20px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:var(--font-display);font-size:clamp(32px,4.5vw,56px);font-weight:700;line-height:1.06;letter-spacing:-.025em;margin-bottom:20px}
+.hero-h1 em{font-style:normal;color:var(--accent)}
+.hero-desc{font-size:17px;color:var(--text-secondary);line-height:1.7;margin-bottom:32px}
+/* Quick contact tiles */
+.quick-contacts{display:flex;flex-direction:column;gap:12px}
+.qc-item{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);text-decoration:none;transition:all var(--t-base)}
+.qc-item:hover{border-color:var(--accent-border);background:var(--bg-raised);transform:translateX(4px)}
+.qc-icon{width:40px;height:40px;border-radius:var(--r-md);background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.qc-icon svg{width:18px;height:18px;color:var(--accent)}
+.qc-label{font-size:11px;color:var(--text-muted);font-family:var(--font-display);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.qc-value{font-size:17px;font-weight:600;color:var(--text-primary);font-family:var(--font-display)}
+.qc-value-sm{font-size:14px;font-weight:500;color:var(--text-primary)}
+.qc-sub{font-size:12px;color:var(--text-muted);margin-top:1px}
+/* ─── MAIN CONTENT GRID ─────────────────────────────── */
+.contacts-main{padding:0 0 88px;position:relative}
+.contacts-grid{display:grid;grid-template-columns:1fr 440px;gap:32px;align-items:start}
+@media(max-width:1000px){.contacts-grid{grid-template-columns:1fr}}
+/* ─── FORM CARD ──────────────────────────────────────── */
+.form-card{background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-2xl);padding:40px;position:relative;overflow:hidden}
+.form-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent)}
+.form-card-title{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--text-primary);margin-bottom:6px}
+.form-card-sub{font-size:14px;color:var(--text-secondary);margin-bottom:28px;line-height:1.6}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.form-grid{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:7px}
+.form-group.full{grid-column:1/-1}
+.form-label{font-size:12px;font-weight:500;color:var(--text-secondary);letter-spacing:.04em}
+.form-input{background:var(--bg-raised);border:1px solid var(--border-default);border-radius:var(--r-md);padding:12px 16px;font-family:var(--font-body);font-size:15px;color:var(--text-primary);outline:none;transition:all var(--t-fast);width:100%}
+.form-input:focus{border-color:var(--accent-border);box-shadow:0 0 0 3px var(--accent-dim)}
+.form-input::placeholder{color:var(--text-muted)}
+select.form-input{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C8A99' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+textarea.form-input{resize:vertical;min-height:120px}
+.form-hint{font-size:11px;color:var(--text-muted)}
+.form-submit{background:var(--accent);color:#09090E;padding:15px;font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:.06em;border-radius:var(--r-md);border:none;cursor:pointer;transition:all var(--t-fast);width:100%;margin-top:4px}
+.form-submit:hover{background:var(--accent-bright);transform:translateY(-1px)}
+.form-privacy{font-size:11px;color:var(--text-muted);text-align:center;margin-top:10px;line-height:1.5}
+.form-privacy a{color:var(--accent);text-decoration:none}
+/* ─── SIDEBAR CARDS ──────────────────────────────────── */
+.sidebar-stack{display:flex;flex-direction:column;gap:16px}
+.contact-card{background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:24px;transition:border-color var(--t-base)}
+.contact-card:hover{border-color:var(--border-default)}
+.cc-title{font-family:var(--font-display);font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
+.cc-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.cc-row:last-child{margin-bottom:0}
+.cc-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:8px}
+.cc-text{font-size:14px;color:var(--text-secondary);line-height:1.5}
+.cc-text strong{color:var(--text-primary);display:block;font-weight:500}
+.cc-phone{font-family:var(--font-display);font-size:18px;font-weight:600;color:var(--text-primary);text-decoration:none;display:block;margin-bottom:4px;transition:color var(--t-fast)}
+.cc-phone:hover{color:var(--accent)}
+.cc-phone-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--success);font-family:var(--font-display);font-weight:500;letter-spacing:.06em;padding:3px 10px;background:var(--success-dim);border:1px solid rgba(45,155,107,0.22);border-radius:99px}
+/* Work hours */
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hours-item{background:var(--bg-raised);border-radius:var(--r-md);padding:10px 12px}
+.hours-days{font-size:11px;color:var(--text-muted);font-family:var(--font-display);font-weight:500;letter-spacing:.06em;margin-bottom:2px}
+.hours-time{font-size:13px;font-weight:500;color:var(--text-primary)}
+.hours-note{font-size:11px;color:var(--text-muted);margin-top:10px;line-height:1.5}
+/* ─── MAP SECTION ────────────────────────────────────── */
+.map-section{padding:0 0 88px;position:relative}
+.map-inner{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start}
+@media(max-width:900px){.map-inner{grid-template-columns:1fr}}
+.map-frame{border-radius:var(--r-2xl);overflow:hidden;border:1px solid var(--border-dim);background:var(--bg-surface);height:420px;position:relative;display:flex;align-items:center;justify-content:center}
+.map-placeholder{text-align:center}
+.map-placeholder-icon{font-size:48px;margin-bottom:16px;display:block}
+.map-placeholder-text{font-family:var(--font-display);font-size:13px;color:var(--text-muted);margin-bottom:8px}
+.map-placeholder-sub{font-size:12px;color:var(--text-muted)}
+/* Directions card */
+.directions-card{background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-2xl);padding:28px}
+.dir-title{font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:20px}
+.dir-item{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+.dir-item:last-child{margin-bottom:0}
+.dir-icon{width:36px;height:36px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;background:var(--bg-raised);border:1px solid var(--border-dim)}
+.dir-label{font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:3px}
+.dir-desc{font-size:12px;color:var(--text-muted);line-height:1.5}
+/* ─── REQUISITES ─────────────────────────────────────── */
+.req-section{background:var(--bg-surface);border-top:1px solid var(--border-dim);border-bottom:1px solid var(--border-dim);padding:72px 0}
+.req-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+@media(max-width:900px){.req-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.req-grid{grid-template-columns:1fr}}
+.req-card{background:var(--bg-raised);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:20px}
+.req-label{font-size:10px;font-family:var(--font-display);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
+.req-value{font-size:14px;color:var(--text-primary);font-weight:500;line-height:1.4}
+.req-value-mono{font-family:var(--font-display);font-size:13px;color:var(--text-primary);letter-spacing:.04em}
+</style>
+
+<Header activePage="contacts" ctaHref="#form" />
+
+<SectionNav sections={sectionNavItems} />
+
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════ -->
+<section class="hero-contacts" style="position:relative;overflow:hidden">
+  <div class="hero-bg-grid" id="pg"></div>
+  <div class="hero-glow"></div>
+
+  <!-- Blueprint: address pin schematic -->
+  <div style="position:absolute;right:8%;bottom:-20px;opacity:.10;pointer-events:none;user-select:none;color:var(--text-primary)">
+    <svg width="200" height="240" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width=".8" font-family="monospace">
+      <!-- Building outline -->
+      <rect x="40" y="60" width="120" height="160" stroke-width="1.2"/>
+      <!-- Floors -->
+      <line x1="40" y1="100" x2="160" y2="100"/>
+      <line x1="40" y1="132" x2="160" y2="132"/>
+      <line x1="40" y1="164" x2="160" y2="164"/>
+      <line x1="40" y1="196" x2="160" y2="196"/>
+      <!-- Entrance -->
+      <rect x="80" y="200" width="40" height="20" stroke-width="1.2"/>
+      <!-- Shaft in building -->
+      <rect x="130" y="60" width="30" height="160" stroke-width="1.4"/>
+      <text x="145" y="58" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ЛФТ</text>
+      <!-- Windows -->
+      <rect x="50" y="70" width="20" height="18"/><rect x="80" y="70" width="20" height="18"/>
+      <rect x="50" y="108" width="20" height="18"/><rect x="80" y="108" width="20" height="18"/>
+      <rect x="50" y="140" width="20" height="18"/><rect x="80" y="140" width="20" height="18"/>
+      <rect x="50" y="172" width="20" height="18"/><rect x="80" y="172" width="20" height="18"/>
+      <!-- Pin / marker -->
+      <circle cx="100" cy="26" r="16" stroke-width="1.2"/>
+      <circle cx="100" cy="26" r="5" stroke-width="1"/>
+      <line x1="100" y1="42" x2="100" y2="60" stroke-dasharray="2 2"/>
+      <line x1="84" y1="26" x2="116" y2="26" stroke-dasharray="2 2" stroke-width=".5"/>
+      <line x1="100" y1="10" x2="100" y2="42" stroke-dasharray="2 2" stroke-width=".5"/>
+      <!-- Address annotation -->
+      <text x="100" y="8" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">1-Я ДУБРОВСКАЯ 13А</text>
+      <!-- Floors annotation -->
+      <text x="175" y="85" font-size="7" fill="currentColor" stroke="none" transform="rotate(90,175,85)">ОФ.19</text>
+      <!-- Distance markers -->
+      <text x="20" y="223" font-size="6" fill="currentColor" stroke="none">M ДУБРОВКА — 5 МИН</text>
+    </svg>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span><span>Контакты</span>
+    </nav>
+    <div class="hero-contacts-inner">
+      <div>
+        <div class="hero-badge fi fi-d1"><div class="badge-dot"></div>МОСКВА · С 2003 ГОДА</div>
+        <h1 class="hero-h1 fi fi-d1">Свяжитесь<br>с нами —<br><em>ответим за 24 ч</em></h1>
+        <p class="hero-desc fi fi-d2">Выезд инженера бесплатно. КП с фиксированной ценой за 3 рабочих дня. Работаем по Москве и МО, крупные объекты — по всей России.</p>
+        <div class="quick-contacts fi fi-d3">
+          <a href="tel:+78002224230" class="qc-item">
+            <div class="qc-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h4l2 4-2 2c1 2 3 4 5 5l2-2 4 2v4a1 1 0 01-1 1C7 18 1 11 1 4a1 1 0 011-1z"/></svg></div>
+            <div>
+              <div class="qc-label">Телефон</div>
+              <div class="qc-value">8 800 222-42-30</div>
+              <div class="qc-sub">бесплатно по России · пн–пт 9:00–18:00</div>
+            </div>
+          </a>
+          <a href="mailto:deltalift@mail.ru" class="qc-item">
+            <div class="qc-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="14" height="10" rx="1.5"/><path d="M2 5l7 5 7-5"/></svg></div>
+            <div>
+              <div class="qc-label">Email</div>
+              <div class="qc-value-sm">deltalift@mail.ru</div>
+              <div class="qc-sub">ответ в течение рабочего дня</div>
+            </div>
+          </a>
+          <a href="https://yandex.ru/maps/?text=Москва+1-я+Дубровская+13А+стр.1" target="_blank" rel="noopener" class="qc-item">
+            <div class="qc-icon"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 1C6.2 1 4 3.2 4 6c0 4 5 11 5 11s5-7 5-11c0-2.8-2.2-5-5-5z"/><circle cx="9" cy="6" r="2"/></svg></div>
+            <div>
+              <div class="qc-label">Адрес офиса</div>
+              <div class="qc-value-sm">Москва, ул. 1-я Дубровская, д.13А, стр.1</div>
+              <div class="qc-sub">оф.19 · м. Дубровка, 5 мин</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Stats mini -->
+      <div class="fi fi-d2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:20px">
+            <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text-primary);line-height:1"><span class="sn-val">23</span><span class="sn-sfx" style="color:var(--accent)">г</span></div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:6px">на рынке</div>
+          </div>
+          <div style="background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:20px">
+            <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text-primary);line-height:1"><span class="sn-val">340</span><span class="sn-sfx" style="color:var(--accent)">+</span></div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:6px">объектов</div>
+          </div>
+          <div style="background:var(--bg-surface);border:1px solid var(--border-dim);border-radius:var(--r-xl);padding:20px">
+            <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text-primary);line-height:1"><span class="sn-val">48</span><span class="sn-sfx" style="color:var(--accent)">ч</span></div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:6px">выезд инженера</div>
+          </div>
+          <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--r-xl);padding:20px">
+            <div style="font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--accent);line-height:1.3">Бесплатная консультация</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:6px">без обязательств</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAIN FORM + CONTACTS ═════════════════════════ -->
+<section class="contacts-main" id="form">
+  <div class="container">
+    <div class="contacts-grid">
+
+      <!-- FORM -->
+      <div class="form-card fi">
+        <div class="form-card-title">Заявка на расчёт</div>
+        <div class="form-card-sub">Опишите задачу — инженер перезвонит и назначит выезд. Выезд на объект бесплатный.</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">Имя / Компания *</label>
+              <input type="text" class="form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Телефон *</label>
+              <input type="tel" class="form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-input" name="email" placeholder="info@company.ru">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Тип объекта</label>
+              <select class="form-input" name="type">
+                <option value="">Выберите</option>
+                <option>Жилой дом / МКД</option>
+                <option>Административное здание</option>
+                <option>Торговый центр</option>
+                <option>Медицинский объект</option>
+                <option>Историческое здание</option>
+                <option>Промышленный объект</option>
+                <option>Частный дом</option>
+                <option>Другое</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Тип работ</label>
+              <select class="form-input" name="work_type">
+                <option value="">Выберите</option>
+                <option>Монтаж нового лифта</option>
+                <option>Замена / модернизация</option>
+                <option>Строительство шахты</option>
+                <option>Техническое обслуживание</option>
+                <option>Аварийный ремонт</option>
+                <option>Проектирование</option>
+                <option>Консультация</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Этажность</label>
+              <input type="text" class="form-input" name="floors" placeholder="Например: 9 этажей">
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Описание задачи</label>
+              <textarea class="form-input" name="message" placeholder="Расскажите об объекте: адрес, размеры шахты, грузоподъёмность, сроки, особенности..."></textarea>
+              <span class="form-hint">Чем подробнее — тем точнее будет расчёт</span>
+            </div>
+            <div class="form-group full">
+              <button type="submit" class="form-submit">Отправить заявку →</button>
+              <p class="form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar-stack fi fi-d1">
+
+        <!-- Phone card -->
+        <div class="contact-card">
+          <div class="cc-title">Телефон</div>
+          <a href="tel:+78002224230" class="cc-phone">8 800 222-42-30</a>
+          <div class="cc-phone-badge" style="margin-bottom:14px">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg>
+            Бесплатно по России
+          </div>
+          <div class="cc-row"><div class="cc-dot"></div><div class="cc-text"><strong>+7 (495) 649-67-72</strong>Прямая линия · Москва</div></div>
+          <div class="cc-row"><div class="cc-dot"></div><div class="cc-text"><strong>deltalift@mail.ru</strong>Email для заявок</div></div>
+        </div>
+
+        <!-- Address card -->
+        <div class="contact-card">
+          <div class="cc-title">Адрес офиса</div>
+          <div class="cc-row">
+            <div class="cc-dot"></div>
+            <div class="cc-text">
+              <strong>г. Москва</strong>
+              ул. 1-я Дубровская, д.13А, стр.1, оф.19
+            </div>
+          </div>
+          <div class="cc-row">
+            <div class="cc-dot"></div>
+            <div class="cc-text"><strong>м. Дубровка</strong>5 минут пешком</div>
+          </div>
+          <div class="cc-row">
+            <div class="cc-dot"></div>
+            <div class="cc-text"><strong>м. Кожуховская</strong>10 минут пешком</div>
+          </div>
+          <a href="https://yandex.ru/maps/?text=Москва+1-я+Дубровская+13А+стр.1" target="_blank" rel="noopener" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:14px;font-size:13px">Открыть на карте →</a>
+        </div>
+
+        <!-- Work hours -->
+        <div class="contact-card">
+          <div class="cc-title">Режим работы</div>
+          <div class="hours-grid">
+            <div class="hours-item">
+              <div class="hours-days">ПН — ПТ</div>
+              <div class="hours-time">9:00 — 18:00</div>
+            </div>
+            <div class="hours-item">
+              <div class="hours-days">СБ — ВС</div>
+              <div class="hours-time" style="color:var(--text-muted)">Выходной</div>
+            </div>
+          </div>
+          <div class="hours-note">⚡ Аварийные выезды — круглосуточно по отдельному договору ТО</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MAP ═══════════════════════════════════════════ -->
+<section class="map-section">
+  <div class="container">
+    <p class="section-label fi">Как добраться</p>
+    <h2 class="section-title fi fi-d1">Офис рядом<br>с м. Дубровка</h2>
+    <div class="divider"></div>
+    <div class="map-inner fi fi-d1">
+      <div class="map-frame">
+        <!-- Yandex Maps embed — 1-я Дубровская 13А стр.1 -->
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=37.674984%2C55.722801&z=17&pt=37.674984%2C55.722801,pm2am"
+          width="100%" height="100%"
+          style="border:none;display:block"
+          allowfullscreen
+          loading="lazy"
+          title="Офис Дельта-лифт на карте — ул. 1-я Дубровская, д.13А, стр.1"
+        ></iframe>
+      </div>
+      <div class="directions-card fi fi-d2">
+        <div class="dir-title">Как нас найти</div>
+        <div class="dir-item">
+          <div class="dir-icon">🚇</div>
+          <div>
+            <div class="dir-label">м. Дубровка</div>
+            <div class="dir-desc">Люблинско-Дмитровская линия. Выход в сторону ул. 1-я Дубровская, 5 минут пешком.</div>
+          </div>
+        </div>
+        <div class="dir-item">
+          <div class="dir-icon">🚇</div>
+          <div>
+            <div class="dir-label">м. Кожуховская</div>
+            <div class="dir-desc">Люблинско-Дмитровская линия. 10 минут пешком по ул. Дубровская.</div>
+          </div>
+        </div>
+        <div class="dir-item">
+          <div class="dir-icon">🚗</div>
+          <div>
+            <div class="dir-label">На автомобиле</div>
+            <div class="dir-desc">Заезд со стороны ул. 1-я Дубровская. Парковка на территории.</div>
+          </div>
+        </div>
+        <div class="dir-item">
+          <div class="dir-icon">🚌</div>
+          <div>
+            <div class="dir-label">Наземный транспорт</div>
+            <div class="dir-desc">Остановка «Дубровская улица» — автобусы по Шарикоподшипниковской ул.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REQUISITES ════════════════════════════════════ -->
+<section class="req-section">
+  <div class="container">
+    <p class="section-label fi">Реквизиты</p>
+    <h2 class="section-title fi fi-d1">Юридические данные<br>компании</h2>
+    <div class="req-grid">
+      <div class="req-card fi">
+        <div class="req-label">Полное наименование</div>
+        <div class="req-value">Общество с ограниченной ответственностью «Дельта-лифт»</div>
+      </div>
+      <div class="req-card fi fi-d1">
+        <div class="req-label">Краткое наименование</div>
+        <div class="req-value">ООО «Дельта-лифт»</div>
+      </div>
+      <div class="req-card fi fi-d2">
+        <div class="req-label">Руководитель</div>
+        <div class="req-value">Усачев Юрий Игоревич<br><span style="font-size:12px;color:var(--text-muted)">Генеральный директор</span></div>
+      </div>
+      <div class="req-card fi fi-d1">
+        <div class="req-label">ОГРН</div>
+        <div class="req-value-mono">1037702013997</div>
+      </div>
+      <div class="req-card fi fi-d2">
+        <div class="req-label">ИНН / КПП</div>
+        <div class="req-value-mono">Уточняется при выставлении счёта</div>
+      </div>
+      <div class="req-card fi fi-d3">
+        <div class="req-label">Фактический адрес</div>
+        <div class="req-value">г. Москва, ул. 1-я Дубровская,<br>д.13А, стр.1, оф.19</div>
+      </div>
+      <div class="req-card fi fi-d3">
+        <div class="req-label">Юридический адрес</div>
+        <div class="req-value">г. Москва, ул. Кузнецкий Мост,<br>д.21/5, эт.6, пом.V, комн.5</div>
+      </div>
+      <div class="req-card fi fi-d2">
+        <div class="req-label">Год регистрации</div>
+        <div class="req-value-mono">2003</div>
+      </div>
+      <div class="req-card fi fi-d3">
+        <div class="req-label">Работаем по</div>
+        <div class="req-value">44-ФЗ (госзакупки),<br>223-ФЗ, прямые договоры</div>
+      </div>
+      <div class="req-card fi fi-d4">
+        <div class="req-label">Лицензии / Допуски</div>
+        <div class="req-value">СРО на монтаж лифтов,<br>допуск Ростехнадзора</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<!-- Page-specific scripts -->
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  // ── HERO PARALLAX ─────────────────────────────────────
+  var pg = document.getElementById('pg');
+  var tick = false;
+  window.addEventListener('scroll', function() {
+    if (!tick) {
+      requestAnimationFrame(function() {
+        if (pg) pg.style.transform = 'translateY(' + (window.scrollY * 0.12) + 'px)';
+        tick = false;
+      });
+      tick = true;
+    }
+  }, { passive: true });
+});
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

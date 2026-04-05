@@ -1,0 +1,61 @@
+---
+interface Props {
+  sections: { id: string; label: string; selector?: string }[];
+}
+
+const { sections } = Astro.props;
+---
+
+<nav class="section-nav" id="sectionNav" aria-hidden="true">
+  {sections.map((section, i) => (
+    <>
+      <div class={`section-nav-line${i === 0 ? ' active' : ''}`} id={`snl${i}`}></div>
+      <div class={`section-nav-dot${i === 0 ? ' active' : ''}`} id={`snd${i}`}>
+        <div class="section-nav-dot-inner"></div>
+        <span class="section-nav-label">{section.label}</span>
+      </div>
+    </>
+  ))}
+  <div class="section-nav-line" id={`snl${sections.length}`}></div>
+</nav>
+
+<script is:inline define:vars={{ sections }}>
+document.addEventListener('DOMContentLoaded',function(){
+  var navDots=document.querySelectorAll('.section-nav-dot');
+  var navLines=document.querySelectorAll('.section-nav-line');
+  var sectionSelectors=sections.map(function(s){return s.selector||('.'+s.id+',#'+s.id)});
+
+  var sectionEls=sectionSelectors.map(function(sel){
+    var el=document.querySelector(sel);
+    return el?(el.closest('section')||el):null;
+  }).filter(Boolean);
+
+  if(sectionEls.length===0) return;
+
+  var activeIdx=0;
+  function setActive(idx){
+    if(idx===activeIdx&&idx!==0) return;
+    activeIdx=idx;
+    navDots.forEach(function(d,i){d.classList.toggle('active',i===idx)});
+    navLines.forEach(function(l,i){l.classList.toggle('active',i<=idx)});
+  }
+
+  function updateNav(){
+    var bestIdx=activeIdx,bestDist=Infinity;
+    sectionEls.forEach(function(el,i){
+      var r=el.getBoundingClientRect();
+      var mid=r.top+r.height/2;
+      var dist=Math.abs(mid-window.innerHeight/2);
+      if(dist<bestDist&&r.top<window.innerHeight&&r.bottom>0){bestDist=dist;bestIdx=i;}
+    });
+    setActive(bestIdx);
+  }
+
+  var raf=null;
+  window.addEventListener('scroll',function(){
+    if(!raf) raf=requestAnimationFrame(function(){updateNav();raf=null;});
+  },{passive:true});
+
+  updateNav();
+});
+</script>

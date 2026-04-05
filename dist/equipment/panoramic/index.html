@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="ru"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Панорамные лифты Sanyo — стеклянные кабины | Дельта-лифт</title><meta name="description" content="Панорамные лифты Sanyo: стеклянные кабины, индивидуальное проектирование под архитектуру объекта. Для торговых и бизнес-центров, отелей."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/_astro/BaseLayout.DcfiHcqe.css">
+<style>.elev-car-display[data-astro-cid-v77xh2lf]{position:absolute;left:50%;transform:translate(-50%);bottom:calc(100% + 4px);width:44px;display:flex;flex-direction:column;align-items:center;gap:1px;z-index:15;pointer-events:none}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-num[data-astro-cid-v77xh2lf]{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--accent);line-height:1;text-shadow:0 0 12px rgba(212,135,14,.6),0 0 4px rgba(212,135,14,.4)}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-arrow[data-astro-cid-v77xh2lf]{font-size:10px;line-height:1;transition:color .25s}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-arrow[data-astro-cid-v77xh2lf].up{color:var(--success)}.elev-car-display[data-astro-cid-v77xh2lf] .elev-floor-arrow[data-astro-cid-v77xh2lf].down{color:#e53e3e}.elev-cw-ropes[data-astro-cid-v77xh2lf]{position:absolute;left:50%;transform:translate(-4px);width:8px;top:36px;display:flex;justify-content:space-between;will-change:height;z-index:3;opacity:.75}
+</style>
+<link rel="stylesheet" href="/_astro/equipment.gCcoWwHR.css"></head> <body>  <header class="site-header"> <a href="/" class="site-logo">DELTA<span>.</span>ELEVATORS</a> <nav class="site-nav hide-mob"> <a href="/equipment/" class="active">Оборудование</a><a href="/services/" class>Услуги</a><a href="/nonstandard/" class>Нестандартные шахты</a><a href="/projects/" class>Проекты</a><a href="/sanyo/" class>Sanyo</a><a href="/contacts/" class>Контакты</a> </nav> <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()"> <span class="theme-toggle-label hide-mob" id="themeLabel">Тёмная</span> <div class="theme-toggle-pill"> <div class="theme-toggle-thumb" id="themeThumb"> <svg id="iconMoon" viewBox="0 0 9 9" fill="currentColor" style="color:var(--bg-base)"><path d="M4.5 0a4.5 4.5 0 100 9 3.5 3.5 0 010-7 4.5 4.5 0 000 0z"></path></svg> <svg id="iconSun" viewBox="0 0 9 9" fill="none" stroke="currentColor" stroke-width="1" style="color:var(--bg-base);display:none"><circle cx="4.5" cy="4.5" r="1.8" fill="currentColor"></circle><line x1="4.5" y1=".5" x2="4.5" y2="1.8"></line><line x1="4.5" y1="7.2" x2="4.5" y2="8.5"></line><line x1=".5" y1="4.5" x2="1.8" y2="4.5"></line><line x1="7.2" y1="4.5" x2="8.5" y2="4.5"></line></svg> </div> </div> </div> <a href="#cta" class="btn btn-primary" style="margin-left:8px">Получить расчёт</a> </header> <nav class="section-nav" id="sectionNav" aria-hidden="true">  <div class="section-nav-line active" id="snl0"></div> <div class="section-nav-dot active" id="snd0"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">О лифте</span> </div>  <div class="section-nav-line" id="snl1"></div> <div class="section-nav-dot" id="snd1"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Особенности</span> </div>  <div class="section-nav-line" id="snl2"></div> <div class="section-nav-dot" id="snd2"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Характеристики</span> </div>  <div class="section-nav-line" id="snl3"></div> <div class="section-nav-dot" id="snd3"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Применение</span> </div>  <div class="section-nav-line" id="snl4"></div> <div class="section-nav-dot" id="snd4"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">FAQ</span> </div>  <div class="section-nav-line" id="snl5"></div> <div class="section-nav-dot" id="snd5"> <div class="section-nav-dot-inner"></div> <span class="section-nav-label">Заявка</span> </div>  <div class="section-nav-line" id="snl6"></div> </nav> <script>(function(){const sections = [{"id":"hero","label":"О лифте","selector":".eq-hero"},{"id":"features","label":"Особенности","selector":".eq-features"},{"id":"specs","label":"Характеристики","selector":".eq-specs"},{"id":"usecases","label":"Применение","selector":".eq-usecases"},{"id":"faq","label":"FAQ","selector":".eq-faq"},{"id":"cta","label":"Заявка","selector":".eq-cta"}];
+
+document.addEventListener('DOMContentLoaded',function(){
+  var navDots=document.querySelectorAll('.section-nav-dot');
+  var navLines=document.querySelectorAll('.section-nav-line');
+  var sectionSelectors=sections.map(function(s){return s.selector||('.'+s.id+',#'+s.id)});
+
+  var sectionEls=sectionSelectors.map(function(sel){
+    var el=document.querySelector(sel);
+    return el?(el.closest('section')||el):null;
+  }).filter(Boolean);
+
+  if(sectionEls.length===0) return;
+
+  var activeIdx=0;
+  function setActive(idx){
+    if(idx===activeIdx&&idx!==0) return;
+    activeIdx=idx;
+    navDots.forEach(function(d,i){d.classList.toggle('active',i===idx)});
+    navLines.forEach(function(l,i){l.classList.toggle('active',i<=idx)});
+  }
+
+  function updateNav(){
+    var bestIdx=activeIdx,bestDist=Infinity;
+    sectionEls.forEach(function(el,i){
+      var r=el.getBoundingClientRect();
+      var mid=r.top+r.height/2;
+      var dist=Math.abs(mid-window.innerHeight/2);
+      if(dist<bestDist&&r.top<window.innerHeight&&r.bottom>0){bestDist=dist;bestIdx=i;}
+    });
+    setActive(bestIdx);
+  }
+
+  var raf=null;
+  window.addEventListener('scroll',function(){
+    if(!raf) raf=requestAnimationFrame(function(){updateNav();raf=null;});
+  },{passive:true});
+
+  updateNav();
+});
+})();</script> <div class="elev-system" data-astro-cid-v77xh2lf> <!-- Call buttons --> <div class="elev-call-panel" data-astro-cid-v77xh2lf> <div class="elev-call-btn" id="callUp" data-astro-cid-v77xh2lf> <span class="elev-call-btn-label" data-astro-cid-v77xh2lf>ВВЕРХ</span> <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-astro-cid-v77xh2lf><path d="M6 9V3M3 6l3-3 3 3" data-astro-cid-v77xh2lf></path></svg> </div> <div class="elev-call-btn" id="callDown" data-astro-cid-v77xh2lf> <span class="elev-call-btn-label" data-astro-cid-v77xh2lf>ВНИЗ</span> <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-astro-cid-v77xh2lf><path d="M6 3v6M3 6l3 3 3-3" data-astro-cid-v77xh2lf></path></svg> </div> </div> <!-- Left-edge fade --> <div class="elev-fade" data-astro-cid-v77xh2lf></div> <!-- Shaft --> <div class="elev-wrap" id="elevWrap" data-astro-cid-v77xh2lf> <div class="elev-shaft-outer" data-astro-cid-v77xh2lf></div> <div class="elev-shaft-inner" data-astro-cid-v77xh2lf></div> <div class="elev-sheave-wrap" data-astro-cid-v77xh2lf><div class="elev-sheave" data-astro-cid-v77xh2lf></div></div> <div class="elev-rail-l-el" data-astro-cid-v77xh2lf><div class="elev-rail-stem" data-astro-cid-v77xh2lf></div></div> <div class="elev-rail-r-el" data-astro-cid-v77xh2lf><div class="elev-rail-stem" data-astro-cid-v77xh2lf></div></div> <div class="elev-pit" data-astro-cid-v77xh2lf> <div class="elev-buffer" data-astro-cid-v77xh2lf><div class="elev-buffer-spring" data-astro-cid-v77xh2lf></div><div class="elev-buffer-base" data-astro-cid-v77xh2lf></div></div> <div class="elev-buffer" data-astro-cid-v77xh2lf><div class="elev-buffer-spring" data-astro-cid-v77xh2lf></div><div class="elev-buffer-base" data-astro-cid-v77xh2lf></div></div> </div> <div class="elev-ropes" id="elevRopes" data-astro-cid-v77xh2lf> <div class="elev-rope" data-astro-cid-v77xh2lf></div> <div class="elev-rope" data-astro-cid-v77xh2lf></div> <div class="elev-rope" data-astro-cid-v77xh2lf></div> </div> <div class="elev-car" id="elevCar" data-astro-cid-v77xh2lf> <!-- Floor display — mounted on the car, moves with it --> <div class="elev-car-display" id="elevCarDisplay" data-astro-cid-v77xh2lf> <div class="elev-floor-arrow" id="elevArrow" data-astro-cid-v77xh2lf>&#9679;</div> <div class="elev-floor-num" id="elevFloor" data-astro-cid-v77xh2lf>1</div> </div> <div class="elev-sling-top" data-astro-cid-v77xh2lf></div> <div class="elev-sling-side elev-sling-side-l" id="elevSlingL" data-astro-cid-v77xh2lf></div> <div class="elev-sling-side elev-sling-side-r" id="elevSlingR" data-astro-cid-v77xh2lf></div> <div class="elev-car-body" id="elevBody" data-astro-cid-v77xh2lf> <div class="elev-doors" id="elevDoors" data-astro-cid-v77xh2lf> <div class="elev-door" data-astro-cid-v77xh2lf></div> <div class="elev-door" data-astro-cid-v77xh2lf></div> </div> <div class="elev-door-gap" id="elevGap" data-astro-cid-v77xh2lf></div> <div class="elev-cop" data-astro-cid-v77xh2lf> <div class="elev-cop-btn lit" id="elevBtn1" data-astro-cid-v77xh2lf></div> <div class="elev-cop-btn" id="elevBtn2" data-astro-cid-v77xh2lf></div> <div class="elev-cop-btn" id="elevBtn3" data-astro-cid-v77xh2lf></div> </div> <div class="elev-interior" data-astro-cid-v77xh2lf> <div class="elev-handrail" data-astro-cid-v77xh2lf></div> <div class="elev-handrail" data-astro-cid-v77xh2lf></div> </div> </div> <div class="elev-sill" data-astro-cid-v77xh2lf></div> <div class="elev-sling-bot" data-astro-cid-v77xh2lf></div> </div> <div class="elev-cw-ropes" id="elevCWRopes" data-astro-cid-v77xh2lf> <div class="elev-rope" data-astro-cid-v77xh2lf></div> <div class="elev-rope" data-astro-cid-v77xh2lf></div> </div> <div class="elev-cw" id="elevCW" data-astro-cid-v77xh2lf> <div class="elev-cw-beam" data-astro-cid-v77xh2lf></div> <div class="elev-cw-weight" data-astro-cid-v77xh2lf> <div class="elev-cw-plate" data-astro-cid-v77xh2lf></div><div class="elev-cw-plate" data-astro-cid-v77xh2lf></div> <div class="elev-cw-plate" data-astro-cid-v77xh2lf></div><div class="elev-cw-plate" data-astro-cid-v77xh2lf></div> <div class="elev-cw-plate" data-astro-cid-v77xh2lf></div> </div> <div class="elev-cw-beam" data-astro-cid-v77xh2lf></div> </div> <div class="elev-pct" id="elevPct" data-astro-cid-v77xh2lf>0%</div> </div> </div>  <script>
+(function(){
+  var wrap=document.getElementById('elevWrap'),car=document.getElementById('elevCar'),
+      ropes=document.getElementById('elevRopes'),cw=document.getElementById('elevCW'),
+      pctEl=document.getElementById('elevPct'),cwRopes=document.getElementById('elevCWRopes'),
+      floorEl=document.getElementById('elevFloor'),
+      arrowEl=document.getElementById('elevArrow'),callUp=document.getElementById('callUp'),
+      callDown=document.getElementById('callDown'),body_el=document.getElementById('elevBody'),
+      slingL=document.getElementById('elevSlingL'),slingR=document.getElementById('elevSlingR'),
+      gap=document.getElementById('elevGap');
+  if(!wrap||!car) return;
+
+  var SHEAVE_Y=36,CAR_TOT=98,BODY_H=76,DOOR_H=48,CAP_T=52,CAP_B=52,FLOORS=9;
+  var raf=null,lastPct=0,callTimer=null;
+
+  if(body_el) body_el.style.height=BODY_H+'px';
+  var doors=document.getElementById('elevDoors');
+  if(doors) doors.style.height=DOOR_H+'px';
+  if(gap) gap.style.height=DOOR_H+'px';
+  var slingH=BODY_H+3;
+  if(slingL) slingL.style.height=slingH+'px';
+  if(slingR) slingR.style.height=slingH+'px';
+
+  function buildBrackets(){
+    wrap.querySelectorAll('.elev-bracket').forEach(function(b){b.remove()});
+    for(var y=80;y<window.innerHeight-60;y+=90){
+      ['elev-bracket-l','elev-bracket-r'].forEach(function(cls){
+        var b=document.createElement('div');
+        b.className='elev-bracket '+cls;
+        b.style.top=y+'px';
+        wrap.appendChild(b);
+      });
+    }
+  }
+  buildBrackets();
+
+  function update(){
+    var docH=document.documentElement.scrollHeight-window.innerHeight;
+    var pct=docH>0?Math.min(1,window.scrollY/docH):0;
+    var wrapH=wrap.clientHeight;
+    var travel=wrapH-CAP_T-CAP_B-CAR_TOT;
+    var carTop=CAP_T+pct*travel;
+    car.style.top=carTop+'px';
+    var ropeH=Math.max(0,carTop-SHEAVE_Y);
+    ropes.style.height=ropeH+'px';
+    ropes.querySelectorAll('.elev-rope').forEach(function(r){r.style.height='100%'});
+    var cwH=55,cwTravel=wrapH-CAP_T-CAP_B-cwH;
+    var cwTop=CAP_T+(1-pct)*cwTravel;
+    cw.style.top=cwTop+'px';
+    if(cwRopes){var cwRopeH=Math.max(0,cwTop-SHEAVE_Y);cwRopes.style.height=cwRopeH+'px';cwRopes.querySelectorAll('.elev-rope').forEach(function(r){r.style.height='100%'});}
+    var floor=Math.max(1,Math.round((1-pct)*FLOORS));
+    if(floorEl) floorEl.textContent=floor;
+    var btns=document.querySelectorAll('.elev-cop-btn');
+    btns.forEach(function(b,i){
+      b.classList.toggle('lit',i===0&&floor<=3||i===1&&floor>3&&floor<=6||i===2&&floor>6);
+    });
+    var dir=pct-lastPct;
+    if(Math.abs(dir)>0.001){
+      var goingDown=dir>0;
+      if(callUp) callUp.classList.toggle('active',!goingDown);
+      if(callDown) callDown.classList.toggle('active',goingDown);
+      if(arrowEl){
+        arrowEl.textContent=goingDown?'\u25BC':'\u25B2';
+        arrowEl.className='elev-floor-arrow '+(goingDown?'down':'up');
+      }
+      clearTimeout(callTimer);
+      callTimer=setTimeout(function(){
+        if(callUp) callUp.classList.remove('active');
+        if(callDown) callDown.classList.remove('active');
+        if(arrowEl){arrowEl.textContent='\u25CF';arrowEl.className='elev-floor-arrow';}
+      },800);
+    }
+    if(pctEl) pctEl.textContent=Math.round(pct*100)+'%';
+    lastPct=pct;
+    raf=null;
+  }
+
+  window.addEventListener('scroll',function(){
+    if(!raf) raf=requestAnimationFrame(update);
+  },{passive:true});
+  window.addEventListener('resize',function(){buildBrackets();requestAnimationFrame(update);});
+  requestAnimationFrame(update);
+})();
+</script> <main> <!-- ═══ HERO ══════════════════════════════════════════════ --> <section class="eq-hero"> <div class="eq-hero-grid" id="pg"></div> <div class="eq-hero-glow"></div> <!-- Blueprint: plan-view cabin outlines with glass panels --> <div class="bp" style="right:6%;bottom:0;opacity:.08"> <svg width="200" height="240" viewBox="0 0 200 240" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace"> <text x="100" y="15" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ПЛАН КАБИН — ВИД СВЕРХУ</text> <!-- rectangular cabin --> <rect x="20" y="30" width="70" height="60" stroke-width="1"></rect> <line x1="20" y1="50" x2="20" y2="70" stroke-width="1.5" stroke-dasharray="3 1"></line> <rect x="25" y="35" width="60" height="50" stroke-dasharray="2 2" stroke-width=".5"></rect> <text x="55" y="65" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ПРЯМОУГ.</text> <!-- semicircular cabin --> <rect x="110" y="30" width="70" height="60" stroke-width="1"></rect> <path d="M180 35 A30 25 0 0 1 180 85" stroke-width="1.2" stroke-dasharray="3 1"></path> <text x="145" y="65" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ПОЛУКРУГ</text> <!-- circular cabin --> <circle cx="65" cy="160" r="35" stroke-width="1"></circle> <circle cx="65" cy="160" r="30" stroke-dasharray="2 2" stroke-width=".5"></circle> <text x="65" y="163" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">КРУГЛАЯ</text> <!-- glass notation --> <line x1="130" y1="130" x2="170" y2="130" stroke-width="1.2" stroke-dasharray="3 1"></line> <text x="150" y="142" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">── СТЕКЛО</text> <text x="150" y="155" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">10–12 ММ</text> <!-- shaft outline --> <rect x="120" y="165" width="60" height="50" stroke-width=".8" stroke-dasharray="4 2"></rect> <text x="150" y="193" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ШАХТА</text> <text x="100" y="235" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ФАСАДНЫЙ / АТРИУМНЫЙ МОНТАЖ</text> </svg> </div> <div class="container"> <nav class="breadcrumb fi"> <a href="/">Главная</a><span style="opacity:.4">›</span> <a href="/equipment/">Оборудование</a><span style="opacity:.4">›</span> <span>Панорамные лифты</span> </nav> <div class="eq-hero-inner"> <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>ПАНОРАМНЫЕ ЛИФТЫ SANYO</div> <h1 class="eq-h1 fi fi-d1">Панорамные лифты <em>Sanyo</em> — архитектурный акцент вашего объекта</h1> <p class="eq-desc fi fi-d2">Стеклянные кабины с индивидуальным дизайном под архитектуру здания. Фасадный и атриумный монтаж. Прямоугольные, полукруглые и круглые формы. LED-подсветка и тихий PM-привод.</p> <div class="eq-actions fi fi-d3"> <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a> <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a> </div> <div class="eq-trust fi fi-d3"> <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div> <div class="eq-trust-item"><div class="eq-trust-dot"></div>Индивидуальный проект</div> <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div> </div> </div> </div> </section> <!-- ═══ FEATURES ═════════════════════════════════════════ --> <section class="eq-features"> <div class="container"> <p class="section-label fi">Ключевые преимущества</p> <h2 class="section-title fi fi-d1">Почему выбирают<br>панорамные лифты Sanyo</h2> <div class="divider"></div> <div class="eq-feat-grid"> <div class="eq-feat-card fi"> <div class="eq-feat-icon">🔲</div> <div class="eq-feat-title">Стеклянные кабины</div> <div class="eq-feat-text">Закалённое стекло и триплекс 10–12 мм. Прозрачные стенки превращают поездку в архитектурное впечатление и визуально расширяют пространство.</div> </div> <div class="eq-feat-card fi fi-d1"> <div class="eq-feat-icon">🎨</div> <div class="eq-feat-title">Индивидуальный дизайн</div> <div class="eq-feat-text">Проектирование кабины под стилистику здания: материалы отделки, форма, цвет каркаса, тип остекления. Каждый лифт уникален.</div> </div> <div class="eq-feat-card fi fi-d2"> <div class="eq-feat-icon">⭕</div> <div class="eq-feat-title">Круглые и полукруглые кабины</div> <div class="eq-feat-text">Нестандартные формы кабин для атриумов и фасадов. Круглая, полукруглая, прямоугольная — подбор под архитектурный замысел.</div> </div> <div class="eq-feat-card fi fi-d1"> <div class="eq-feat-icon">💡</div> <div class="eq-feat-title">LED-подсветка</div> <div class="eq-feat-text">Встроенная светодиодная подсветка кабины и шахты. Создаёт эффектный визуальный акцент, особенно в тёмное время суток.</div> </div> <div class="eq-feat-card fi fi-d2"> <div class="eq-feat-icon">🔇</div> <div class="eq-feat-title">Тихая работа — PM-привод</div> <div class="eq-feat-text">Синхронный безредукторный привод с постоянными магнитами. Минимальный уровень шума и вибрации для комфорта пассажиров.</div> </div> <div class="eq-feat-card fi fi-d3"> <div class="eq-feat-icon">🏗️</div> <div class="eq-feat-title">Наружный и внутренний монтаж</div> <div class="eq-feat-text">Фасадное крепление на внешнюю стену или атриумная установка внутри здания. Металлоконструкция шахты под ключ.</div> </div> </div> </div> </section> <!-- ═══ SPECS ════════════════════════════════════════════ --> <section class="eq-specs"> <div class="container"> <p class="section-label fi">Технические характеристики</p> <h2 class="section-title fi fi-d1">Параметры<br>панорамных лифтов</h2> <div class="eq-spec-grid"> <div class="eq-spec-row fi"> <span class="eq-spec-label">Грузоподъёмность</span> <span class="eq-spec-value"><em>450–2000</em> кг</span> </div> <div class="eq-spec-row fi fi-d1"> <span class="eq-spec-label">Скорость</span> <span class="eq-spec-value"><em>0.5–2.5</em> м/с</span> </div> <div class="eq-spec-row fi fi-d1"> <span class="eq-spec-label">Привод</span> <span class="eq-spec-value">PM безредукторный</span> </div> <div class="eq-spec-row fi fi-d2"> <span class="eq-spec-label">Формы кабин</span> <span class="eq-spec-value">прямоуг. / полукруг / круг</span> </div> <div class="eq-spec-row fi fi-d2"> <span class="eq-spec-label">Остекление</span> <span class="eq-spec-value">закалённое <em>10–12</em> мм</span> </div> <div class="eq-spec-row fi fi-d3"> <span class="eq-spec-label">Тип монтажа</span> <span class="eq-spec-value">фасадный / атриумный</span> </div> </div> </div> </section> <!-- ═══ USE CASES ════════════════════════════════════════ --> <section class="eq-usecases"> <div class="container"> <p class="section-label fi">Применение</p> <h2 class="section-title fi fi-d1">Для каких объектов<br>подходят</h2> <div class="divider"></div> <div class="eq-uc-grid"> <div class="eq-uc-card fi"> <div class="eq-uc-icon">🛒</div> <div class="eq-uc-title">Торговые центры</div> <div class="eq-uc-text">Панорамный лифт в атриуме — визуальная доминанта ТЦ. Привлекает внимание посетителей и работает как навигационный ориентир между этажами.</div> </div> <div class="eq-uc-card fi fi-d1"> <div class="eq-uc-icon">🏨</div> <div class="eq-uc-title">Отели</div> <div class="eq-uc-text">Стеклянный лифт в лобби создаёт премиальное впечатление. Индивидуальный дизайн кабины интегрируется в интерьер отеля.</div> </div> <div class="eq-uc-card fi fi-d1"> <div class="eq-uc-icon">🏢</div> <div class="eq-uc-title">Бизнес-центры</div> <div class="eq-uc-text">Фасадный панорамный лифт подчёркивает статус здания. Обзорные кабины создают комфортную среду для арендаторов и их клиентов.</div> </div> <div class="eq-uc-card fi fi-d2"> <div class="eq-uc-icon">🏠</div> <div class="eq-uc-title">Частные резиденции</div> <div class="eq-uc-text">Компактные панорамные лифты для загородных домов и пентхаусов. Элемент престижа и удобства для владельцев многоуровневого жилья.</div> </div> </div> </div> </section> <!-- ═══ FAQ ══════════════════════════════════════════════ --> <section class="eq-faq"> <div class="container"> <p class="section-label fi">Частые вопросы</p> <h2 class="section-title fi fi-d1">FAQ по панорамным<br>лифтам Sanyo</h2> <div class="divider"></div> <div class="eq-faq-list"> <div class="eq-faq-item fi"> <div class="eq-faq-q" onclick="toggleEqFaq(this)"> <span>Какие формы кабин доступны?</span> <span class="eq-faq-arrow">+</span> </div> <div class="eq-faq-a"><div class="eq-faq-a-inner">Sanyo производит панорамные кабины трёх основных форм: прямоугольные, полукруглые и круглые. Форма подбирается под архитектуру здания и тип шахты. Возможны индивидуальные решения по эскизам архитектора.</div></div> </div> <div class="eq-faq-item fi fi-d1"> <div class="eq-faq-q" onclick="toggleEqFaq(this)"> <span>Насколько безопасно стекло в кабине?</span> <span class="eq-faq-arrow">+</span> </div> <div class="eq-faq-a"><div class="eq-faq-a-inner">Используется закалённое стекло или триплекс толщиной 10–12 мм, выдерживающий ударные и ветровые нагрузки. При разрушении закалённое стекло рассыпается на безопасные фрагменты, триплекс удерживается на плёнке. Все решения соответствуют нормам безопасности.</div></div> </div> <div class="eq-faq-item fi fi-d2"> <div class="eq-faq-q" onclick="toggleEqFaq(this)"> <span>Можно ли установить панорамный лифт снаружи здания?</span> <span class="eq-faq-arrow">+</span> </div> <div class="eq-faq-a"><div class="eq-faq-a-inner">Да, фасадный монтаж — один из основных вариантов. Лифт крепится к внешней стене здания на металлоконструкции. Стеклянная шахта защищает от осадков и ветра. Проектируем под климатические условия региона установки.</div></div> </div> <div class="eq-faq-item fi fi-d3"> <div class="eq-faq-q" onclick="toggleEqFaq(this)"> <span>Какие требования к шахте для панорамного лифта?</span> <span class="eq-faq-arrow">+</span> </div> <div class="eq-faq-a"><div class="eq-faq-a-inner">Панорамный лифт может устанавливаться в готовую шахту с остеклением или в металлоконструкцию, которую мы проектируем и монтируем. Минимальные размеры зависят от формы кабины и грузоподъёмности. Инженер выполнит замеры и предложит оптимальное решение.</div></div> </div> </div> </div> </section> <!-- ═══ CTA ══════════════════════════════════════════════ --> <section class="eq-cta" id="cta"> <div class="container"> <div class="eq-cta-grid"> <div> <p class="section-label fi">Запросить расчёт</p> <h2 class="eq-cta-title fi fi-d1">Подберём панорамный лифт<br><em>под архитектуру вашего объекта</em></h2> <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, выполнит замеры и подготовит КП с визуализацией кабины за 5 рабочих дней.</p> <div class="eq-cta-benefits fi fi-d2"> <div class="eq-cta-benefit"> <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"></path></svg></div>
+Бесплатный выезд инженера
+</div> <div class="eq-cta-benefit"> <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"></path></svg></div>
+КП с визуализацией кабины
+</div> <div class="eq-cta-benefit"> <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"></path></svg></div>
+Фиксированная цена в договоре
+</div> </div> <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a> <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div> </div> <div class="eq-form fi fi-d2"> <div class="eq-form-title">Быстрая заявка</div> <form action="/contacts/send/" method="POST"> <div class="eq-form-group"> <label class="eq-form-label">Имя / Компания *</label> <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required> </div> <div class="eq-form-group"> <label class="eq-form-label">Телефон *</label> <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required> </div> <div class="eq-form-group"> <label class="eq-form-label">Описание задачи</label> <textarea class="eq-form-input" name="message" placeholder="Тип объекта, форма кабины, этажность, фасадный или атриумный монтаж..."></textarea> </div> <input type="hidden" name="source" value="panoramic"> <button type="submit" class="eq-form-submit">Отправить заявку →</button> <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p> </form> </div> </div> </div> </section> </main> <footer class="footer"> <div class="container"> <div class="footer-inner"> <div> <div class="footer-logo">DELTA<span>.</span>ELEVATORS</div> <div class="footer-desc">ООО «Дельта-лифт» — монтаж, замена и обслуживание лифтов с 2003 года. Официальный дилер SANYO в России.</div> </div> <div> <div class="footer-col-title">Услуги</div> <div class="footer-links"> <a href="/services/installation/">Монтаж лифтов</a> <a href="/nonstandard/">Нестандартные шахты</a> <a href="/services/modernization/">Замена и модернизация</a> <a href="/services/maintenance/">Техобслуживание</a> <a href="/services/design/">Проектирование</a> </div> </div> <div> <div class="footer-col-title">Оборудование</div> <div class="footer-links"> <a href="/equipment/passenger/">Пассажирские лифты</a> <a href="/equipment/freight/">Грузовые лифты</a> <a href="/equipment/hospital/">Больничные лифты</a> <a href="/equipment/home/">Домашние лифты</a> <a href="/sanyo/">Лифты SANYO</a> </div> </div> <div> <div class="footer-col-title">Компания</div> <div class="footer-links"> <a href="/about/">О компании</a> <a href="/projects/">Портфолио</a> <a href="/letters/">Благодарственные письма</a> <a href="/sanyo/">Официальный дилер SANYO</a> <a href="/contacts/">Контакты</a> </div> </div> </div> <div class="footer-bottom"> <div>&copy; 2003&ndash;2026 ООО &laquo;Дельта-лифт&raquo; &middot; ОГРН 1037702013997</div> <div>107996, Москва, Кузнецкий Мост, 21/5, эт. 6 &middot; 8 800 222-42-30</div> </div> </div> </footer> <script>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+function toggleEqFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+</script> <script>
+(function(){
+  var root = document.documentElement;
+  var KEY = 'delta-theme';
+
+  function applyTheme(t){
+    root.setAttribute('data-theme', t);
+    localStorage.setItem(KEY, t);
+    var label = document.getElementById('themeLabel');
+    var moon  = document.getElementById('iconMoon');
+    var sun   = document.getElementById('iconSun');
+    if(label) label.textContent = t === 'light' ? 'Светлая' : 'Тёмная';
+    if(moon)  moon.style.display  = t === 'light' ? 'none' : 'block';
+    if(sun)   sun.style.display   = t === 'light' ? 'block' : 'none';
+  }
+
+  window.toggleTheme = function(){
+    var c = root.getAttribute('data-theme') || 'dark';
+    applyTheme(c === 'dark' ? 'light' : 'dark');
+  };
+
+  var saved = localStorage.getItem(KEY);
+  if(saved){ applyTheme(saved); }
+  else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches){
+    applyTheme('light');
+  }
+})();
+</script> <script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('vis');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.07});
+  document.querySelectorAll('.fi').forEach(function(el){ obs.observe(el); });
+})();
+</script>  </body></html>

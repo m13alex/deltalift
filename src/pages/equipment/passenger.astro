@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ElevatorSystem from '../../components/ElevatorSystem.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import ThemeToggleScript from '../../components/ThemeToggleScript.astro';
+import FadeInScript from '../../components/FadeInScript.astro';
+import '../../styles/equipment.css';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'О лифте', selector: '.eq-hero' },
+  { id: 'features', label: 'Особенности', selector: '.eq-features' },
+  { id: 'specs', label: 'Характеристики', selector: '.eq-specs' },
+  { id: 'usecases', label: 'Применение', selector: '.eq-usecases' },
+  { id: 'faq', label: 'FAQ', selector: '.eq-faq' },
+  { id: 'cta', label: 'Заявка', selector: '.eq-cta' },
+];
+---
+
+<BaseLayout title="Пассажирские лифты Sanyo — MRL и MR | Дельта-лифт Москва" description="Пассажирские лифты Sanyo: грузоподъёмность 320–2000 кг, скорость до 4 м/с, система WISE3000. MRL и MR исполнения. Сертификация EAC. Поставка и монтаж в Москве.">
+
+<Header activePage="equipment" ctaHref="#cta" />
+<SectionNav sections={sectionNavItems} />
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="eq-hero">
+  <div class="eq-hero-grid" id="pg"></div>
+  <div class="eq-hero-glow"></div>
+
+  <!-- Blueprint: MRL shaft cross-section -->
+  <div class="bp" style="right:6%;bottom:0;opacity:.08">
+    <svg width="180" height="260" viewBox="0 0 180 260" fill="none" stroke="currentColor" stroke-width=".7" font-family="monospace">
+      <rect x="20" y="20" width="140" height="220" stroke-width="1"/>
+      <rect x="60" y="30" width="60" height="200" stroke-width="1.2" stroke-dasharray="4 2"/>
+      <rect x="68" y="80" width="44" height="60" stroke-width="1"/>
+      <line x1="68" y1="110" x2="112" y2="110" stroke-dasharray="2 2"/>
+      <text x="90" y="100" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">КАБИНА</text>
+      <rect x="125" y="160" width="20" height="40" stroke-width=".8"/>
+      <text x="135" y="155" font-size="5" fill="currentColor" stroke="none" text-anchor="middle">ПВС</text>
+      <line x1="20" y1="230" x2="160" y2="230" stroke-width="1"/>
+      <text x="90" y="248" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">ПРИЯМОК ОТ 100 ММ</text>
+      <text x="90" y="15" font-size="6" fill="currentColor" stroke="none" text-anchor="middle">MRL — БЕЗ МП</text>
+      <line x1="5" y1="20" x2="5" y2="240" stroke-dasharray="2 2" stroke-width=".5"/>
+      <text x="3" y="130" font-size="5" fill="currentColor" stroke="none" transform="rotate(-90,3,130)">ДО 150 М</text>
+    </svg>
+  </div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <a href="/equipment/">Оборудование</a><span style="opacity:.4">›</span>
+      <span>Пассажирские лифты</span>
+    </nav>
+    <div class="eq-hero-inner">
+      <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>ПАССАЖИРСКИЕ ЛИФТЫ SANYO</div>
+      <h1 class="eq-h1 fi fi-d1">Пассажирские лифты <em>Sanyo</em> — от жилых домов до высотных зданий</h1>
+      <p class="eq-desc fi fi-d2">MRL и MR исполнения, грузоподъёмность от 320 до 2000 кг. PM-привод с экономией энергии до 30%. Система управления WISE3000. Сертификация EAC для российского рынка.</p>
+      <div class="eq-actions fi fi-d3">
+        <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a>
+        <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a>
+      </div>
+      <div class="eq-trust fi fi-d3">
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Монтаж от 14 дней</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═════════════════════════════════════════ -->
+<section class="eq-features">
+  <div class="container">
+    <p class="section-label fi">Ключевые преимущества</p>
+    <h2 class="section-title fi fi-d1">Почему выбирают<br>пассажирские лифты Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-feat-grid">
+      <div class="eq-feat-card fi">
+        <div class="eq-feat-icon">⚡</div>
+        <div class="eq-feat-title">MRL — без машинного помещения</div>
+        <div class="eq-feat-text">Привод размещается в шахте. Экономия площади здания, снижение стоимости строительства. Идеально для реконструкции.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">🔋</div>
+        <div class="eq-feat-title">PM-привод — 30% экономии</div>
+        <div class="eq-feat-text">Синхронный безредукторный привод с постоянными магнитами. Тихая работа, минимальная вибрация, низкое энергопотребление.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">🧠</div>
+        <div class="eq-feat-title">WISE3000 — умное управление</div>
+        <div class="eq-feat-text">Интеллектуальная система маршрутизации вызовов. Оптимизирует время ожидания в зданиях с высоким трафиком.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d1">
+        <div class="eq-feat-icon">📐</div>
+        <div class="eq-feat-title">Малый приямок — от 100 мм</div>
+        <div class="eq-feat-text">Специальные серии для объектов с ограниченным приямком. Решение там, где стандартные лифты невозможны.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d2">
+        <div class="eq-feat-icon">📏</div>
+        <div class="eq-feat-title">Низкое верхнее — от 2400 мм</div>
+        <div class="eq-feat-text">Минимальное надшахтное пространство для зданий с низкими техническими этажами и историческими ограничениями.</div>
+      </div>
+      <div class="eq-feat-card fi fi-d3">
+        <div class="eq-feat-icon">✅</div>
+        <div class="eq-feat-title">Сертификация EAC</div>
+        <div class="eq-feat-text">Полный пакет сертификатов ТР ТС 011/2011. Готовность к регистрации в Ростехнадзоре без дополнительных экспертиз.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECS ════════════════════════════════════════════ -->
+<section class="eq-specs">
+  <div class="container">
+    <p class="section-label fi">Технические характеристики</p>
+    <h2 class="section-title fi fi-d1">Параметры<br>пассажирских лифтов</h2>
+    <div class="eq-spec-grid">
+      <div class="eq-spec-row fi">
+        <span class="eq-spec-label">Грузоподъёмность</span>
+        <span class="eq-spec-value"><em>320–2000</em> кг</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Скорость</span>
+        <span class="eq-spec-value"><em>0.5–4.0</em> м/с</span>
+      </div>
+      <div class="eq-spec-row fi fi-d1">
+        <span class="eq-spec-label">Привод</span>
+        <span class="eq-spec-value">PM безредукторный</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Управление</span>
+        <span class="eq-spec-value">WISE3000</span>
+      </div>
+      <div class="eq-spec-row fi fi-d2">
+        <span class="eq-spec-label">Исполнение</span>
+        <span class="eq-spec-value">MRL / MR</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Высота подъёма</span>
+        <span class="eq-spec-value">до <em>150</em> м</span>
+      </div>
+      <div class="eq-spec-row fi fi-d3">
+        <span class="eq-spec-label">Мин. приямок</span>
+        <span class="eq-spec-value">от <em>100</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d4">
+        <span class="eq-spec-label">Мин. верхнее пространство</span>
+        <span class="eq-spec-value">от <em>2400</em> мм</span>
+      </div>
+      <div class="eq-spec-row fi fi-d4">
+        <span class="eq-spec-label">Количество остановок</span>
+        <span class="eq-spec-value">до <em>64</em></span>
+      </div>
+      <div class="eq-spec-row fi fi-d5">
+        <span class="eq-spec-label">Ширина дверей</span>
+        <span class="eq-spec-value"><em>700–1100</em> мм</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ USE CASES ════════════════════════════════════════ -->
+<section class="eq-usecases">
+  <div class="container">
+    <p class="section-label fi">Применение</p>
+    <h2 class="section-title fi fi-d1">Для каких объектов<br>подходят</h2>
+    <div class="divider"></div>
+    <div class="eq-uc-grid">
+      <div class="eq-uc-card fi">
+        <div class="eq-uc-icon">🏢</div>
+        <div class="eq-uc-title">Жилые комплексы</div>
+        <div class="eq-uc-text">Массовая застройка и индивидуальные проекты. MRL-исполнение экономит площадь и снижает затраты на строительство машинного помещения.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🏦</div>
+        <div class="eq-uc-title">Бизнес-центры</div>
+        <div class="eq-uc-text">Высокая интенсивность использования, требования к скорости. WISE3000 оптимизирует время ожидания в часы пик, группируя вызовы.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d1">
+        <div class="eq-uc-icon">🏗️</div>
+        <div class="eq-uc-title">Реконструкция зданий</div>
+        <div class="eq-uc-text">Нестандартные шахты, малый приямок, низкое верхнее — специальные серии решают задачи где другие поставщики отказывают.</div>
+      </div>
+      <div class="eq-uc-card fi fi-d2">
+        <div class="eq-uc-icon">🛒</div>
+        <div class="eq-uc-title">Торговые центры</div>
+        <div class="eq-uc-text">Увеличенная кабина для колясок и тележек, высокий трафик. Надёжная работа без длительных простоев на обслуживание.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ══════════════════════════════════════════════ -->
+<section class="eq-faq">
+  <div class="container">
+    <p class="section-label fi">Частые вопросы</p>
+    <h2 class="section-title fi fi-d1">FAQ по пассажирским<br>лифтам Sanyo</h2>
+    <div class="divider"></div>
+    <div class="eq-faq-list">
+      <div class="eq-faq-item fi">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Чем MRL отличается от лифта с машинным помещением?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">В MRL-лифте привод и контроллер размещаются непосредственно в шахте, что устраняет необходимость строительства отдельного машинного помещения на крыше. Это экономит площадь и стоимость строительства. Современные PM-приводы обеспечивают MRL-лифтам те же параметры скорости и грузоподъёмности, что и классическим решениям.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d1">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какой минимальный размер шахты нужен?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Минимальные размеры зависят от грузоподъёмности: для лифта на 320 кг (4 чел.) шахта от 1300×1100 мм. Для нестандартных шахт подбираем конфигурацию индивидуально. Приямок — от 100 мм, верхнее пространство — от 2400 мм.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d2">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Сколько стоит пассажирский лифт Sanyo?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Стоимость зависит от грузоподъёмности, скорости, количества остановок и отделки кабины. Ориентировочно: от 250 000 ₽ за базовую комплектацию. Оставьте заявку — инженер рассчитает точную стоимость под ваш объект за 3 рабочих дня.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d3">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какие сроки поставки и монтажа?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Поставка оборудования: 60–90 дней с момента предоплаты. Монтаж: от 14 рабочих дней в зависимости от этажности и готовности шахты. Собственные монтажные бригады, аккредитованные Ростехнадзором.</div></div>
+      </div>
+      <div class="eq-faq-item fi fi-d4">
+        <div class="eq-faq-q" onclick="toggleEqFaq(this)">
+          <span>Какая гарантия на оборудование?</span>
+          <span class="eq-faq-arrow">+</span>
+        </div>
+        <div class="eq-faq-a"><div class="eq-faq-a-inner">Гарантия производителя — 24 месяца с момента ввода в эксплуатацию. Гарантийное обслуживание выполняется нашими сервисными инженерами. Также предлагаем расширенные контракты на ТО с фиксированной стоимостью.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════ -->
+<section class="eq-cta" id="cta">
+  <div class="container">
+    <div class="eq-cta-grid">
+      <div>
+        <p class="section-label fi">Запросить расчёт</p>
+        <h2 class="eq-cta-title fi fi-d1">Подберём пассажирский лифт<br><em>под ваш объект</em></h2>
+        <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, замерит шахту и подготовит КП с фиксированной ценой за 3 рабочих дня.</p>
+        <div class="eq-cta-benefits fi fi-d2">
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Бесплатный выезд инженера
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            КП за 3 рабочих дня
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Фиксированная цена в договоре
+          </div>
+        </div>
+        <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a>
+        <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div>
+      </div>
+      <div class="eq-form fi fi-d2">
+        <div class="eq-form-title">Быстрая заявка</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="eq-form-group">
+            <label class="eq-form-label">Имя / Компания *</label>
+            <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Телефон *</label>
+            <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Описание задачи</label>
+            <textarea class="eq-form-input" name="message" placeholder="Этажность, размеры шахты, грузоподъёмность, сроки..."></textarea>
+          </div>
+          <input type="hidden" name="source" value="passenger">
+          <button type="submit" class="eq-form-submit">Отправить заявку →</button>
+          <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+function toggleEqFaq(el){var item=el.parentElement;item.classList.toggle('open')}
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>

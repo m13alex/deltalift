@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ElevatorSystem from '../../components/ElevatorSystem.astro';
+import SectionNav from '../../components/SectionNav.astro';
+import ThemeToggleScript from '../../components/ThemeToggleScript.astro';
+import FadeInScript from '../../components/FadeInScript.astro';
+import '../../styles/equipment.css';
+
+const sectionNavItems = [
+  { id: 'hero', label: 'Каталог', selector: '.eq-hero' },
+  { id: 'catalog', label: 'Оборудование', selector: '.eq-catalog' },
+  { id: 'why-sanyo', label: 'Почему Sanyo', selector: '.eq-why' },
+  { id: 'cta', label: 'Заявка', selector: '.eq-cta' },
+];
+---
+
+<BaseLayout title="Лифты и эскалаторы Sanyo — каталог оборудования | Дельта-лифт" description="Полная линейка лифтового оборудования Sanyo: пассажирские, грузовые, больничные, панорамные, автомобильные лифты и эскалаторы. Поставка и монтаж по России.">
+
+<Header activePage="equipment" ctaHref="#cta" />
+<SectionNav sections={sectionNavItems} />
+<ElevatorSystem />
+
+<main>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="eq-hero">
+  <div class="eq-hero-grid" id="pg"></div>
+  <div class="eq-hero-glow"></div>
+
+  <div class="container">
+    <nav class="breadcrumb fi">
+      <a href="/">Главная</a><span style="opacity:.4">›</span>
+      <span>Оборудование</span>
+    </nav>
+    <div class="eq-hero-inner">
+      <div class="eq-badge fi fi-d1"><div class="eq-badge-dot"></div>ЛИНЕЙКА SANYO ELEVATOR</div>
+      <h1 class="eq-h1 fi fi-d1">Лифты и эскалаторы <em>Sanyo</em></h1>
+      <p class="eq-desc fi fi-d2">Полная линейка лифтового оборудования: пассажирские, грузовые, больничные, панорамные, автомобильные лифты и эскалаторы. PM-привод с экономией энергии до 30%, сертификация EAC, поставка и монтаж по всей России.</p>
+      <div class="eq-actions fi fi-d3">
+        <a href="#cta" class="btn btn-primary btn-lg">Запросить расчёт →</a>
+        <a href="/nonstandard/" class="btn btn-outline">Нестандартная шахта?</a>
+      </div>
+      <div class="eq-trust fi fi-d3">
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Сертификат EAC</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Монтаж от 14 дней</div>
+        <div class="eq-trust-item"><div class="eq-trust-dot"></div>Гарантия 24 мес.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CATALOG ═════════════════════════════════════════ -->
+<section class="eq-catalog">
+  <div class="container">
+    <p class="section-label fi">Каталог оборудования</p>
+    <h2 class="section-title fi fi-d1">Выберите тип<br>оборудования</h2>
+    <div class="divider"></div>
+    <div class="eq-hub-grid">
+
+      <a href="/equipment/passenger/" class="eq-hub-card fi">
+        <span class="eq-hub-icon">🏢</span>
+        <span class="eq-hub-title">Пассажирские лифты</span>
+        <span class="eq-hub-desc">MRL и MR исполнения для жилых комплексов, бизнес-центров и торговых объектов. Система управления WISE3000.</span>
+        <span class="eq-hub-spec">320–2000 кг · до 4 м/с</span>
+        <span class="eq-hub-link">Подробнее →</span>
+      </a>
+
+      <a href="/equipment/freight/" class="eq-hub-card fi fi-d1">
+        <span class="eq-hub-icon">📦</span>
+        <span class="eq-hub-title">Грузовые лифты</span>
+        <span class="eq-hub-desc">Для складов, производств и логистических центров. Нестандартные платформы, двустороннее открывание дверей.</span>
+        <span class="eq-hub-spec">до 5000 кг · нестандартные платформы</span>
+        <span class="eq-hub-link">Подробнее →</span>
+      </a>
+
+      <a href="/equipment/hospital/" class="eq-hub-card fi fi-d1">
+        <span class="eq-hub-icon">🏥</span>
+        <span class="eq-hub-title">Больничные лифты</span>
+        <span class="eq-hub-desc">Увеличенная кабина для каталок и медоборудования. Плавный ход, антибактериальное покрытие, приоритетный режим.</span>
+        <span class="eq-hub-spec">от 2100 мм · плавный ход</span>
+        <span class="eq-hub-link">Подробнее →</span>
+      </a>
+
+      <a href="/equipment/escalators/" class="eq-hub-card fi fi-d2">
+        <span class="eq-hub-icon">↗️</span>
+        <span class="eq-hub-title">Эскалаторы</span>
+        <span class="eq-hub-desc">Для торговых и бизнес-центров, метро и вокзалов. Надёжный привод, высокая пропускная способность.</span>
+        <span class="eq-hub-spec">до 13 м · 30°/35°</span>
+        <span class="eq-hub-link">Подробнее →</span>
+      </a>
+
+      <a href="/equipment/panoramic/" class="eq-hub-card fi fi-d2">
+        <span class="eq-hub-icon">🔷</span>
+        <span class="eq-hub-title">Панорамные лифты</span>
+        <span class="eq-hub-desc">Стеклянные кабины для торговых центров, гостиниц и общественных зданий. Архитектурный акцент объекта.</span>
+        <span class="eq-hub-spec">стеклянные кабины</span>
+        <span class="eq-hub-link">Подробнее →</span>
+      </a>
+
+      <a href="/equipment/auto/" class="eq-hub-card fi fi-d3">
+        <span class="eq-hub-icon">🚗</span>
+        <span class="eq-hub-title">Автомобильные лифты</span>
+        <span class="eq-hub-desc">Для паркингов и автосалонов. Увеличенные платформы, усиленная конструкция, плавный пуск и торможение.</span>
+        <span class="eq-hub-spec">платформы до 5000 кг</span>
+        <span class="eq-hub-link">Подробнее →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY SANYO ═══════════════════════════════════════ -->
+<section class="eq-why">
+  <div class="container">
+    <p class="section-label fi">Технологии</p>
+    <h2 class="section-title fi fi-d1">Почему<br>Sanyo Elevator</h2>
+    <div class="divider"></div>
+    <div class="eq-why-grid">
+      <div class="eq-why-card fi">
+        <div class="eq-why-num">30%</div>
+        <div class="eq-why-title">PM-привод</div>
+        <div class="eq-why-text">Синхронный безредукторный привод с постоянными магнитами. Экономия энергии до 30%, минимальная вибрация и шум.</div>
+      </div>
+      <div class="eq-why-card fi fi-d1">
+        <div class="eq-why-num">EAC</div>
+        <div class="eq-why-title">Сертификация</div>
+        <div class="eq-why-text">Полный пакет сертификатов ТР ТС 011/2011. Готовность к регистрации в Ростехнадзоре без дополнительных экспертиз.</div>
+      </div>
+      <div class="eq-why-card fi fi-d1">
+        <div class="eq-why-num">MRL</div>
+        <div class="eq-why-title">Без машинного помещения</div>
+        <div class="eq-why-text">Привод в шахте — не нужно строить машинное помещение на крыше. Экономия площади и стоимости строительства.</div>
+      </div>
+      <div class="eq-why-card fi fi-d2">
+        <div class="eq-why-num">50+</div>
+        <div class="eq-why-title">Стран присутствия</div>
+        <div class="eq-why-text">Sanyo Elevator поставляет оборудование в более чем 50 стран мира. Проверенные решения для любых климатических условий.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ══════════════════════════════════════════════ -->
+<section class="eq-cta" id="cta">
+  <div class="container">
+    <div class="eq-banner fi">
+      <div class="eq-banner-text">Нужна консультация по подбору оборудования? <em>Свяжитесь с нами</em></div>
+      <a href="/contacts/" class="btn btn-primary btn-lg">Связаться →</a>
+    </div>
+
+    <div class="eq-cta-grid" style="margin-top:64px">
+      <div>
+        <p class="section-label fi">Запросить расчёт</p>
+        <h2 class="eq-cta-title fi fi-d1">Подберём оборудование<br><em>под ваш объект</em></h2>
+        <p class="eq-cta-sub fi fi-d2">Инженер выедет на объект, замерит шахту и подготовит КП с фиксированной ценой за 3 рабочих дня.</p>
+        <div class="eq-cta-benefits fi fi-d2">
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Бесплатный выезд инженера
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            КП за 3 рабочих дня
+          </div>
+          <div class="eq-cta-benefit">
+            <div class="eq-cta-check"><svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5l2 2 4-4"/></svg></div>
+            Фиксированная цена в договоре
+          </div>
+        </div>
+        <a href="tel:+78002224230" class="eq-cta-phone fi fi-d3">8 800 222-42-30</a>
+        <div class="eq-cta-phone-sub fi fi-d3">бесплатно по России · пн–пт 9:00–18:00</div>
+      </div>
+      <div class="eq-form fi fi-d2">
+        <div class="eq-form-title">Быстрая заявка</div>
+        <form action="/contacts/send/" method="POST">
+          <div class="eq-form-group">
+            <label class="eq-form-label">Имя / Компания *</label>
+            <input type="text" class="eq-form-input" name="name" placeholder="Иван Петров / ООО «Строй»" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Телефон *</label>
+            <input type="tel" class="eq-form-input" name="phone" placeholder="+7 (___) ___-__-__" required>
+          </div>
+          <div class="eq-form-group">
+            <label class="eq-form-label">Описание задачи</label>
+            <textarea class="eq-form-input" name="message" placeholder="Тип оборудования, этажность, размеры шахты, сроки..."></textarea>
+          </div>
+          <input type="hidden" name="source" value="equipment-hub">
+          <button type="submit" class="eq-form-submit">Отправить заявку →</button>
+          <p class="eq-form-privacy">Нажимая кнопку, вы соглашаетесь с <a href="/privacy/">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<Footer />
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',function(){
+  var pg=document.getElementById('pg');var t=false;
+  window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(function(){if(pg)pg.style.transform='translateY('+(window.scrollY*.12)+'px)';t=false});t=true}},{passive:true});
+});
+</script>
+
+<ThemeToggleScript />
+<FadeInScript />
+
+</BaseLayout>
